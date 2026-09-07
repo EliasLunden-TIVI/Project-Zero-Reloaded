@@ -1,6 +1,76 @@
 [gd_scene format=3 uid="uid://dw0m6styhy3fx"]
 
 [ext_resource type="Script" uid="uid://ev23sehgrcom" path="res://Scripts/Player/Player-core.gd" id="1_um8lo"]
+[ext_resource type="Texture2D" uid="uid://bpnnk3bqq8pf7" path="res://Textures/Character/Player/Zero/Zero.Torso.png" id="2_x3d5u"]
+[ext_resource type="Texture2D" uid="uid://bgi1dttpehbwv" path="res://Textures/Character/Player/Zero/Zero_Shoulder.png" id="3_b43ah"]
+[ext_resource type="Texture2D" uid="uid://dc38ji6b85lw1" path="res://Textures/Character/Player/Zero/Zero_Forearm.png" id="4_shmu5"]
+[ext_resource type="Texture2D" uid="uid://da3wygv3duxd3" path="res://Textures/Character/Player/Zero/Zero_Hand.png" id="5_vxq8l"]
+[ext_resource type="Texture2D" uid="uid://cboctssvoh1qe" path="res://Textures/Character/Player/Zero/Zero.Head.png" id="6_gg3t4"]
+[ext_resource type="Texture2D" uid="uid://be2fiufhg55k6" path="res://Textures/Character/Player/Zero/Zero.visor.png" id="7_javds"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1520154662]
 script = ExtResource("1_um8lo")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=324574269]
+
+[node name="Torso" type="Bone2D" parent="." unique_id=703447236]
+
+[node name="Torso-Texture" type="Sprite2D" parent="Torso" unique_id=1736815501]
+texture = ExtResource("2_x3d5u")
+
+[node name="Left-Shoulder" type="Bone2D" parent="Torso" unique_id=1278055500]
+position = Vector2(-120, 0)
+
+[node name="Shoulder-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder" unique_id=2054261377]
+position = Vector2(0, -56)
+texture = ExtResource("3_b43ah")
+
+[node name="Left-Forearm" type="Bone2D" parent="Torso/Left-Shoulder" unique_id=2082415482]
+z_index = -1
+position = Vector2(0, -96)
+
+[node name="Forearn-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=1586772091]
+position = Vector2(-10, -39)
+texture = ExtResource("4_shmu5")
+
+[node name="Left-Hand" type="Bone2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=3691123]
+position = Vector2(0, -104)
+
+[node name="Hand-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm/Left-Hand" unique_id=940419828]
+position = Vector2(10, -25)
+texture = ExtResource("5_vxq8l")
+
+[node name="Right-Shoulder" type="Bone2D" parent="Torso" unique_id=1851167748]
+position = Vector2(120, 0)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+
+[node name="Shoulder-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder" unique_id=892489682]
+position = Vector2(0, -56)
+texture = ExtResource("3_b43ah")
+
+[node name="Right-Forearm" type="Bone2D" parent="Torso/Right-Shoulder" unique_id=1511714377]
+z_index = -1
+position = Vector2(0, -96)
+
+[node name="Forearn-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=243235102]
+position = Vector2(-10, -39)
+texture = ExtResource("4_shmu5")
+
+[node name="Right-Hand" type="Bone2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=204275470]
+position = Vector2(0, -104)
+
+[node name="Hand-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=1320456539]
+position = Vector2(10, -25)
+texture = ExtResource("5_vxq8l")
+
+[node name="Head" type="Bone2D" parent="Torso" unique_id=814199551]
+
+[node name="Head-Sprite" type="Sprite2D" parent="Torso/Head" unique_id=1704807458]
+texture = ExtResource("6_gg3t4")
+
+[node name="Head-Visor" type="Sprite2D" parent="Torso/Head" unique_id=1201544155]
+z_index = 1
+texture = ExtResource("7_javds")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=504990517]
