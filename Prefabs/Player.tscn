@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://be2fiufhg55k6" path="res://Textures/Character/Player/Zero/Zero.visor.png" id="7_javds"]
 [ext_resource type="Texture2D" uid="uid://trmg1qdhkcae" path="res://Textures/Character/Player/Zero/Zero_Shoulder2.png" id="9_lhekp"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_31m54"]
+light_mode = 1
+
 [sub_resource type="Animation" id="Animation_javds"]
 length = 0.001
 tracks/0/type = "value"
@@ -1185,6 +1188,7 @@ _data = {
 radius = 138.43771
 
 [node name="Player" type="CharacterBody2D" unique_id=1520154662]
+physics_interpolation_mode = 1
 script = ExtResource("1_um8lo")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=324574269]
@@ -1248,9 +1252,13 @@ texture = ExtResource("6_gg3t4")
 
 [node name="Head-Visor" type="Sprite2D" parent="Torso/Head" unique_id=1201544155]
 z_index = 1
+material = SubResource("CanvasItemMaterial_31m54")
 texture = ExtResource("7_javds")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=504990517]
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="CharacterAnimator" type="AnimationPlayer" parent="." unique_id=1416798122]
 libraries/ = SubResource("AnimationLibrary_lhekp")
