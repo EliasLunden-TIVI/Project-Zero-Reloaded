@@ -1181,6 +1181,9 @@ _data = {
 &"Zero__Test": SubResource("Animation_t8lmw")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tytk5"]
+radius = 138.43771
+
 [node name="Player" type="CharacterBody2D" unique_id=1520154662]
 script = ExtResource("1_um8lo")
 
@@ -1259,3 +1262,6 @@ autoplay = &"Zero_Idle"
 position = Vector2(120.00003, -200)
 rotation = -3.1415925
 scale = Vector2(0.99999994, -0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=525967669]
+shape = SubResource("CircleShape2D_tytk5")
