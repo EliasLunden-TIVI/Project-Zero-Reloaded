@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-# MOVEMENT #
+### MOVEMENT ###
 
 # CURRENT PLAYER SPEED
 var SPEED: float
@@ -12,9 +12,6 @@ var SPEED: float
 @export var BASESPRINTSPEED: float = 1500
 # IF PLAYER MOVEMENT IS ENABLED
 @export var MovementActive: bool = true
-
-# SIGNAL RESOURCES 
-
 
 func _ready() -> void:
 	pass
@@ -48,5 +45,5 @@ func _process(delta):
 
 		# Independent aim direction
 	var mouse_position = get_global_mouse_position()
-		# TURN PLAYER TO FACE CURSOR
-	rotation = global_position.direction_to(mouse_position).angle() + PI / 2
+		# TURN PLAYER TO FACE CURSOR 
+	rotation = global_position.direction_to(mouse_position).angle() + PI / 2 # PI / 2 fixes rotation offset

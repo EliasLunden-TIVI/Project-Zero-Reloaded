@@ -125,6 +125,23 @@ texture = SubResource("GradientTexture2D_7tyv7")
 [node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1247815159]
 position = Vector2(2250, 150)
 scale = Vector2(26.562498, 26.5625)
+color = Color(1, 0.5176471, 0, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_7tyv7")
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=792219493]
+position = Vector2(-1100, -1599.9999)
+scale = Vector2(26.562498, 26.5625)
+color = Color(1, 0.113473944, 0.16066167, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_7tyv7")
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=2014112320]
+position = Vector2(2200, -1599.9999)
+scale = Vector2(26.562498, 26.5625)
+color = Color(0.37078658, 0.6275275, 9.62615e-07, 1)
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_7tyv7")
