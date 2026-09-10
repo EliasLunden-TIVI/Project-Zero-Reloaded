@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc38ji6b85lw1"
-path="res://.godot/imported/Zero_Arm2.png-0d7b360fd55ccaf8f6fd33c4237db248.ctex"
+uid="uid://trmg1qdhkcae"
+path="res://.godot/imported/Zero_Shoulder2.png-88e99d301c1b91150cc312efe0a4554e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Character/Player/Zero/Zero_Arm2.png"
-dest_files=["res://.godot/imported/Zero_Arm2.png-0d7b360fd55ccaf8f6fd33c4237db248.ctex"]
+source_file="res://Textures/Character/Player/Zero/Zero_Shoulder2.png"
+dest_files=["res://.godot/imported/Zero_Shoulder2.png-88e99d301c1b91150cc312efe0a4554e.ctex"]
 
 [params]
 
