@@ -24,10 +24,11 @@ func get_input() -> Vector2:
 	# CALCULATE MOVEMENT STRENGHT ON THE Y AXIS
 	input.y = Input.get_action_strength("Movement_Down") - Input.get_action_strength("Movement_Up")
 	
-	if Input.is_action_pressed("ui_up"):
-		SPEEDMODIFIER = 1.5
+	if Input.is_action_pressed("Movement_Sprint"):
+		SPEEDMODIFIER = 1.25
 	else:
 		SPEEDMODIFIER = 1
+		
 	return input.normalized()
 
 		
@@ -43,7 +44,10 @@ func _process(delta):
 		
 	move_and_slide()
 
+	
+
 		# Independent aim direction
 	var mouse_position = get_global_mouse_position()
 		# TURN PLAYER TO FACE CURSOR 
 	rotation = global_position.direction_to(mouse_position).angle() + PI / 2 # PI / 2 fixes rotation offset
+		

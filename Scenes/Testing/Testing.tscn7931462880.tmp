@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://iqh4hii07x8j" path="res://Textures/Building/Walls/Walls-Sheet.png" id="1_7tyv7"]
 [ext_resource type="Texture2D" uid="uid://jyt60kd51opo" path="res://Textures/Building/Floors/Floor-Sheet.png" id="2_xkty1"]
 [ext_resource type="PackedScene" uid="uid://dw0m6styhy3fx" path="res://Prefabs/Player.tscn" id="3_s084k"]
-[ext_resource type="PackedScene" uid="uid://c53csauaj0b8g" path="res://Resources/Weapons/Projectiles/Projectile_9x19.tscn" id="4_k75jd"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s084k"]
 polygon = PackedVector2Array(-13.3333435, -200, 13.333328, -200, 13.333328, 200, -13.3333435, 200)
@@ -163,6 +162,3 @@ shadow_filter = 2
 
 [node name="Player" parent="." unique_id=1520154662 instance=ExtResource("3_s084k")]
 position = Vector2(600, -650)
-
-[node name="Projectile_9x19" parent="." unique_id=1292293062 instance=ExtResource("4_k75jd")]
-position = Vector2(1200, -950)

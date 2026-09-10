@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://derjnibvrq8sx" path="res://Textures/Weapons/92FSX/Sights.png" id="11_8afax"]
 [ext_resource type="Texture2D" uid="uid://cxrtngud7ckjs" path="res://Textures/Weapons/92FSX/Muzzle.png" id="12_t7w7j"]
 [ext_resource type="Texture2D" uid="uid://dywjh126wph5j" path="res://Textures/Weapons/92FSX/Magazine.png" id="13_8afax"]
-[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="14_t7w7j"]
+[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Muzzle_Smoke.png" id="14_t7w7j"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_31m54"]
 light_mode = 1
@@ -959,8 +959,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t7w7j"]
 gradient = SubResource("Gradient_8afax")
-width = 256
-height = 256
+width = 128
+height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.75, 0.25)
@@ -1064,6 +1064,8 @@ position = Vector2(0, -256)
 script = ExtResource("8_t7w7j")
 
 [node name="WeaponAnimator" type="AnimationPlayer" parent="WeaponManager" unique_id=1785509630]
+process_priority = 1
+process_physics_priority = 1
 libraries/ = SubResource("AnimationLibrary_wuv02")
 
 [node name="Textures" type="Node2D" parent="WeaponManager" unique_id=446644194]
@@ -1080,10 +1082,6 @@ texture = ExtResource("10_wuv02")
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=1720549317]
 texture = ExtResource("11_8afax")
 
-[node name="Magazine" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=173589982]
-z_index = -1
-texture = ExtResource("13_8afax")
-
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=986302984]
 texture = ExtResource("12_t7w7j")
 
@@ -1091,8 +1089,6 @@ texture = ExtResource("12_t7w7j")
 position = Vector2(0, -48)
 color = Color(1, 0.37254903, 0, 1)
 energy = 0.0
-shadow_enabled = true
-shadow_filter = 2
 texture = SubResource("GradientTexture2D_t7w7j")
 texture_scale = 4.0
 
@@ -1107,5 +1103,9 @@ explosiveness = 0.5
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_08l6w")
 
-[node name="BulletOrigin" type="Node2D" parent="WeaponManager" unique_id=458772070]
-rotation = -1.5707964
+[node name="Magazine" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=173589982]
+z_index = -1
+texture = ExtResource("13_8afax")
+
+[node name="WeaponParticles" type="GPUParticles2D" parent="WeaponManager/Textures/Core/Magazine" unique_id=1100863604]
+position = Vector2(0, 72)
