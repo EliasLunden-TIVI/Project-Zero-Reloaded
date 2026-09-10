@@ -44,8 +44,6 @@ func _process(delta):
 		
 	move_and_slide()
 
-	
-
 		# Independent aim direction
 	var mouse_position = get_global_mouse_position()
 		# TURN PLAYER TO FACE CURSOR 

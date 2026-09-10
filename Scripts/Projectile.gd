@@ -17,8 +17,6 @@ func _ready() -> void:
 
 	Direction = Vector2.RIGHT.rotated(global_rotation)
 	
-	await get_tree().create_timer(Lifetime)
-	queue_free() # Delete the projectile after a given time has passed.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
