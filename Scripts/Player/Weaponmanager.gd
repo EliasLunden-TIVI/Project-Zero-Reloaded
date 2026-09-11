@@ -67,7 +67,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Combat_Attack") && Canfire && current_capacity > 0:
 		Attack()
 	
-	if Input.is_action_just_pressed("Combat_Reload"):
+	# Reload if the player Can fire (Not mid animation) and if the weapon is not fully loaded
+	if Input.is_action_just_pressed("Combat_Reload") && Canfire && current_capacity < WEAPONS[current_weapon]["capacity"]:
 		Reload()
 		
 
@@ -110,6 +111,10 @@ func Reload():
 		WeaponAnimator.play("%s_Reload_Emmergency" % current_weapon)
 	elif current_capacity == 0: # Empty reload
 		WeaponAnimator.play("%s_Reload_Empty" % current_weapon)
+	else:
+		pass
+	
+	await get_tree().create_timer(2).timeout
 	
 	current_capacity = WEAPONS[current_weapon]["capacity"]
 		
