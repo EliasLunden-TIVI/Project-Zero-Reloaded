@@ -9,7 +9,7 @@ light_mode = 1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu8uk"]
 size = Vector2(20, 30)
 
-[node name="Projectile_9x19" type="Node2D" unique_id=1292293062]
+[node name="Projectile_9x19" type="Node2D" unique_id=1292293062 groups=["Projectile_9x19"]]
 script = ExtResource("1_df847")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641388000]

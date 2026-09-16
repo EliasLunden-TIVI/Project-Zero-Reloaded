@@ -48,7 +48,7 @@ func _ready() -> void:
 	
 	Loadout = ["92FSX", "SPS-7"]
 	current_weapon = Loadout[0] # Allways equips the first weapon in the loadout
-	current_capacity = WEAPONS[current_weapon]["capacity"]
+	current_capacity = WEAPONS[current_weapon]["capacity"] # Set the ammo count to the max count
 	
 	WeaponAnimator.play("%s_Idle" % current_weapon)
 	
@@ -64,7 +64,8 @@ func swap_weapon(Weapon_Name: String) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("Combat_Attack") && Canfire && current_capacity > 0:
+	# Swapped to is_action_pressed to allow holding down button to fire
+	if Input.is_action_pressed("Combat_Attack") && Canfire && current_capacity > 0:
 		Attack()
 	
 	# Reload if the player Can fire (Not mid animation) and if the weapon is not fully loaded
@@ -75,13 +76,19 @@ func _process(delta: float) -> void:
 func Attack():
 	Canfire = false
 	
+	# Animation variations
+	
 	if current_capacity > 1:
 		WeaponAnimator.play("%s_Attack" % current_weapon)
 	elif current_capacity == 1:
 		WeaponAnimator.play("%s_Attack_Empty" % current_weapon)
 		
-	current_capacity -= 1
+	# Remove 1 bullet	
 		
+	current_capacity -= 1
+	
+	# Spawning bullet
+	
 	var weapon_data = WEAPONS[current_weapon]
 		
 	var projectile_scene: PackedScene = weapon_data["projectile"]
@@ -95,6 +102,8 @@ func Attack():
 	await get_tree().create_timer(weapon_data["fire_rate"]).timeout
 
 	Canfire = true
+	
+	# Animation variations
 	
 	if current_capacity > 0:
 		WeaponAnimator.play("%s_Idle" % current_weapon)

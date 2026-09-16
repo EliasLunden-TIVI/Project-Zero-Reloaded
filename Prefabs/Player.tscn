@@ -339,7 +339,7 @@ tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("13_8afax")]
+"values": [ExtResource("14_08l6w")]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
@@ -372,10 +372,10 @@ tracks/28/path = NodePath("Textures/Core/Barrel/MuzzleParticles:emitting")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true, false]
+"values": [true]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
@@ -387,7 +387,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [5]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -399,7 +399,7 @@ tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.6]
+"values": [0.5]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
@@ -797,10 +797,10 @@ tracks/28/path = NodePath("Textures/Core/Barrel/MuzzleParticles:emitting")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true, false]
+"values": [false]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
@@ -812,7 +812,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [5]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -824,7 +824,7 @@ tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.6]
+"values": [0.5]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
@@ -1218,19 +1218,19 @@ tracks/27/keys = {
 }
 tracks/28/type = "value"
 tracks/28/imported = false
-tracks/28/enabled = true
+tracks/28/enabled = false
 tracks/28/path = NodePath("Textures/Core/Barrel/MuzzleParticles:emitting")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [false]
+"values": []
 }
 tracks/29/type = "value"
 tracks/29/imported = false
-tracks/29/enabled = true
+tracks/29/enabled = false
 tracks/29/path = NodePath("Textures/Core/Barrel/MuzzleParticles:amount")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
@@ -1242,7 +1242,7 @@ tracks/29/keys = {
 }
 tracks/30/type = "value"
 tracks/30/imported = false
-tracks/30/enabled = true
+tracks/30/enabled = false
 tracks/30/path = NodePath("Textures/Core/Barrel/MuzzleParticles:lifetime")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
@@ -1678,10 +1678,10 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0073069036, 0.2, 1.5, 1.6, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0073069036, 0.2, 1.5, 1.5500001, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.1308996938995747, 0.1308996938995747, 0.0, 0.0]
+"values": [0.0, 0.1308996938995747, 0.1308996938995747, -0.01745329251994329, 0.0, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1762,10 +1762,10 @@ tracks/10/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.45, 1.5, 1.5500001, 1.7, 1.75, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.45, 1.55, 1.6, 1.7, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.1257373675363425, 1.0471975511965976, 1.1257373675363425, 0.2617993877991494, 0.17453292519943295, 0.2617993877991494, 0.0, 0.0, 0.4363323129985824, 0.6108652381980153, 0.4363323129985824, 0.1308996938995747, 0.0, 0.0]
+"values": [0.0, 1.1257373675363425, 1.0471975511965976, 1.1257373675363425, 0.2617993877991494, 0.17453292519943295, 0.2617993877991494, 0.0, 0.0, 0.4363323129985824, 0.7853981633974483, 0.4363323129985824, 0.1308996938995747, 0.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -1837,7 +1837,7 @@ tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.2, 1.3000001, 1.4, 1.6, 1.6999999, 1.75, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, 0.0, 0.017453292519943295, 0.0]
+"values": [0.0, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, 0.0, 0.01745329251994329, 0.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -2127,7 +2127,7 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0073069036, 0.2, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0.0073069036, 0.2, 1.6, 1.8, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.1308996938995747, 0.1308996938995747, 0.0, 0.0]
@@ -2283,10 +2283,10 @@ tracks/16/path = NodePath("Textures/Core:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.2, 1.3000001, 1.4, 1.5, 1.6, 1.6999999, 1.75, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.7, 0.8, 0.90000004, 1, 1.3000001, 1.4, 1.5, 1.6, 1.6999999, 1.75, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, -0.1308996938995747, 0.0, 0.04363323129985824, 0.0]
+"values": [0.0, -0.17453292519943295, -0.17453292519943295, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, -0.1308996938995747, 0.0, 0.04363323129985824, 0.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -2815,7 +2815,7 @@ texture = ExtResource("3_b43ah")
 [node name="Left-Forearm" type="Bone2D" parent="Torso/Left-Shoulder" unique_id=2082415482]
 z_index = -1
 position = Vector2(0, -96)
-scale = Vector2(0.99999845, 0.99999845)
+scale = Vector2(0.999998, 0.999998)
 
 [node name="Forearn-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=1586772091]
 position = Vector2(-10, -39)
@@ -2840,7 +2840,7 @@ texture = ExtResource("3_b43ah")
 [node name="Right-Forearm" type="Bone2D" parent="Torso/Right-Shoulder" unique_id=1511714377]
 z_index = -1
 position = Vector2(0, -96)
-scale = Vector2(0.99999964, 0.99999964)
+scale = Vector2(0.9999995, 0.9999995)
 
 [node name="Forearn-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=243235102]
 position = Vector2(-10, -39)
@@ -2880,6 +2880,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("8_t7w7j")
 
 [node name="WeaponAnimator" type="AnimationPlayer" parent="WeaponManager" unique_id=1785509630]
+deterministic = true
 audio_max_polyphony = 64
 libraries/ = SubResource("AnimationLibrary_wuv02")
 
@@ -2890,18 +2891,16 @@ position = Vector2(0, -70)
 texture = ExtResource("9_t8lmw")
 
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=60731910]
-position = Vector2(0, 70)
 texture = ExtResource("10_wuv02")
 
 [node name="Stock_Frame" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=1655655174]
 
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=1720549317]
-position = Vector2(0, 70)
 texture = ExtResource("11_8afax")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=173589982]
 z_index = -1
-texture = ExtResource("13_8afax")
+texture = ExtResource("14_08l6w")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=986302984]
 texture = ExtResource("12_t7w7j")
@@ -2916,12 +2915,14 @@ texture = SubResource("GradientTexture2D_t7w7j")
 texture_scale = 4.0
 
 [node name="MuzzleParticles" type="GPUParticles2D" parent="WeaponManager/Textures/Core/Barrel" unique_id=1231867892]
+self_modulate = Color(1, 1, 1, 0.16470589)
 position = Vector2(0, -48)
 rotation = -1.5707964
 emitting = false
-amount = 20
+amount = 5
 texture = ExtResource("14_t7w7j")
-lifetime = 0.6
+lifetime = 0.5
+one_shot = true
 explosiveness = 0.5
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_08l6w")
