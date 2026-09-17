@@ -10,6 +10,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	weapon_manager.ammo_changed.connect(_on_ammo_changed)
+	weapon_manager.weapon_changed.connect(_on_weapon_changed)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,4 +39,16 @@ func _on_ammo_changed(current_capacity: int, capacity: int):
 		WeaponAmmo.text = "XXXXX"
 	else:
 		print_debug("ERROR: Ammo_percent out of range")
+
+func _on_weapon_changed(current_weapon: String):
+	
+	#DEBUG feature
+	#print_debug(current_weapon)
+	
+	var weapon_path = "res://Textures/Weapons/%s/GUI/%s.png" % [current_weapon, current_weapon]
+	var weapon_texture = load(weapon_path)
+	
+	WeaponImage.texture = weapon_texture
+	
+	WeaponName.text = str(current_weapon)
 	

@@ -45,6 +45,7 @@ const WEAPONS = {
 @onready var WeaponAnimator = $WeaponAnimator
 
 signal ammo_changed(current_capacity: int, capacity: int)
+signal weapon_changed(current_weapon: String)
 #signal weapon_changed(currentWeapon: String)
 
 func _ready() -> void:
@@ -54,13 +55,19 @@ func _ready() -> void:
 	current_capacity = WEAPONS[current_weapon]["capacity"] # Set the ammo count to the max count
 	
 	WeaponAnimator.play("%s_Idle" % current_weapon)
-
-
-func swap_weapon(Weapon_Name: String) -> void:
-	if current_weapon == Weapon_Name:
-		return
 	
-	current_weapon = Weapon_Name
+	# Small delay to allow the GUI element to be instantiated
+	await get_tree().create_timer(0.1).timeout
+	
+	weapon_changed.emit(current_weapon)
+	ammo_changed.emit(current_capacity, capacity)
+	
+
+func Swap_Weapon(Weapon_Name: String) -> void:
+	#if current_weapon == Weapon_Name:
+		#return
+	
+	weapon_changed.emit(Weapon_Name)
 	
 	WeaponAnimator.play("%s_Idle" % current_weapon)
 
@@ -74,6 +81,9 @@ func _process(_delta: float) -> void:
 	# Reload if the player Can fire (Not mid animation) and if the weapon is not fully loaded
 	if Input.is_action_just_pressed("Combat_Reload") && Canfire && current_capacity < WEAPONS[current_weapon]["capacity"]:
 		Reload()
+		
+	if Input.is_action_just_pressed("Combat_Swapweapon"):
+		Swap_Weapon(current_weapon)
 		
 
 func Attack():

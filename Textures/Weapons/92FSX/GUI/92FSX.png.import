@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blg2i4t21pkc4"
-path="res://.godot/imported/92FS-GUI.png-4fd6993e8a31fa7abdd773d75756f83d.ctex"
+path="res://.godot/imported/92FSX.png-e219d17050816c0ec23bfa3e0fa3b021.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/GUI/92FS-GUI.png"
-dest_files=["res://.godot/imported/92FS-GUI.png-4fd6993e8a31fa7abdd773d75756f83d.ctex"]
+source_file="res://Textures/Weapons/92FSX/GUI/92FSX.png"
+dest_files=["res://.godot/imported/92FSX.png-e219d17050816c0ec23bfa3e0fa3b021.ctex"]
 
 [params]
 
