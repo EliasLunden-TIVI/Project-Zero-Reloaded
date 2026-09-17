@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywjh126wph5j"
-path="res://.godot/imported/92FSX_Magazine_Empty.png-886c48dac35adb3601f0f8eb99a802d1.ctex"
+uid="uid://t0gq4tsqgge3"
+path="res://.godot/imported/Frame.png-e8734bb1e651f4c6d877dfd2a7691d85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/92FSX_Magazine_Empty.png"
-dest_files=["res://.godot/imported/92FSX_Magazine_Empty.png-886c48dac35adb3601f0f8eb99a802d1.ctex"]
+source_file="res://Textures/Weapons/92FSX/Gameplay/Frame.png"
+dest_files=["res://.godot/imported/Frame.png-e8734bb1e651f4c6d877dfd2a7691d85.ctex"]
 
 [params]
 

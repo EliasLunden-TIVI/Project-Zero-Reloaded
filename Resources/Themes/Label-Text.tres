@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://lxr7dvegonym"]
+
+[ext_resource type="FontFile" uid="uid://dkbwg00un1e4a" path="res://Resources/Fonts/Nexusian.ttf" id="1_fvwny"]
+
+[resource]
+Label/fonts/font = ExtResource("1_fvwny")

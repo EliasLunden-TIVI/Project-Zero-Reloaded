@@ -13,7 +13,10 @@ var SPEED: float
 # IF PLAYER MOVEMENT IS ENABLED
 @export var MovementActive: bool = true
 
+#@onready var UI = load("res://Resources/GUI/Player_GUI.tscn")
+
 func _ready() -> void:
+	# Spawn UI into scene on spawn # This prevents the need to seperately add a player GUI into every player scene.
 	pass
 
 func get_input() -> Vector2:	
@@ -32,7 +35,7 @@ func get_input() -> Vector2:
 	return input.normalized()
 
 		
-func _process(delta):
+func _process(_delta):
 	var playerInput = get_input()
 	
 	if Input.is_action_pressed("Movement_Sprint"):

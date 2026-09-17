@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cboctssvoh1qe" path="res://Textures/Character/Player/Zero/Zero.Head.png" id="6_gg3t4"]
 [ext_resource type="Texture2D" uid="uid://be2fiufhg55k6" path="res://Textures/Character/Player/Zero/Zero.visor.png" id="7_javds"]
 [ext_resource type="Script" uid="uid://dikdghhtnaes5" path="res://Scripts/Player/Weaponmanager.gd" id="8_t7w7j"]
-[ext_resource type="Texture2D" uid="uid://t0gq4tsqgge3" path="res://Textures/Weapons/92FSX/Frame.png" id="9_t8lmw"]
-[ext_resource type="Texture2D" uid="uid://dujpjt6uymplv" path="res://Textures/Weapons/92FSX/Slide.png" id="10_wuv02"]
-[ext_resource type="Texture2D" uid="uid://derjnibvrq8sx" path="res://Textures/Weapons/92FSX/Sights.png" id="11_8afax"]
-[ext_resource type="Texture2D" uid="uid://cxrtngud7ckjs" path="res://Textures/Weapons/92FSX/Muzzle.png" id="12_t7w7j"]
-[ext_resource type="Texture2D" uid="uid://dywjh126wph5j" path="res://Textures/Weapons/92FSX/92FSX_Magazine_Empty.png" id="13_8afax"]
-[ext_resource type="Texture2D" uid="uid://cefphrvdlr8hj" path="res://Textures/Weapons/92FSX/92FSX_Magazine.png" id="14_08l6w"]
+[ext_resource type="Texture2D" uid="uid://t0gq4tsqgge3" path="res://Textures/Weapons/92FSX/Gameplay/Frame.png" id="9_t8lmw"]
+[ext_resource type="Texture2D" uid="uid://dujpjt6uymplv" path="res://Textures/Weapons/92FSX/Gameplay/Slide.png" id="10_wuv02"]
+[ext_resource type="Texture2D" uid="uid://derjnibvrq8sx" path="res://Textures/Weapons/92FSX/Gameplay/Sights.png" id="11_8afax"]
+[ext_resource type="Texture2D" uid="uid://cxrtngud7ckjs" path="res://Textures/Weapons/92FSX/Gameplay/Muzzle.png" id="12_t7w7j"]
+[ext_resource type="Texture2D" uid="uid://dywjh126wph5j" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Magazine_Empty.png" id="13_8afax"]
+[ext_resource type="Texture2D" uid="uid://cefphrvdlr8hj" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Magazine.png" id="14_08l6w"]
 [ext_resource type="AudioStream" uid="uid://blf2sq7ixupyn" path="res://SFX/Weapon/92FS/92FS_Fire.wav" id="14_o7xy3"]
 [ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="14_t7w7j"]
 [ext_resource type="AudioStream" uid="uid://4h56u1gqiuqy" path="res://SFX/Weapon/92FS/92FS_Reload_Full.wav" id="16_aw6xh"]
@@ -387,7 +387,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [5]
+"values": [10]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -452,7 +452,7 @@ tracks/34/keys = {
 
 [sub_resource type="Animation" id="Animation_08l6w"]
 resource_name = "92FSX_Attack_Empty"
-length = 0.15
+length = 0.2
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -800,7 +800,7 @@ tracks/28/keys = {
 "times": PackedFloat32Array(0.05),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
@@ -812,7 +812,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [5]
+"values": [15]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -1218,19 +1218,19 @@ tracks/27/keys = {
 }
 tracks/28/type = "value"
 tracks/28/imported = false
-tracks/28/enabled = false
+tracks/28/enabled = true
 tracks/28/path = NodePath("Textures/Core/Barrel/MuzzleParticles:emitting")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": []
+"values": [false]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
-tracks/29/enabled = false
+tracks/29/enabled = true
 tracks/29/path = NodePath("Textures/Core/Barrel/MuzzleParticles:amount")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
@@ -1242,7 +1242,7 @@ tracks/29/keys = {
 }
 tracks/30/type = "value"
 tracks/30/imported = false
-tracks/30/enabled = false
+tracks/30/enabled = true
 tracks/30/path = NodePath("Textures/Core/Barrel/MuzzleParticles:lifetime")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
@@ -2747,6 +2747,18 @@ tracks/19/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Textures/Core/Barrel/MuzzleParticles:emitting")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wuv02"]
 _data = {
@@ -2764,13 +2776,13 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t7w7j"]
 gradient = SubResource("Gradient_8afax")
-width = 256
-height = 256
+width = 360
+height = 360
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.75, 0.25)
+fill_to = Vector2(0.8421053, 0.15789473)
 metadata/_snap_enabled = true
-metadata/_snap_count = 4
+metadata/_snap_count = 6
 
 [sub_resource type="Curve" id="Curve_08l6w"]
 _data = [Vector2(0.0067567676, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0]
@@ -2900,7 +2912,7 @@ texture = ExtResource("11_8afax")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=173589982]
 z_index = -1
-texture = ExtResource("14_08l6w")
+texture = ExtResource("13_8afax")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Textures/Core" unique_id=986302984]
 texture = ExtResource("12_t7w7j")
@@ -2915,14 +2927,16 @@ texture = SubResource("GradientTexture2D_t7w7j")
 texture_scale = 4.0
 
 [node name="MuzzleParticles" type="GPUParticles2D" parent="WeaponManager/Textures/Core/Barrel" unique_id=1231867892]
-self_modulate = Color(1, 1, 1, 0.16470589)
+self_modulate = Color(0.45490196, 0.45490196, 0.45490196, 0.29411766)
 position = Vector2(0, -48)
 rotation = -1.5707964
 emitting = false
-amount = 5
+amount = 15
 texture = ExtResource("14_t7w7j")
 lifetime = 0.5
+interp_to_end = 0.1
 one_shot = true
+speed_scale = 3.0
 explosiveness = 0.5
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_08l6w")

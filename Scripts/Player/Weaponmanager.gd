@@ -44,6 +44,9 @@ const WEAPONS = {
 
 @onready var WeaponAnimator = $WeaponAnimator
 
+signal ammo_changed(current_capacity: int, capacity: int)
+#signal weapon_changed(currentWeapon: String)
+
 func _ready() -> void:
 	
 	Loadout = ["92FSX", "SPS-7"]
@@ -51,7 +54,7 @@ func _ready() -> void:
 	current_capacity = WEAPONS[current_weapon]["capacity"] # Set the ammo count to the max count
 	
 	WeaponAnimator.play("%s_Idle" % current_weapon)
-	
+
 
 func swap_weapon(Weapon_Name: String) -> void:
 	if current_weapon == Weapon_Name:
@@ -62,7 +65,7 @@ func swap_weapon(Weapon_Name: String) -> void:
 	WeaponAnimator.play("%s_Idle" % current_weapon)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	# Swapped to is_action_pressed to allow holding down button to fire
 	if Input.is_action_pressed("Combat_Attack") && Canfire && current_capacity > 0:
@@ -110,6 +113,10 @@ func Attack():
 	else:
 		WeaponAnimator.play("%s_Idle_Empty" % current_weapon)
 	
+	# Signal and update UI with new data
+	
+	ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
+	
 func Reload():
 	
 	Canfire = false
@@ -126,7 +133,11 @@ func Reload():
 	await get_tree().create_timer(2).timeout
 	
 	current_capacity = WEAPONS[current_weapon]["capacity"]
-		
+	
+	# Signal and update UI with new data
+	
+	ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
+	
 	WeaponAnimator.play("%s_Idle" % current_weapon)
 	
 	Canfire = true
