@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bpgqo3jokd4fg"]
+
+[ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="1_aw1gr"]
+[ext_resource type="Script" uid="uid://dts8prmsnk6it" path="res://Scripts/Player/Player-gui.gd" id="1_qaa8i"]
+
+[node name="PlayerGui" type="CanvasLayer" unique_id=941128799]
+
+[node name="Control" type="Control" parent="." unique_id=1698331355]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_qaa8i")
+
+[node name="Weapon-Panel" type="Panel" parent="Control" unique_id=1650090945]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.781
+anchor_top = 0.694
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.28796387
+offset_top = 0.28799438
+
+[node name="Weapon-Name-Card" type="Panel" parent="Control/Weapon-Panel" unique_id=197716135]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.030000001
+anchor_right = 0.9760001
+anchor_bottom = 0.192
+offset_left = -0.49799967
+offset_top = -0.03999996
+offset_right = 0.04800415
+offset_bottom = -0.015991211
+
+[node name="Weapon-Name" type="Label" parent="Control/Weapon-Panel/Weapon-Name-Card" unique_id=509049867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aw1gr")
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapon-Ammo-Card" type="Panel" parent="Control/Weapon-Panel" unique_id=454344543]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.202
+anchor_right = 0.97800004
+anchor_bottom = 0.36900002
+offset_left = -0.04799986
+offset_top = 0.0039978027
+offset_right = -0.4560089
+offset_bottom = -0.06200409
+
+[node name="Weapon-Ammo" type="Label" parent="Control/Weapon-Panel/Weapon-Ammo-Card" unique_id=305552587]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aw1gr")
+text = "[N/A]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapon-Image-Card" type="Panel" parent="Control/Weapon-Panel" unique_id=685489054]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.379
+anchor_right = 0.97800004
+anchor_bottom = 0.97
+offset_left = 0.005999565
+offset_top = -0.041999817
+offset_right = -0.45599365
+offset_bottom = 0.039993286
+
+[node name="Weapon-Image" type="TextureRect" parent="Control/Weapon-Panel/Weapon-Image-Card" unique_id=1122416715]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 5
+stretch_mode = 5

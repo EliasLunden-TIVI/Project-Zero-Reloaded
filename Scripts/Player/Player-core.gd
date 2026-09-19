@@ -13,7 +13,10 @@ var SPEED: float
 # IF PLAYER MOVEMENT IS ENABLED
 @export var MovementActive: bool = true
 
+#@onready var UI = load("res://Resources/GUI/Player_GUI.tscn")
+
 func _ready() -> void:
+	# Spawn UI into scene on spawn # This prevents the need to seperately add a player GUI into every player scene.
 	pass
 
 func get_input() -> Vector2:	
@@ -24,14 +27,15 @@ func get_input() -> Vector2:
 	# CALCULATE MOVEMENT STRENGHT ON THE Y AXIS
 	input.y = Input.get_action_strength("Movement_Down") - Input.get_action_strength("Movement_Up")
 	
-	if Input.is_action_pressed("ui_up"):
-		SPEEDMODIFIER = 1.5
+	if Input.is_action_pressed("Movement_Sprint"):
+		SPEEDMODIFIER = 1.25
 	else:
 		SPEEDMODIFIER = 1
+		
 	return input.normalized()
 
 		
-func _process(delta):
+func _process(_delta):
 	var playerInput = get_input()
 	
 	if Input.is_action_pressed("Movement_Sprint"):
@@ -47,3 +51,4 @@ func _process(delta):
 	var mouse_position = get_global_mouse_position()
 		# TURN PLAYER TO FACE CURSOR 
 	rotation = global_position.direction_to(mouse_position).angle() + PI / 2 # PI / 2 fixes rotation offset
+		

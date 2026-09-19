@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ckh381wx0td73"]
+
+[node name="Weapon92fs" type="Node2D" unique_id=1035464329]
+
+[node name="WeaponAnimator" type="AnimationPlayer" parent="." unique_id=1257346448]
+
+[node name="Textures" type="Node2D" parent="." unique_id=332147875]
+
+[node name="Core" type="Sprite2D" parent="Textures" unique_id=1755713053]
+
+[node name="Bolt" type="Sprite2D" parent="Textures/Core" unique_id=204980635]
+
+[node name="Stock_Frame" type="Sprite2D" parent="Textures/Core" unique_id=2103420428]
+
+[node name="Sight" type="Sprite2D" parent="Textures/Core" unique_id=751083510]
+
+[node name="Barrel" type="Sprite2D" parent="Textures/Core" unique_id=767909167]
+
+[node name="Magazine" type="Sprite2D" parent="Textures/Core" unique_id=1143259453]
