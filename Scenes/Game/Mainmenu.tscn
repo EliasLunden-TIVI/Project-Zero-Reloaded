@@ -1,5 +1,18 @@
 [gd_scene format=3 uid="uid://6e2wy25210fi"]
 
+[ext_resource type="Script" uid="uid://bj7avifa0x3u" path="res://Scripts/Mainmenu.gd" id="1_c7nip"]
+[ext_resource type="Texture2D" uid="uid://n2re6dsdp1ws" path="res://Textures/GUI/Mainmenu/Icon_1.png" id="1_jphfe"]
+[ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="2_8fsw5"]
+[ext_resource type="Texture2D" uid="uid://2qhg8hqlvcog" path="res://Textures/GUI/Mainmenu/Icon_2.png" id="2_vvj6j"]
+[ext_resource type="Texture2D" uid="uid://v8ajj1hfmaf6" path="res://Textures/GUI/Mainmenu/Icon_3.png" id="3_dpccq"]
+[ext_resource type="Texture2D" uid="uid://ck34103s8wwb" path="res://Textures/GUI/Mainmenu/Icon_4.png" id="4_e6dy5"]
+[ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="6_e6dy5"]
+[ext_resource type="Theme" uid="uid://byxdw7cx3j5mw" path="res://Resources/Themes/MainMenu-Panel.tres" id="7_cpf42"]
+
+[sub_resource type="Theme" id="Theme_dc60u"]
+default_font = ExtResource("6_e6dy5")
+Window/fonts/title_font = ExtResource("6_e6dy5")
+
 [node name="Mainmenu" type="Control" unique_id=1638803952]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +20,144 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c7nip")
+
+[node name="Backround" type="TextureRect" parent="." unique_id=1622953408]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Taskbar" type="Panel" parent="." unique_id=1175988159]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.938
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.17596436
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Taskbar" unique_id=1244301567]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_right = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Taskbar/HBoxContainer" unique_id=1583833525]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("1_jphfe")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Taskbar/HBoxContainer" unique_id=1843996969]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("2_vvj6j")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Taskbar/HBoxContainer" unique_id=1544983803]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("3_dpccq")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="Taskbar/HBoxContainer" unique_id=1994238123]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("4_e6dy5")
+icon_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=761157181]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.88900006
+offset_top = 192.0
+offset_bottom = -184.07202
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="Button" type="Button" parent="GridContainer" unique_id=1996255371]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("1_jphfe")
+
+[node name="Button2" type="Button" parent="GridContainer" unique_id=1424259309]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("2_vvj6j")
+
+[node name="Button3" type="Button" parent="GridContainer" unique_id=279350395]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("3_dpccq")
+
+[node name="Button4" type="Button" parent="GridContainer" unique_id=2033372410]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("4_e6dy5")
+
+[node name="Label" type="Label" parent="." unique_id=165063083]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.09900001
+offset_left = 8.0
+offset_top = 8.0
+offset_bottom = -0.15200806
+theme = ExtResource("2_8fsw5")
+theme_override_font_sizes/font_size = 20
+text = "| SEC-OS 9.0.1A | UNAUTHORIZED USE AND DISTRIBUTION PROHIBITED |"
+
+[node name="LevelSelectWindow" type="Window" parent="." unique_id=270180033]
+transparent_bg = true
+oversampling_override = 1.0
+title = "PROJECT_ZERO/"
+position = Vector2i(0, 36)
+size = Vector2i(830, 400)
+theme = SubResource("Theme_dc60u")
+
+[node name="Panel" type="Panel" parent="LevelSelectWindow" unique_id=2134064739]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_cpf42")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectWindow/Panel" unique_id=1922395620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_right = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="LevelSelectWindow/Panel/VBoxContainer" unique_id=280992010]
+layout_mode = 2
+size_flags_vertical = 3
+text = "TEST-LEVEL-1"

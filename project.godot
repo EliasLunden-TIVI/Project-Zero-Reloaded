@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="Project-Zero-Reloaded"
+config/tags=PackedStringArray("Project")
+run/main_scene="uid://6e2wy25210fi"
 config/features=PackedStringArray("4.7")
 config/icon="res://Textures/Misc/icon.png"
 
