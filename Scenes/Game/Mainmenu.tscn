@@ -50,37 +50,37 @@ offset_right = -192.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Taskbar/HBoxContainer" unique_id=1583833525]
-visible = false
+[node name="Command_Shortcut" type="Button" parent="Taskbar/HBoxContainer" unique_id=1583833525]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 icon = ExtResource("1_jphfe")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Button2" type="Button" parent="Taskbar/HBoxContainer" unique_id=1843996969]
-visible = false
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 icon = ExtResource("2_vvj6j")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Button3" type="Button" parent="Taskbar/HBoxContainer" unique_id=1544983803]
-visible = false
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 icon = ExtResource("3_dpccq")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Button4" type="Button" parent="Taskbar/HBoxContainer" unique_id=1994238123]
-visible = false
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 icon = ExtResource("4_e6dy5")
 icon_alignment = 1
+expand_icon = true
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=761157181]
 layout_mode = 1
@@ -93,29 +93,33 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 6
 
-[node name="Button" type="Button" parent="GridContainer" unique_id=1996255371]
+[node name="Command" type="Button" parent="GridContainer" unique_id=1996255371]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 icon = ExtResource("1_jphfe")
+icon_alignment = 1
 
-[node name="Button2" type="Button" parent="GridContainer" unique_id=1424259309]
+[node name="Settings" type="Button" parent="GridContainer" unique_id=1424259309]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 icon = ExtResource("2_vvj6j")
+icon_alignment = 1
 
-[node name="Button3" type="Button" parent="GridContainer" unique_id=279350395]
+[node name="Files" type="Button" parent="GridContainer" unique_id=279350395]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 icon = ExtResource("3_dpccq")
+icon_alignment = 1
 
-[node name="Button4" type="Button" parent="GridContainer" unique_id=2033372410]
+[node name="Database" type="Button" parent="GridContainer" unique_id=2033372410]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 icon = ExtResource("4_e6dy5")
+icon_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=165063083]
 layout_mode = 1
@@ -132,9 +136,10 @@ text = "| SEC-OS 9.0.1A | UNAUTHORIZED USE AND DISTRIBUTION PROHIBITED |"
 [node name="LevelSelectWindow" type="Window" parent="." unique_id=270180033]
 transparent_bg = true
 oversampling_override = 1.0
-title = "PROJECT_ZERO/"
+title = "PROJECT_ZERO/Command/Subject_Zero"
 position = Vector2i(0, 36)
 size = Vector2i(830, 400)
+visible = false
 theme = SubResource("Theme_dc60u")
 
 [node name="Panel" type="Panel" parent="LevelSelectWindow" unique_id=2134064739]
@@ -157,7 +162,12 @@ offset_right = -126.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="LevelSelectWindow/Panel/VBoxContainer" unique_id=280992010]
+[node name="Scene_1" type="Button" parent="LevelSelectWindow/Panel/VBoxContainer" unique_id=280992010]
 layout_mode = 2
 size_flags_vertical = 3
 text = "TEST-LEVEL-1"
+
+[connection signal="button_down" from="Taskbar/HBoxContainer/Command_Shortcut" to="." method="_on_command_shortcut_button_down"]
+[connection signal="button_down" from="GridContainer/Command" to="." method="_on_command_button_down"]
+[connection signal="close_requested" from="LevelSelectWindow" to="." method="_on_level_select_window_close_requested"]
+[connection signal="button_down" from="LevelSelectWindow/Panel/VBoxContainer/Scene_1" to="." method="_on_scene_1_button_down"]

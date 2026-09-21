@@ -92,3 +92,65 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 5
 stretch_mode = 5
+
+[node name="Pause-Panel" type="Panel" parent="Control" unique_id=2001114908]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.27800003
+anchor_bottom = 1.0
+offset_right = -0.25604248
+grow_vertical = 2
+
+[node name="Header" type="Panel" parent="Control/Pause-Panel" unique_id=1545876574]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.09900001
+offset_bottom = -0.15200806
+
+[node name="Label" type="Label" parent="Control/Pause-Panel/Header" unique_id=1199318245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aw1gr")
+theme_override_font_sizes/font_size = 30
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Pause-Panel" unique_id=1228479246]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.123
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 0.29599762
+offset_right = -16.0
+offset_bottom = -16.0
+
+[node name="Continue" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=602544188]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Continue Cycle"
+
+[node name="Settings" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=716529786]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Subject Configuration"
+
+[node name="Restart" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=99493955]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Restart Cycle"
+
+[node name="Quit" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=1010147593]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Terminate Cycle"
+
+[connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Continue" to="Control" method="_on_continue_button_down"]
+[connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Quit" to="Control" method="_on_quit_button_down"]

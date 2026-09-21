@@ -7,16 +7,36 @@ extends Control
 
 @onready var weapon_manager = get_node("../../Player/WeaponManager")
 
+var Paused: bool = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	$"Pause-Panel".hide()
+	
 	weapon_manager.ammo_changed.connect(_on_ammo_changed)
 	weapon_manager.weapon_changed.connect(_on_weapon_changed)
 
 
+func _input(event) -> void:	
+	if event.is_action_pressed("GUI_Pause"):
+		pause()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+func pause():
+	if Paused == true:
+		$"Pause-Panel".hide()
+		Paused = false
+	elif Paused == false:
+		$"Pause-Panel".show()
+		Paused = true
+
+	
+
 
 ### AMMO COUNTER SYSTEM ###
 func _on_ammo_changed(current_capacity: int, capacity: int):
@@ -52,3 +72,11 @@ func _on_weapon_changed(current_weapon: String):
 	
 	WeaponName.text = str(current_weapon)
 	
+
+
+func _on_quit_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Game/Mainmenu.tscn")
+
+
+func _on_continue_button_down() -> void:
+	pause()
