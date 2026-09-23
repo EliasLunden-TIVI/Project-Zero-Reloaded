@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://iqh4hii07x8j" path="res://Textures/Building/Walls/Walls-Sheet.png" id="1_7tyv7"]
 [ext_resource type="Texture2D" uid="uid://jyt60kd51opo" path="res://Textures/Building/Floors/Floor-Sheet.png" id="2_xkty1"]
 [ext_resource type="PackedScene" uid="uid://dw0m6styhy3fx" path="res://Prefabs/Player.tscn" id="3_s084k"]
-[ext_resource type="PackedScene" uid="uid://c53csauaj0b8g" path="res://Resources/Weapons/Projectiles/Projectile_9x19.tscn" id="4_k75jd"]
 [ext_resource type="PackedScene" uid="uid://bpgqo3jokd4fg" path="res://Resources/GUI/Player_GUI.tscn" id="5_31m54"]
+[ext_resource type="PackedScene" uid="uid://c768o873ejnia" path="res://Prefabs/Breakable/Prop_PlanterPot_Small.tscn" id="6_q1hu0"]
+[ext_resource type="PackedScene" uid="uid://dgp1imme3k68t" path="res://Prefabs/Breakable/Prop_TargetDummy.tscn" id="7_dq6ea"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s084k"]
 polygon = PackedVector2Array(-13.3333435, -200, 13.333328, -200, 13.333328, 200, -13.3333435, 200)
@@ -165,10 +166,35 @@ shadow_filter = 2
 [node name="Player" parent="." unique_id=1520154662 instance=ExtResource("3_s084k")]
 position = Vector2(600, -650)
 
-[node name="Projectile_9x19" parent="." unique_id=1292293062 instance=ExtResource("4_k75jd")]
-position = Vector2(1200, -950)
-
-[node name="Projectile_9x20" parent="." unique_id=30104379 instance=ExtResource("4_k75jd")]
-position = Vector2(950, -200)
-
 [node name="PlayerGui" parent="." unique_id=941128799 instance=ExtResource("5_31m54")]
+
+[node name="PropPlanterPotSmall" parent="." unique_id=404817474 instance=ExtResource("6_q1hu0")]
+position = Vector2(270, -1730)
+
+[node name="PropPlanterPotSmall2" parent="." unique_id=841561457 instance=ExtResource("6_q1hu0")]
+position = Vector2(542, -1737)
+
+[node name="PropPlanterPotSmall3" parent="." unique_id=1455483373 instance=ExtResource("6_q1hu0")]
+position = Vector2(417, -1570)
+
+[node name="PropPlanterPotSmall4" parent="." unique_id=591950209 instance=ExtResource("6_q1hu0")]
+position = Vector2(1263, -2067)
+
+[node name="PropTargetDummy" parent="." unique_id=825368776 instance=ExtResource("7_dq6ea")]
+position = Vector2(-573, -792)
+
+[node name="PropTargetDummy2" parent="." unique_id=534695112 instance=ExtResource("7_dq6ea")]
+position = Vector2(-1444, -773)
+
+[node name="PropTargetDummy3" parent="." unique_id=776707449 instance=ExtResource("7_dq6ea")]
+position = Vector2(-1034, -779)
+
+[node name="PropPlanterPotSmall5" parent="." unique_id=1866339479 instance=ExtResource("6_q1hu0")]
+position = Vector2(-53, -646)
+
+[node name="PropPlanterPotSmall6" parent="." unique_id=1347712489 instance=ExtResource("6_q1hu0")]
+position = Vector2(-74, -818)
+
+[node name="PropTargetDummy4" parent="." unique_id=1692978967 instance=ExtResource("7_dq6ea")]
+position = Vector2(582, -2033)
+rotation = -3.1415927

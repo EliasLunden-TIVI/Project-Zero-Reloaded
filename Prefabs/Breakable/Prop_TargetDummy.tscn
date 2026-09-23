@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://dgp1imme3k68t"]
+
+[ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Scripts/Prop_Breakable.gd" id="1_hvk3o"]
+[ext_resource type="AudioStream" uid="uid://d2eecyahew7u5" path="res://SFX/Prop/Ceramic_Break_Pixabay.mp3" id="3_w3cgd"]
+[ext_resource type="Texture2D" uid="uid://bggb5nedbhx0h" path="res://Textures/Character/Dummy.png" id="4_hvk3o"]
+[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="5_buji3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
+radius = 157.81319
+
+[sub_resource type="Animation" id="Animation_gjoy6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_hvk3o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PropSFX:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PropSFX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PropParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PropParticles:amount")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PropParticles:process_material")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PropParticles:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Curve" id="Curve_lee33"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oc0vn"]
+curve = SubResource("Curve_lee33")
+
+[sub_resource type="Curve" id="Curve_b6w6b"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q6ux3"]
+curve = SubResource("Curve_b6w6b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dc60u"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 750.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+linear_accel_curve = SubResource("CurveTexture_q6ux3")
+anim_speed_curve = SubResource("CurveTexture_oc0vn")
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+collision_mode = 2
+
+[sub_resource type="Animation" id="Animation_8s872"]
+resource_name = "TargetDummy_Break"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_hvk3o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PropSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PropSFX:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_w3cgd")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PropParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PropParticles:amount")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PropParticles:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_buji3")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PropParticles:process_material")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ParticleProcessMaterial_dc60u")]
+}
+
+[sub_resource type="Animation" id="Animation_w3cgd"]
+resource_name = "TargetDummy_Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_hvk3o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("PropSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("PropSFX:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_w3cgd")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvyq3"]
+_data = {
+&"RESET": SubResource("Animation_gjoy6"),
+&"TargetDummy_Break": SubResource("Animation_8s872"),
+&"TargetDummy_Idle": SubResource("Animation_w3cgd")
+}
+
+[node name="PropTargetDummy" type="Area2D" unique_id=404817474 groups=["TargetDummy"]]
+z_index = -3
+script = ExtResource("1_hvk3o")
+
+[node name="PropTexture" type="Sprite2D" parent="." unique_id=1383000680]
+physics_interpolation_mode = 1
+texture = ExtResource("4_hvk3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=111188632]
+shape = SubResource("CircleShape2D_dc60u")
+debug_color = Color(0.9543254, 1.347661e-06, 0.5515211, 0.41960785)
+
+[node name="PropAnimator" type="AnimationPlayer" parent="." unique_id=1822218837]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_xvyq3")
+
+[node name="PropSFX" type="AudioStreamPlayer2D" parent="." unique_id=829834308]
+
+[node name="PropParticles" type="GPUParticles2D" parent="." unique_id=1831800860]
+lifetime = 3.0
+interp_to_end = 0.1
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

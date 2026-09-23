@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx87g8v3ic3wy"
-path="res://.godot/imported/Glass_Debris1.png-3d68f2d909f6af1a343f52d705eae7a7.ctex"
+uid="uid://bns75u8taglxc"
+path="res://.godot/imported/Debris_Glass5.png-85e7b980f04e1fbf5e70884686ba21b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/VFX/Debris/Glass/Glass_Debris1.png"
-dest_files=["res://.godot/imported/Glass_Debris1.png-3d68f2d909f6af1a343f52d705eae7a7.ctex"]
+source_file="res://Textures/VFX/Debris/Glass/Debris_Glass5.png"
+dest_files=["res://.godot/imported/Debris_Glass5.png-85e7b980f04e1fbf5e70884686ba21b3.ctex"]
 
 [params]
 
