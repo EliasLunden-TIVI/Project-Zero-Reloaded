@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwydmbu221tud"
-path="res://.godot/imported/Glass_Debris4.png-5a76237a9b921f0c9a8ade34b707e638.ctex"
+uid="uid://bggb5nedbhx0h"
+path="res://.godot/imported/Dummy.png-890ab42c9f804c91b426044efd26673c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/VFX/Debris/Glass/Glass_Debris4.png"
-dest_files=["res://.godot/imported/Glass_Debris4.png-5a76237a9b921f0c9a8ade34b707e638.ctex"]
+source_file="res://Textures/Character/Dummy.png"
+dest_files=["res://.godot/imported/Dummy.png-890ab42c9f804c91b426044efd26673c.ctex"]
 
 [params]
 

@@ -140,7 +140,7 @@ func Reload():
 	else:
 		pass
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"]).timeout
 	
 	current_capacity = WEAPONS[current_weapon]["capacity"]
 	

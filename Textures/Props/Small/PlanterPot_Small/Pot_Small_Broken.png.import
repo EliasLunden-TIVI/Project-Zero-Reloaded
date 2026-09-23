@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2pdj86xx1vam"
-path="res://.godot/imported/Glass_Debris3.png-63f2136a60c3b6851165b7855bfc1326.ctex"
+uid="uid://u0uauh3fxh2n"
+path="res://.godot/imported/Pot_Small_Broken.png-5ae3bd1a303b7d9e2c897ac835820d0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/VFX/Debris/Glass/Glass_Debris3.png"
-dest_files=["res://.godot/imported/Glass_Debris3.png-63f2136a60c3b6851165b7855bfc1326.ctex"]
+source_file="res://Textures/Props/Small/PlanterPot_Small/Pot_Small_Broken.png"
+dest_files=["res://.godot/imported/Pot_Small_Broken.png-5ae3bd1a303b7d9e2c897ac835820d0e.ctex"]
 
 [params]
 

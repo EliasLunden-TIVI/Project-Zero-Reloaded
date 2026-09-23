@@ -20,6 +20,10 @@ config/icon="res://Textures/Misc/icon.png"
 
 window/vsync/vsync_mode=0
 
+[global_group]
+
+Projectile="Any projectile"
+
 [input]
 
 Movement_Right={

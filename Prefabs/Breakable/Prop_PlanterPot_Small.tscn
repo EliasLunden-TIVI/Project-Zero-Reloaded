@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://c768o873ejnia"]
+
+[ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Scripts/Prop_Breakable.gd" id="1_8s872"]
+[ext_resource type="Texture2D" uid="uid://bbfsff8wut42w" path="res://Textures/Props/Small/PlanterPot_Small/Pot_Small.png" id="2_dmfrj"]
+[ext_resource type="Texture2D" uid="uid://u0uauh3fxh2n" path="res://Textures/Props/Small/PlanterPot_Small/Pot_Small_Broken.png" id="2_xvyq3"]
+[ext_resource type="Texture2D" uid="uid://c4eebdd8osamu" path="res://Textures/VFX/Debris/Dirt/Debris_Dirt.png" id="3_dmfrj"]
+[ext_resource type="AudioStream" uid="uid://d2eecyahew7u5" path="res://SFX/Prop/Ceramic_Break_Pixabay.mp3" id="5_oc0vn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
+radius = 79.12016
+
+[sub_resource type="CurveTexture" id="CurveTexture_oc0vn"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_q6ux3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dc60u"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 750.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+linear_accel_curve = SubResource("CurveTexture_q6ux3")
+anim_speed_curve = SubResource("CurveTexture_oc0vn")
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+collision_mode = 2
+
+[sub_resource type="Animation" id="Animation_8s872"]
+resource_name = "PlanterPotSmall_Break"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_xvyq3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PropSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PropSFX:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_oc0vn")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PropParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PropParticles:amount")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PropParticles:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_dmfrj")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PropParticles:process_material")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ParticleProcessMaterial_dc60u")]
+}
+
+[sub_resource type="Animation" id="Animation_oc0vn"]
+resource_name = "PlanterPotSmall_Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_dmfrj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("PropSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("PropSFX:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_oc0vn")]
+}
+
+[sub_resource type="Animation" id="Animation_gjoy6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PropTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_dmfrj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PropSFX:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PropSFX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PropParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PropParticles:amount")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PropParticles:process_material")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PropParticles:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvyq3"]
+_data = {
+&"PlanterPotSmall_Break": SubResource("Animation_8s872"),
+&"PlanterPotSmall_Idle": SubResource("Animation_oc0vn"),
+&"RESET": SubResource("Animation_gjoy6")
+}
+
+[node name="PropPlanterPotSmall" type="Area2D" unique_id=404817474 groups=["PlanterPotSmall"]]
+z_index = -3
+script = ExtResource("1_8s872")
+
+[node name="PropTexture" type="Sprite2D" parent="." unique_id=1383000680 groups=["PlanterPotSmall"]]
+physics_interpolation_mode = 1
+texture = ExtResource("2_dmfrj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=111188632]
+shape = SubResource("CircleShape2D_dc60u")
+debug_color = Color(0.9543254, 1.347661e-06, 0.5515211, 0.41960785)
+
+[node name="PropAnimator" type="AnimationPlayer" parent="." unique_id=1822218837]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_xvyq3")
+autoplay = &"PlanterPotSmall_Idle"
+
+[node name="PropSFX" type="AudioStreamPlayer2D" parent="." unique_id=829834308]
+
+[node name="PropParticles" type="GPUParticles2D" parent="." unique_id=1831800860]
+lifetime = 3.0
+interp_to_end = 0.1
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
