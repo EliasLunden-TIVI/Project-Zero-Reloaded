@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://lxr7dvegonym"]
 
-[ext_resource type="FontFile" uid="uid://dkbwg00un1e4a" path="res://Resources/Fonts/Nexusian.ttf" id="1_fvwny"]
+[ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="1_mdknw"]
 
 [resource]
-Label/fonts/font = ExtResource("1_fvwny")
+Label/fonts/font = ExtResource("1_mdknw")
