@@ -73,10 +73,10 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, 0.08726646259971647, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -157,10 +157,10 @@ tracks/10/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.1308996938995747, 0.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -388,7 +388,7 @@ tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [10]
+"values": [15]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
@@ -451,9 +451,9 @@ tracks/34/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_08l6w"]
+[sub_resource type="Animation" id="Animation_tkui5"]
 resource_name = "92FSX_Attack_Empty"
-length = 0.2
+length = 0.15
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -498,10 +498,10 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, 0.08726646259971647, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -582,10 +582,10 @@ tracks/10/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.1308996938995747, 0.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -678,10 +678,10 @@ tracks/18/path = NodePath("Textures/Core/Bolt:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 70), Vector2(0, 70)]
+"values": [Vector2(0, 0), Vector2(0, 70)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -690,10 +690,10 @@ tracks/19/path = NodePath("Textures/Core/Bolt:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, 0.0]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -726,10 +726,10 @@ tracks/22/path = NodePath("Textures/Core/Sight:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 70), Vector2(0, 70)]
+"values": [Vector2(0, 0), Vector2(0, 70)]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
@@ -738,10 +738,10 @@ tracks/23/path = NodePath("Textures/Core/Sight:rotation")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, 0.0]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
@@ -1655,10 +1655,10 @@ tracks/1/path = NodePath("../Torso/Right-Shoulder:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.45, 0.6, 0.7),
+"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.54999995, 0.7, 0.95),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-3.490658503988659, -3.490658503988659, -3.141592653589793, -3.490658503988659, -3.5779249665883754, -3.490658503988659]
+"values": [-3.490658503988659, -3.490658503988659, -3.141592653589793, -3.490658503988659, -3.577924966588375, -3.490658503988659]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1679,10 +1679,10 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.45, 0.6, 0.7, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.45, 0.6, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.1308996938995747, 0.5235987755982988, -0.1308996938995747, 0.04363323129985824, -0.08726646259971647, 0.0, 0.0]
+"values": [0.0, -0.1308996938995747, 0.5235987755982988, -0.1308996938995747, 0.04363323129985824, 0.0, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1823,10 +1823,10 @@ tracks/15/path = NodePath("Textures/Core:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.29999995, 0.4, 1.0500001, 1.1, 1.1500001),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.55, 1.0500001, 1.1, 1.1500001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -70), Vector2(0, -70), Vector2(10, -85), Vector2(0, -70), Vector2(0, -70), Vector2(0, -80), Vector2(0, -70)]
+"values": [Vector2(0, -70), Vector2(0, -70), Vector2(10, -60), Vector2(50, -75), Vector2(0, -70), Vector2(0, -70), Vector2(0, -80), Vector2(0, -70)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -1835,10 +1835,10 @@ tracks/16/path = NodePath("Textures/Core:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.85000014, 0.95000005, 1.1500001, 1.25, 1.3000001, 1.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.5875, 0.85000014, 0.95000005, 1.1500001, 1.25, 1.3000001, 1.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.17453292519943295, -0.3490658503988659, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, 0.0, 0.01745329251994329, 0.0]
+"values": [-0.3490658503988659, -0.3490658503988659, -0.1308996938995747, -0.6981317007977318, -0.3490658503988659, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, 0.0, 0.01745329251994329, 0.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -2104,10 +2104,10 @@ tracks/1/path = NodePath("../Torso/Right-Shoulder:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.54999995, 0.7, 0.95, 1.2, 1.5, 1.8000001, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-3.490658503988659]
+"values": [-3.490658503988659, -3.490658503988659, -3.141592653589793, -3.490658503988659, -3.577924966588375, -3.490658503988659, -3.490658503988659, -3.5779249665883754, -3.490658503988659, -3.490658503988659]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2128,10 +2128,10 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0073069036, 0.2, 1.5, 1.5500001, 1.7, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.45, 0.6, 1, 1.5, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.1308996938995747, 0.1308996938995747, -0.01745329251994329, 0.0, 0.0]
+"values": [0.0, -0.1308996938995747, 0.5235987755982988, -0.1308996938995747, 0.04363323129985824, 0.0, 0.0, 0.0, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2188,10 +2188,10 @@ tracks/8/path = NodePath("../Torso/Left-Shoulder:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.4, 1.55, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.3490658503988659]
+"values": [0.3490658503988659, 0.4363323129985824, 0.3490658503988659, 0.5235987755982988, 0.3490658503988659, 0.3490658503988659]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -2212,7 +2212,7 @@ tracks/10/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.45, 1.55, 1.6, 1.7, 1.9),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.45, 1.5, 1.6, 1.7, 1.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.1257373675363425, 1.0471975511965976, 1.1257373675363425, 0.2617993877991494, 0.17453292519943295, 0.2617993877991494, 0.0, 0.0, 0.4363323129985824, 0.7853981633974483, 0.4363323129985824, 0.1308996938995747, 0.0]
@@ -2272,10 +2272,10 @@ tracks/15/path = NodePath("Textures/Core:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.55, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.4, 1.5, 1.6, 1.7, 1.75, 1.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -70), Vector2(0, -70), Vector2(0, -85), Vector2(0, -70)]
+"values": [Vector2(0, -70), Vector2(0, -70), Vector2(0, -50), Vector2(0, -65), Vector2(0, -70), Vector2(0, -75), Vector2(0, -70)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -2284,10 +2284,10 @@ tracks/16/path = NodePath("Textures/Core:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.2, 1.3000001, 1.4, 1.6, 1.6999999, 1.75, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.5875, 0.85000014, 0.95000005, 1.1500001, 1.4, 1.6, 1.6999999, 1.75, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, 0.0, 0.01745329251994329, 0.0]
+"values": [-0.3490658503988659, -0.3490658503988659, -0.1308996938995747, -0.6981317007977318, -0.3490658503988659, -0.17453292519943295, -0.17453292519943295, -0.1308996938995747, -0.1308996938995747, 0.0, -0.17453292519943295, 0.0, 0.01745329251994329, 0.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -2308,10 +2308,10 @@ tracks/18/path = NodePath("Textures/Core/Bolt:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.55),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.45, 1.5, 1.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 70), Vector2(0, 70), Vector2(0, 0)]
+"values": [Vector2(0, 70), Vector2(0, 70), Vector2(0, 75), Vector2(0, 0)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -2356,10 +2356,10 @@ tracks/22/path = NodePath("Textures/Core/Sight:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.55),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.45, 1.5, 1.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 70), Vector2(0, 70), Vector2(0, 0)]
+"values": [Vector2(0, 70), Vector2(0, 70), Vector2(0, 75), Vector2(0, 0)]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
@@ -2553,10 +2553,10 @@ tracks/1/path = NodePath("../Torso/Right-Shoulder:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-3.490658503988659]
+"values": [-3.490658503988659, -3.4033920413889427, -3.490658503988659, -3.5255650890285457, -3.490658503988659]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2577,10 +2577,10 @@ tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0073069036, 0.2, 1.6, 1.8, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.45, 1, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.1308996938995747, 0.1308996938995747, 0.0, 0.0]
+"values": [0.0, 0.1308996938995747, 0.17453292519943295, 0.0, 0.04363323129985824, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2637,10 +2637,10 @@ tracks/8/path = NodePath("../Torso/Left-Shoulder:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.3490658503988659]
+"values": [0.3490658503988659, 0.4363323129985824, 0.3490658503988659, 0.4363323129985824, 0.3490658503988659]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -2661,7 +2661,7 @@ tracks/10/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.5, 1.6, 1.7, 1.8000002, 1.9000001),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.5, 1.6, 1.8, 1.9, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.1257373675363425, 1.0471975511965976, 1.1257373675363425, 0.2617993877991494, 0.17453292519943295, 0.2617993877991494, 0.0, 1.1257373675363425, 1.2217304763960306, 1.1257373675363425, 0.0, 0.08726646259971647, 0.0]
@@ -3213,7 +3213,7 @@ tracks/20/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wuv02"]
 _data = {
 &"92FSX_Attack": SubResource("Animation_k2qb3"),
-&"92FSX_Attack_Empty": SubResource("Animation_08l6w"),
+&"92FSX_Attack_Empty": SubResource("Animation_tkui5"),
 &"92FSX_Idle": SubResource("Animation_8afax"),
 &"92FSX_Idle_Empty": SubResource("Animation_t7w7j"),
 &"92FSX_Reload_Emmergency": SubResource("Animation_aw6xh"),
@@ -3278,7 +3278,7 @@ texture = ExtResource("3_b43ah")
 [node name="Left-Forearm" type="Bone2D" parent="Torso/Left-Shoulder" unique_id=2082415482]
 z_index = -1
 position = Vector2(0, -96)
-scale = Vector2(0.9999978, 0.9999978)
+scale = Vector2(0.9999968, 0.9999968)
 
 [node name="Forearn-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=1586772091]
 position = Vector2(-10, -39)
@@ -3303,7 +3303,7 @@ texture = ExtResource("3_b43ah")
 [node name="Right-Forearm" type="Bone2D" parent="Torso/Right-Shoulder" unique_id=1511714377]
 z_index = -1
 position = Vector2(0, -96)
-scale = Vector2(0.99999917, 0.99999917)
+scale = Vector2(0.9999983, 0.9999983)
 
 [node name="Forearn-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=243235102]
 position = Vector2(-10, -39)

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://iqh4hii07x8j" path="res://Textures/Building/Walls/Walls-Sheet.png" id="1_7tyv7"]
 [ext_resource type="Texture2D" uid="uid://jyt60kd51opo" path="res://Textures/Building/Floors/Floor-Sheet.png" id="2_xkty1"]
 [ext_resource type="PackedScene" uid="uid://dw0m6styhy3fx" path="res://Prefabs/Player.tscn" id="3_s084k"]
-[ext_resource type="PackedScene" uid="uid://bpgqo3jokd4fg" path="res://Resources/GUI/Player_GUI.tscn" id="5_31m54"]
+[ext_resource type="PackedScene" uid="uid://bpgqo3jokd4fg" path="res://Scripts/Player/Player_GUI.tscn" id="5_31m54"]
 [ext_resource type="PackedScene" uid="uid://c768o873ejnia" path="res://Prefabs/Breakable/Prop_PlanterPot_Small.tscn" id="6_q1hu0"]
 [ext_resource type="PackedScene" uid="uid://dgp1imme3k68t" path="res://Prefabs/Breakable/Prop_TargetDummy.tscn" id="7_dq6ea"]
 

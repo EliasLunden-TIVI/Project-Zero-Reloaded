@@ -18,6 +18,7 @@ config/icon="res://Textures/Misc/icon.png"
 
 [display]
 
+window/size/mode=1
 window/vsync/vsync_mode=0
 
 [global_group]
