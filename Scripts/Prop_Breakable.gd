@@ -1,10 +1,12 @@
 extends Area2D
 
-var Health: int = 1
+# Shared health for ALL props
+var Health: int = 15
 
 @onready var PropTexture = $PropTexture
 @onready var Animator = $PropAnimator
 @onready var Collision = $CollisionShape2D
+@onready var Particles = $PropParticles
 @onready var Audio = $PropSFX
 
 @onready var PropName = get_groups()
@@ -25,14 +27,19 @@ func _on_area_entered(area: Area2D) -> void:
 			Take_Damage(Damage)
 
 func Take_Damage(Damage):
-	Health =- Damage
-	Break()
-	# Check if prop is broken ( Health = 0 )
-	#if Health <= 0 && Broken == false:
+	if Broken != true:
+		Health =- Damage
 		
-	#else:
-		#pass
+		# Check if prop is broken ( Health = 0 )
+		if Health <= 0 && Broken == false:
+			Break()
+		else:
+			Particles.emitting = true
+			# Reseting particles for Oneshot to work
+			Particles.emitting = false
+			
 	
 # Activate breaking animation
 func Break():
 	Animator.play("%s_Break" % PropName[0])
+	Broken = true

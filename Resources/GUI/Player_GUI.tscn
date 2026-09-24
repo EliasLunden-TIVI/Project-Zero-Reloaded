@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="1_aw1gr"]
 [ext_resource type="Script" uid="uid://dts8prmsnk6it" path="res://Scripts/Player/Player-gui.gd" id="1_qaa8i"]
+[ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="3_qaa8i"]
 
 [node name="PlayerGui" type="CanvasLayer" unique_id=941128799]
 
@@ -68,6 +69,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_aw1gr")
+theme_override_constants/outline_size = 5
 text = "[N/A]"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -131,25 +133,30 @@ offset_left = 16.0
 offset_top = 0.29599762
 offset_right = -16.0
 offset_bottom = -16.0
+theme = ExtResource("3_qaa8i")
 
 [node name="Continue" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=602544188]
 layout_mode = 2
 size_flags_vertical = 3
+tooltip_text = "Continue the game"
 text = "Continue Cycle"
 
 [node name="Settings" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=716529786]
 layout_mode = 2
 size_flags_vertical = 3
+tooltip_text = "Open settings"
 text = "Subject Configuration"
 
 [node name="Restart" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=99493955]
 layout_mode = 2
 size_flags_vertical = 3
+tooltip_text = "Restart current level"
 text = "Restart Cycle"
 
 [node name="Quit" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=1010147593]
 layout_mode = 2
 size_flags_vertical = 3
+tooltip_text = "Return to mainmenu"
 text = "Terminate Cycle"
 
 [connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Continue" to="Control" method="_on_continue_button_down"]

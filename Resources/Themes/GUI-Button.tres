@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://bjiygoegi52bb"]
+
+[ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="1_syc3c"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(1, 0.49019608, 0.49019608, 1)
+Button/colors/font_hover_color = Color(1, 0.49019608, 0.49019608, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 0, 0, 1)
+Button/fonts/font = ExtResource("1_syc3c")

@@ -21,7 +21,7 @@ const WEAPONS = {
 		"fire_rate": 0.15,
 		"fire_mode": 1,
 		"capacity": 15,
-		"reload_speed": 2.5,
+		"reload_speed": 2,
 		"reload_type": "magazine",
 		"ammo_type": "lightAmmo",
 		#"max_spread": 3, # Spread not implemented yet.
@@ -130,17 +130,18 @@ func Attack():
 func Reload():
 	
 	Canfire = false
-	
-	if current_capacity > 1: # Retention reload
-		WeaponAnimator.play("%s_Reload_Retention" % current_weapon)
-	elif current_capacity == 1: # Empty reload with a bullet in the chamber
+	if current_capacity == 1 || Input.is_action_just_pressed("Combat_Reload_Emmergency") && current_capacity != 0 : # Empty reload with a bullet in the chamber or when requested 
 		WeaponAnimator.play("%s_Reload_Emmergency" % current_weapon)
-	elif current_capacity == 0: # Empty reload
+		await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"] - 0.5).timeout
+	elif current_capacity > 1: # Retention reload
+		WeaponAnimator.play("%s_Reload_Retention" % current_weapon)
+		await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"]).timeout
+	elif current_capacity <= 0: # Empty reload
 		WeaponAnimator.play("%s_Reload_Empty" % current_weapon)
+		await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"]).timeout
 	else:
+		print_debug("Reload failed. Capacity out of range.")
 		pass
-	
-	await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"]).timeout
 	
 	current_capacity = WEAPONS[current_weapon]["capacity"]
 	

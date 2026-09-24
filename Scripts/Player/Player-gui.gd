@@ -47,16 +47,22 @@ func _on_ammo_changed(current_capacity: int, capacity: int):
 	
 	if ammo_percent >= 1: 
 		WeaponAmmo.text = "OOOOO"
+		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
 	elif ammo_percent >= 0.8:
 		WeaponAmmo.text = "OOOOX"
+		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 1.0, 0.608, 1.0))
 	elif ammo_percent >= 0.6: 
 		WeaponAmmo.text = "OOOXX"
+		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 1.0, 0.0, 1.0))
 	elif ammo_percent >= 0.4: 
 		WeaponAmmo.text = "OOXXX"
+		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 0.333, 0.0, 1.0))
 	elif ammo_percent >= 0.2:
 		WeaponAmmo.text = "OXXXX"
+		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 0.0, 0.0, 1.0))
 	elif ammo_percent <= 0:
 		WeaponAmmo.text = "XXXXX"
+		WeaponAmmo.add_theme_color_override("font_color", Color(0.608, 0.0, 0.0, 1.0))
 	else:
 		print_debug("ERROR: Ammo_percent out of range")
 
