@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dm70418hco0hr"
-path="res://.godot/imported/92FS_Supressed.wav-6a98e7fd18d8f940f0ff0319e7b10427.sample"
+path="res://.godot/imported/92FSX_Supressed.wav-65a51f8da9e3471459cfd2a5d1ad06d4.sample"
 
 [deps]
 
-source_file="res://SFX/Weapon/92FS/92FS_Supressed.wav"
-dest_files=["res://.godot/imported/92FS_Supressed.wav-6a98e7fd18d8f940f0ff0319e7b10427.sample"]
+source_file="res://SFX/Weapon/92FSX/92FSX_Supressed.wav"
+dest_files=["res://.godot/imported/92FSX_Supressed.wav-65a51f8da9e3471459cfd2a5d1ad06d4.sample"]
 
 [params]
 
