@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqwcjya0jngo0"
-path="res://.godot/imported/SPS-7-2.png-d8919d0be61cfe0240686a0d374c6ad3.ctex"
+uid="uid://bfjhumk4x6eli"
+path="res://.godot/imported/ChargingHandle.png-f2866f4e135e011ad38a8e0d1f48f0e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/SPS-7-2.png"
-dest_files=["res://.godot/imported/SPS-7-2.png-d8919d0be61cfe0240686a0d374c6ad3.ctex"]
+source_file="res://Textures/Weapons/SPS-7/Gameplay/ChargingHandle.png"
+dest_files=["res://.godot/imported/ChargingHandle.png-f2866f4e135e011ad38a8e0d1f48f0e9.ctex"]
 
 [params]
 

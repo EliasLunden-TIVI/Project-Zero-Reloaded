@@ -33,7 +33,7 @@ const WEAPONS = {
 		"fire_rate": 0.10,
 		"fire_mode": 3,
 		"capacity": 30,
-		"reload_speed": 4,
+		"reload_speed": 2.5,
 		"reload_type": "magazine",
 		"ammo_type": "lightAmmo",
 		"max_spread": 6,
@@ -83,6 +83,7 @@ func _process(_delta: float) -> void:
 		Reload()
 		
 	if Input.is_action_just_pressed("Combat_Swapweapon"):
+		current_weapon = Loadout[1]
 		Swap_Weapon(current_weapon)
 		
 
@@ -107,8 +108,8 @@ func Attack():
 	var projectile_scene: PackedScene = weapon_data["projectile"]
 	var projectile = projectile_scene.instantiate()
 
-	projectile.global_position = $BulletOrigin.global_position
-	projectile.global_rotation = $BulletOrigin.global_rotation
+	projectile.global_position = $Core/BulletOrigin.global_position
+	projectile.global_rotation = $Core/BulletOrigin.global_rotation
 
 	get_tree().current_scene.add_child(projectile)
 
