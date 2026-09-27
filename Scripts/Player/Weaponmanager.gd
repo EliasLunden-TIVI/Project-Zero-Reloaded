@@ -130,8 +130,8 @@ func Attack():
 func Reload():
 	
 	Canfire = false
-	if current_capacity == 1 || Input.is_action_just_pressed("Combat_Reload_Emmergency") && current_capacity != 0 : # Empty reload with a bullet in the chamber or when requested 
-		WeaponAnimator.play("%s_Reload_Emmergency" % current_weapon)
+	if current_capacity == 1 || Input.is_action_just_pressed("Combat_Reload_Emergency") && current_capacity != 0 : # Empty reload with a bullet in the chamber or when requested 
+		WeaponAnimator.play("%s_Reload_Emergency" % current_weapon)
 		await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"] - 0.5).timeout
 	elif current_capacity > 1: # Retention reload
 		WeaponAnimator.play("%s_Reload_Retention" % current_weapon)

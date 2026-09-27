@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://derjnibvrq8sx"
-path="res://.godot/imported/Sights.png-b2eca466494a9a86c20311852c32d114.ctex"
+uid="uid://dujpjt6uymplv"
+path="res://.godot/imported/92FSX_Slide.png-d0e44553f53b9f3ea5b50e1bf4ee4ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/Gameplay/Sights.png"
-dest_files=["res://.godot/imported/Sights.png-b2eca466494a9a86c20311852c32d114.ctex"]
+source_file="res://Textures/Weapons/92FSX/Gameplay/92FSX_Slide.png"
+dest_files=["res://.godot/imported/92FSX_Slide.png-d0e44553f53b9f3ea5b50e1bf4ee4ef2.ctex"]
 
 [params]
 

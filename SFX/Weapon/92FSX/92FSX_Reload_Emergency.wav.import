@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctjx4nkhocvp4"
-path="res://.godot/imported/92FSX_Reload_Emmergency.wav-e4a9510d3499ba4c5a8d6e86a109b5b1.sample"
+path="res://.godot/imported/92FSX_Reload_Emergency.wav-a1453da165dc77c767bb04e1afa6dce0.sample"
 
 [deps]
 
-source_file="res://SFX/Weapon/92FSX/92FSX_Reload_Emmergency.wav"
-dest_files=["res://.godot/imported/92FSX_Reload_Emmergency.wav-e4a9510d3499ba4c5a8d6e86a109b5b1.sample"]
+source_file="res://SFX/Weapon/92FSX/92FSX_Reload_Emergency.wav"
+dest_files=["res://.godot/imported/92FSX_Reload_Emergency.wav-a1453da165dc77c767bb04e1afa6dce0.sample"]
 
 [params]
 

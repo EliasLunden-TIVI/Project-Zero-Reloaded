@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxrtngud7ckjs"
-path="res://.godot/imported/Muzzle.png-cbf16c27d7f24bf29ce4f9f9c8f3edf1.ctex"
+uid="uid://t0gq4tsqgge3"
+path="res://.godot/imported/92FSX_Frame.png-27eddc6d975c6a950824ea0ff577199f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/Gameplay/Muzzle.png"
-dest_files=["res://.godot/imported/Muzzle.png-cbf16c27d7f24bf29ce4f9f9c8f3edf1.ctex"]
+source_file="res://Textures/Weapons/92FSX/Gameplay/92FSX_Frame.png"
+dest_files=["res://.godot/imported/92FSX_Frame.png-27eddc6d975c6a950824ea0ff577199f.ctex"]
 
 [params]
 
