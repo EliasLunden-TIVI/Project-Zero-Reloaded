@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgp1imme3k68t"]
 
-[ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Scripts/Prop_Breakable.gd" id="1_hvk3o"]
+[ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Prefabs/Scripts/Prop_Breakable.gd" id="1_hvk3o"]
 [ext_resource type="AudioStream" uid="uid://d2eecyahew7u5" path="res://SFX/Prop/Ceramic_Break_Pixabay.mp3" id="3_w3cgd"]
 [ext_resource type="Texture2D" uid="uid://bggb5nedbhx0h" path="res://Textures/Character/Dummy.png" id="4_hvk3o"]
 [ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="5_buji3"]

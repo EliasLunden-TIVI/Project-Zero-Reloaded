@@ -1,0 +1,551 @@
+[gd_scene format=3 uid="uid://b60sf41hvsg1e"]
+
+[ext_resource type="Script" uid="uid://ccm21nt2i2374" path="res://Prefabs/Scripts/NPC_Core.gd" id="1_h3cth"]
+[ext_resource type="Texture2D" uid="uid://3rg61gr4wwcl" path="res://Textures/Character/NPC/Dummy/Dummy_Torso.png" id="2_khe3p"]
+[ext_resource type="Texture2D" uid="uid://dhc2s4thjlydw" path="res://Textures/Character/NPC/Dummy/Dummy_Shoulder.png" id="3_o5t11"]
+[ext_resource type="Texture2D" uid="uid://5q70on00qrao" path="res://Textures/Character/NPC/Dummy/Dummy_Forearm.png" id="4_lgv57"]
+[ext_resource type="Texture2D" uid="uid://da3wygv3duxd3" path="res://Textures/Character/Player/Zero/Zero_Hand.png" id="5_u41yb"]
+[ext_resource type="Texture2D" uid="uid://b4d87at0pw0k5" path="res://Textures/Character/NPC/Dummy/Dummy_Head.png" id="6_5e3hn"]
+[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="25_x85f1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
+radius = 128.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gvnwn"]
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_5e3hn"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Torso/Left-Shoulder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Torso/Left-Shoulder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -96)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Torso/Right-Shoulder:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Torso/Right-Shoulder:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.141592653589793]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -96)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.6721404e-05, -104.00027)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -104)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Core/WeaponSound:stream")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Core/WeaponSound:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Core/Magazine:self_modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Core:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Core:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Core/Frame:texture")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Core/ChargingHandle:texture")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Core/ChargingHandle:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Core/Barrel/MuzzleFlash:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Core/Bolt:z_index")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5e3hn"]
+_data = {
+&"RESET": SubResource("Animation_5e3hn")
+}
+
+[sub_resource type="Gradient" id="Gradient_8afax"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6vpf7"]
+gradient = SubResource("Gradient_8afax")
+width = 360
+height = 360
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8421053, 0.15789473)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
+[sub_resource type="Curve" id="Curve_e3nbg"]
+_data = [Vector2(0.0067567676, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_t7w7j"]
+curve = SubResource("Curve_e3nbg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kdc20"]
+lifetime_randomness = 0.25
+particle_flag_disable_z = true
+angle_min = -320.0
+angle_max = 360.00003
+initial_velocity_min = 200.0
+initial_velocity_max = 800.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+alpha_curve = SubResource("CurveTexture_t7w7j")
+turbulence_enabled = true
+
+[node name="NpcTesting" type="CharacterBody2D" unique_id=330108728]
+script = ExtResource("1_h3cth")
+
+[node name="NPC_Hurtbox_Torso" type="Area2D" parent="." unique_id=1884212185]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Hurtbox_Torso" unique_id=1213675818]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_dc60u")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=273032310]
+
+[node name="Torso" type="Bone2D" parent="." unique_id=1235584438]
+
+[node name="Torso-Texture" type="Sprite2D" parent="Torso" unique_id=1115641233]
+texture = ExtResource("2_khe3p")
+
+[node name="Torso-Armor" type="Sprite2D" parent="Torso" unique_id=2144000781]
+
+[node name="Left-Shoulder" type="Bone2D" parent="Torso" unique_id=992563557]
+position = Vector2(-120, 0)
+scale = Vector2(0.99999887, 0.99999887)
+
+[node name="Shoulder-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder" unique_id=1824237161]
+position = Vector2(0, -56)
+rotation = -0.00045359344
+texture = ExtResource("3_o5t11")
+
+[node name="Left-Forearm" type="Bone2D" parent="Torso/Left-Shoulder" unique_id=1700183307]
+z_index = -1
+position = Vector2(0, -96)
+scale = Vector2(0.9999966, 0.9999966)
+
+[node name="Forearm-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=508541386]
+position = Vector2(-10, -39)
+texture = ExtResource("4_lgv57")
+
+[node name="Left-Hand" type="Bone2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=1915218629]
+position = Vector2(0, -104)
+
+[node name="Hand-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm/Left-Hand" unique_id=674796934]
+position = Vector2(10, -25)
+texture = ExtResource("5_u41yb")
+
+[node name="Right-Shoulder" type="Bone2D" parent="Torso" unique_id=21467232]
+position = Vector2(120, 0)
+rotation = 3.1415927
+scale = Vector2(0.9999995, -0.9999995)
+
+[node name="Shoulder-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder" unique_id=1682045891]
+position = Vector2(0, -56)
+texture = ExtResource("3_o5t11")
+
+[node name="Right-Forearm" type="Bone2D" parent="Torso/Right-Shoulder" unique_id=1180751422]
+z_index = -1
+position = Vector2(0, -96)
+scale = Vector2(0.9999983, 0.9999983)
+
+[node name="Forearm-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=978770335]
+position = Vector2(-10, -39)
+texture = ExtResource("4_lgv57")
+
+[node name="Right-Hand" type="Bone2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=103394262]
+position = Vector2(1.6721404e-05, -104.00027)
+
+[node name="Hand-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=847765665]
+position = Vector2(10, -25)
+texture = ExtResource("5_u41yb")
+
+[node name="WeaponSocket" type="Node2D" parent="Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=1395898130]
+
+[node name="Head" type="Bone2D" parent="Torso" unique_id=1322962932]
+z_index = 2
+
+[node name="Head-Sprite" type="Sprite2D" parent="Torso/Head" unique_id=1277768716]
+texture = ExtResource("6_5e3hn")
+
+[node name="Head-Gear" type="Sprite2D" parent="Torso/Head" unique_id=507430142]
+z_index = 1
+material = SubResource("CanvasItemMaterial_gvnwn")
+
+[node name="Head-Face" type="Sprite2D" parent="Torso/Head" unique_id=1677062161]
+
+[node name="WeaponManager" type="Node2D" parent="." unique_id=1201009737]
+position = Vector2(0, -256)
+scale = Vector2(0.8, 0.8)
+
+[node name="WeaponAnimator" type="AnimationPlayer" parent="WeaponManager" unique_id=227150952]
+deterministic = true
+audio_max_polyphony = 64
+libraries/ = SubResource("AnimationLibrary_5e3hn")
+
+[node name="Core" type="Node2D" parent="WeaponManager" unique_id=1255383184]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Stock" type="Sprite2D" parent="WeaponManager/Core" unique_id=790608740]
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=63964325]
+z_index = 1
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=132241852]
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Frame" type="Sprite2D" parent="WeaponManager/Core" unique_id=100855226]
+position = Vector2(0, 7.6293945e-06)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=843629182]
+z_index = -1
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=58404892]
+
+[node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=723980233]
+position = Vector2(0, -48)
+color = Color(1, 0.37254903, 0, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_6vpf7")
+texture_scale = 1e-05
+
+[node name="MuzzleParticles" type="GPUParticles2D" parent="WeaponManager/Core/Barrel" unique_id=1753488923]
+self_modulate = Color(0.45490196, 0.45490196, 0.45490196, 0.29411766)
+position = Vector2(0, -48)
+rotation = -1.5707964
+emitting = false
+amount = 20
+texture = ExtResource("25_x85f1")
+lifetime = 0.6
+interp_to_end = 0.1
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.5
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_kdc20")
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1222817337]
+
+[node name="ChargingHandle" type="Sprite2D" parent="WeaponManager/Core" unique_id=1267356114]
+z_index = -1
+
+[node name="WeaponSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core" unique_id=1059235352]
+position = Vector2(0, -70)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="BulletOrigin" type="Node2D" parent="WeaponManager/Core" unique_id=805111392]
+rotation = -1.5707964
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="NPC_Animator" type="AnimationPlayer" parent="." unique_id=615595383]
+
+[connection signal="area_entered" from="NPC_Hurtbox_Torso" to="." method="_on_npc_hurtbox_torso_area_entered"]

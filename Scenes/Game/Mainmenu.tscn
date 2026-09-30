@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6e2wy25210fi"]
 
-[ext_resource type="Script" uid="uid://bj7avifa0x3u" path="res://Scripts/Mainmenu.gd" id="1_c7nip"]
+[ext_resource type="Script" uid="uid://bj7avifa0x3u" path="res://Prefabs/Scripts/Mainmenu.gd" id="1_c7nip"]
 [ext_resource type="Texture2D" uid="uid://n2re6dsdp1ws" path="res://Textures/GUI/Mainmenu/Icon_1.png" id="1_jphfe"]
 [ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="2_8fsw5"]
 [ext_resource type="Texture2D" uid="uid://bbc4hr3v1ue7c" path="res://Resources/GUI/Bliss_(Windows_XP).png" id="2_o658a"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="6_e6dy5"]
 [ext_resource type="Theme" uid="uid://byxdw7cx3j5mw" path="res://Resources/Themes/MainMenu-Panel.tres" id="7_cpf42"]
 [ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="10_j60ab"]
+
 
 [sub_resource type="Theme" id="Theme_dc60u"]
 default_font = ExtResource("6_e6dy5")

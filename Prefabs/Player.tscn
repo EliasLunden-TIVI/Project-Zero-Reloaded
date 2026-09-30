@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dw0m6styhy3fx"]
 
-[ext_resource type="Script" uid="uid://ev23sehgrcom" path="res://Scripts/Player/Player-core.gd" id="1_um8lo"]
+[ext_resource type="Script" uid="uid://ev23sehgrcom" path="res://Prefabs/Scripts/Player/Player-core.gd" id="1_um8lo"]
 [ext_resource type="Texture2D" uid="uid://bpnnk3bqq8pf7" path="res://Textures/Character/Player/Zero/Zero.Torso.png" id="2_x3d5u"]
 [ext_resource type="Texture2D" uid="uid://bgi1dttpehbwv" path="res://Textures/Character/Player/Zero/Zero_Shoulder.png" id="3_b43ah"]
 [ext_resource type="Texture2D" uid="uid://dc38ji6b85lw1" path="res://Textures/Character/Player/Zero/Zero_Forearm.png" id="4_shmu5"]
 [ext_resource type="Texture2D" uid="uid://da3wygv3duxd3" path="res://Textures/Character/Player/Zero/Zero_Hand.png" id="5_vxq8l"]
 [ext_resource type="Texture2D" uid="uid://cboctssvoh1qe" path="res://Textures/Character/Player/Zero/Zero.Head.png" id="6_gg3t4"]
 [ext_resource type="Texture2D" uid="uid://be2fiufhg55k6" path="res://Textures/Character/Player/Zero/Zero.visor.png" id="7_javds"]
-[ext_resource type="Script" uid="uid://dikdghhtnaes5" path="res://Scripts/Player/Weaponmanager.gd" id="8_t7w7j"]
+[ext_resource type="Script" uid="uid://dikdghhtnaes5" path="res://Prefabs/Scripts/Player/Weaponmanager.gd" id="8_t7w7j"]
 [ext_resource type="Texture2D" uid="uid://t0gq4tsqgge3" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Frame.png" id="9_t8lmw"]
 [ext_resource type="Texture2D" uid="uid://dujpjt6uymplv" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Slide.png" id="10_wuv02"]
 [ext_resource type="Texture2D" uid="uid://derjnibvrq8sx" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Sights.png" id="11_8afax"]
@@ -3310,7 +3310,7 @@ tracks/34/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_wuv02"]
-length = 0.033333335
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3338,271 +3338,271 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Torso/Left-Shoulder/Shoulder-L-Texture:texture")
+tracks/2/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_b43ah")]
+"update": 0,
+"values": [Vector2(0, -96)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:position")
+tracks/3/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -96)]
+"values": [0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
+tracks/4/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:visible")
+tracks/5/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand/Hand-L-Texture:texture")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [ExtResource("5_vxq8l")]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand/Hand-L-Texture:texture")
+tracks/6/path = NodePath("../Torso/Right-Shoulder:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_vxq8l")]
+"update": 0,
+"values": [Vector2(120, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Torso/Right-Shoulder:position")
+tracks/7/path = NodePath("../Torso/Right-Shoulder:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(120, 0)]
+"values": [3.141592653589793]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Torso/Right-Shoulder:rotation")
+tracks/8/path = NodePath("../Torso/Right-Shoulder/Shoulder-R-Texture:texture")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.141592653589793]
+"update": 1,
+"values": [ExtResource("3_b43ah")]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Torso/Right-Shoulder/Shoulder-R-Texture:texture")
+tracks/9/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_b43ah")]
+"update": 0,
+"values": [Vector2(0, -96)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:position")
+tracks/10/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -96)]
+"values": [0.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
+tracks/11/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [true]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:visible")
+tracks/12/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand/Hand-R-Texture:texture")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [ExtResource("5_vxq8l")]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand/Hand-R-Texture:texture")
+tracks/13/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_vxq8l")]
+"values": [null]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/14/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [false]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/15/path = NodePath("Core/WeaponSound:stream")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [null]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Core/WeaponSound:stream")
+tracks/16/path = NodePath("Core/WeaponSound:playing")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [false]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Core/WeaponSound:playing")
+tracks/17/path = NodePath("Core/Magazine:self_modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Core/Magazine:self_modulate")
+tracks/18/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [0]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
+tracks/19/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [false]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/20/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [1.0]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
+tracks/21/path = NodePath("Core:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Vector2(0, 0)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Core:position")
+tracks/22/path = NodePath("Core:rotation")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [0.0]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Core:rotation")
+tracks/23/path = NodePath("Core/Frame:texture")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [null]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Core/Frame:texture")
+tracks/24/path = NodePath("Core/ChargingHandle:texture")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -3614,31 +3614,31 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Core/ChargingHandle:texture")
+tracks/25/path = NodePath("Core/ChargingHandle:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Core/ChargingHandle:position")
+tracks/26/path = NodePath("Core/Barrel/MuzzleFlash:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -48)]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Core/Barrel/MuzzleFlash:position")
+tracks/27/path = NodePath("Core/Barrel/MuzzleParticles:position")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
@@ -3650,26 +3650,38 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/28/path = NodePath("Core/Bolt:z_index")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -48)]
+"update": 1,
+"values": [-1]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Core/Bolt:z_index")
+tracks/29/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -104)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"update": 0,
+"values": [Vector2(0, -104)]
 }
 
 [sub_resource type="Animation" id="Animation_3b1fg"]
@@ -7122,11 +7134,11 @@ _data = {
 &"SPS-7_Reload_Retention": SubResource("Animation_2wlbw")
 }
 
-[sub_resource type="Gradient" id="Gradient_8afax"]
+[sub_resource type="Gradient" id="Gradient_fuy0y"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t7w7j"]
-gradient = SubResource("Gradient_8afax")
+gradient = SubResource("Gradient_fuy0y")
 width = 360
 height = 360
 fill = 1
@@ -7140,7 +7152,7 @@ _data = [Vector2(0.0067567676, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0
 point_count = 2
 metadata/_snap_enabled = true
 
-[sub_resource type="CurveTexture" id="CurveTexture_t7w7j"]
+[sub_resource type="CurveTexture" id="CurveTexture_gy83n"]
 curve = SubResource("Curve_08l6w")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08l6w"]
@@ -7152,7 +7164,7 @@ initial_velocity_min = 200.0
 initial_velocity_max = 800.0
 gravity = Vector3(0, 98, 0)
 scale_min = 0.5
-alpha_curve = SubResource("CurveTexture_t7w7j")
+alpha_curve = SubResource("CurveTexture_gy83n")
 turbulence_enabled = true
 
 [node name="Player" type="CharacterBody2D" unique_id=1520154662]
@@ -7185,7 +7197,6 @@ position = Vector2(-10, -39)
 texture = ExtResource("4_shmu5")
 
 [node name="Left-Hand" type="Bone2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=3691123]
-position = Vector2(0, -104)
 
 [node name="Hand-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm/Left-Hand" unique_id=940419828]
 position = Vector2(10, -25)
@@ -7256,14 +7267,11 @@ scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=1720549317]
 z_index = 1
-position = Vector2(0, 70)
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("11_8afax")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=173589982]
 z_index = -1
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("13_8afax")
 
 [node name="Frame" type="Sprite2D" parent="WeaponManager/Core" unique_id=1661681515]
 position = Vector2(0, 7.6293945e-06)
@@ -7271,12 +7279,9 @@ scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=60731910]
 z_index = -1
-position = Vector2(0, 70)
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("10_wuv02")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=986302984]
-texture = ExtResource("12_t7w7j")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=302458990]
 position = Vector2(0, -48)
@@ -7285,7 +7290,7 @@ energy = 0.0
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_t7w7j")
-texture_scale = 4.0
+texture_scale = 1e-05
 
 [node name="MuzzleParticles" type="GPUParticles2D" parent="WeaponManager/Core/Barrel" unique_id=1231867892]
 self_modulate = Color(0.45490196, 0.45490196, 0.45490196, 0.29411766)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c768o873ejnia"]
 
-[ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Scripts/Prop_Breakable.gd" id="1_8s872"]
+[ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Prefabs/Scripts/Prop_Breakable.gd" id="1_8s872"]
 [ext_resource type="Texture2D" uid="uid://bbfsff8wut42w" path="res://Textures/Props/Small/PlanterPot_Small/Pot_Small.png" id="2_dmfrj"]
 [ext_resource type="Texture2D" uid="uid://u0uauh3fxh2n" path="res://Textures/Props/Small/PlanterPot_Small/Pot_Small_Broken.png" id="2_xvyq3"]
 [ext_resource type="Texture2D" uid="uid://c4eebdd8osamu" path="res://Textures/VFX/Debris/Dirt/Debris_Dirt.png" id="3_dmfrj"]

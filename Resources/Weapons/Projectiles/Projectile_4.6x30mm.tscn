@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://c53csauaj0b8g"]
+[gd_scene format=3 uid="uid://gpd03nbkqdgw"]
 
-[ext_resource type="Script" uid="uid://86cysesibhom" path="res://Prefabs/Scripts/Projectile.gd" id="1_df847"]
-[ext_resource type="Texture2D" uid="uid://kndmq3ydh1qp" path="res://Textures/VFX/Weapons/Projectile_Small.png" id="1_wu8uk"]
-
+[ext_resource type="Script" uid="uid://86cysesibhom" path="res://Prefabs/Scripts/Projectile.gd" id="1_hdgi0"]
+[ext_resource type="Texture2D" uid="uid://kndmq3ydh1qp" path="res://Textures/VFX/Weapons/Projectile_Small.png" id="2_fdjs5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu8uk"]
 size = Vector2(32.000004, 48)
@@ -11,7 +10,7 @@ size = Vector2(32.000004, 48)
 light_mode = 1
 
 [node name="Projectile_9x19" type="Area2D" unique_id=1785982187 groups=["Projectile"]]
-script = ExtResource("1_df847")
+script = ExtResource("1_hdgi0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=480819546]
 position = Vector2(0, 4.7683716e-07)
@@ -22,4 +21,4 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Projectile_Texture" type="Sprite2D" parent="." unique_id=1641388000]
 material = SubResource("CanvasItemMaterial_df847")
 rotation = 1.5707966
-texture = ExtResource("1_wu8uk")
+texture = ExtResource("2_fdjs5")
