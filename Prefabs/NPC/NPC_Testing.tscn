@@ -858,7 +858,46 @@ scale_min = 0.5
 alpha_curve = SubResource("CurveTexture_t7w7j")
 turbulence_enabled = true
 
-[node name="NpcTesting" type="CharacterBody2D" unique_id=330108728]
+[sub_resource type="Animation" id="Animation_gvnwn"]
+resource_name = "NPC_TestDummy_Death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.5529412, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o7vlm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7vlm"]
+_data = {
+&"NPC_TestDummy_Death": SubResource("Animation_gvnwn"),
+&"RESET": SubResource("Animation_o7vlm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tytk5"]
+radius = 122.05327
+
+[node name="NpcTesting" type="CharacterBody2D" unique_id=330108728 groups=["TestDummy"]]
 script = ExtResource("1_h3cth")
 
 [node name="NPC_Hurtbox_Torso" type="Area2D" parent="." unique_id=1884212185]
@@ -1018,5 +1057,10 @@ rotation = -1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="NPC_Animator" type="AnimationPlayer" parent="." unique_id=615595383]
+libraries/ = SubResource("AnimationLibrary_o7vlm")
+
+[node name="NPC_Collision" type="CollisionShape2D" parent="." unique_id=1665063444]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_tytk5")
 
 [connection signal="area_entered" from="NPC_Hurtbox_Torso" to="." method="_on_npc_hurtbox_torso_area_entered"]

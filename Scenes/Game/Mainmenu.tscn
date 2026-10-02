@@ -11,7 +11,6 @@
 [ext_resource type="Theme" uid="uid://byxdw7cx3j5mw" path="res://Resources/Themes/MainMenu-Panel.tres" id="7_cpf42"]
 [ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="10_j60ab"]
 
-
 [sub_resource type="Theme" id="Theme_dc60u"]
 default_font = ExtResource("6_e6dy5")
 Window/fonts/title_font = ExtResource("6_e6dy5")
@@ -97,6 +96,7 @@ offset_left = 0.38391113
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_8fsw5")
+theme_override_constants/line_spacing = -8
 text = "16/02/2034
 9:32:00 AM"
 horizontal_alignment = 1

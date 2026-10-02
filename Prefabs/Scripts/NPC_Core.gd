@@ -10,7 +10,15 @@ var Alive: bool
 
 var CorpseRemovalDelay: float = 15
 
+var EnemyName: String
+
+@onready var Animator = $NPC_Animator
+
 func _ready() -> void:
+	
+	# Get the first group name to be set as the name and "ID" of the enemy.
+	EnemyName = get_groups()[0]
+	
 	Health = 100
 	Alive = true
 
@@ -32,7 +40,8 @@ func Take_Damage(Damage):
 	
 func Die():
 	Alive = false
-	
 	print_debug("NPC Killed")
+	
+	Animator.play("NPC_%s_Death" % EnemyName)
 	await get_tree().create_timer(CorpseRemovalDelay).timeout
 	queue_free()

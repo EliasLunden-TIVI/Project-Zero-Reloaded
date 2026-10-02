@@ -16,6 +16,8 @@ var capacity: int
 
 var Equiped_Weapon: String
 
+var LoadoutIndex: int
+
 const WEAPONS = {
 	"92FSX": {
 		"fire_rate": 0.15,
@@ -51,6 +53,7 @@ signal weapon_changed(current_weapon: String)
 func _ready() -> void:
 	
 	Loadout = ["92FSX", "SPS-7"]
+	LoadoutIndex = 0
 	current_weapon = Loadout[0] # Allways equips the first weapon in the loadout
 	current_capacity = WEAPONS[current_weapon]["capacity"] # Set the ammo count to the max count
 	
@@ -64,12 +67,30 @@ func _ready() -> void:
 	
 
 func Swap_Weapon(Weapon_Name: String) -> void:
-	#if current_weapon == Weapon_Name:
-		#return
+	
+	if LoadoutIndex != Loadout.size() - 1:
+		LoadoutIndex =+ 1
+	else:
+		LoadoutIndex = 0
+	
+	print_debug(LoadoutIndex)
+	
+	current_weapon = Loadout[LoadoutIndex]
+	
+	# Update stats
+	
+	current_capacity = WEAPONS[current_weapon]["capacity"]
+	capacity = WEAPONS[current_weapon]["capacity"]
+	
+	# Send signals
 	
 	weapon_changed.emit(Weapon_Name)
-	
 	WeaponAnimator.play("%s_Idle" % current_weapon)
+	
+	# Update GUI
+	
+	weapon_changed.emit(current_weapon)
+	ammo_changed.emit(current_capacity, capacity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -83,7 +104,7 @@ func _process(_delta: float) -> void:
 		Reload()
 		
 	if Input.is_action_just_pressed("Combat_Swapweapon"):
-		current_weapon = Loadout[1]
+		current_weapon = Loadout[LoadoutIndex]
 		Swap_Weapon(current_weapon)
 		
 
