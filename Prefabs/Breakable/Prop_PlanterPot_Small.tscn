@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbfsff8wut42w" path="res://Textures/Props/Small/PlanterPot_Small/Pot_Small.png" id="2_dmfrj"]
 [ext_resource type="Texture2D" uid="uid://u0uauh3fxh2n" path="res://Textures/Props/Small/PlanterPot_Small/Pot_Small_Broken.png" id="2_xvyq3"]
 [ext_resource type="Texture2D" uid="uid://c4eebdd8osamu" path="res://Textures/VFX/Debris/Dirt/Debris_Dirt.png" id="3_dmfrj"]
+[ext_resource type="AudioStream" uid="uid://ctq3eukf7cm1d" path="res://SFX/Prop/Pot_Break_2_Pixabay.mp3" id="4_oc0vn"]
 [ext_resource type="AudioStream" uid="uid://d2eecyahew7u5" path="res://SFX/Prop/Ceramic_Break_Pixabay.mp3" id="5_oc0vn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
@@ -77,7 +78,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_oc0vn")]
+"values": [ExtResource("4_oc0vn")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -279,6 +280,8 @@ libraries/ = SubResource("AnimationLibrary_xvyq3")
 autoplay = &"PlanterPotSmall_Idle"
 
 [node name="PropSFX" type="AudioStreamPlayer2D" parent="." unique_id=829834308]
+max_distance = 3500.0
+max_polyphony = 6
 
 [node name="PropParticles" type="GPUParticles2D" parent="." unique_id=1831800860]
 lifetime = 3.0
