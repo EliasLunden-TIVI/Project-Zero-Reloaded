@@ -392,6 +392,7 @@ offset_right = 0.57598877
 offset_bottom = -0.22399902
 theme = ExtResource("1_qe8ul")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/line_spacing = -7
 text = "FATAL ERROR : INSTANCE : 0
 
 RUNNING DIAGNOSTICS [COMPLETE]
