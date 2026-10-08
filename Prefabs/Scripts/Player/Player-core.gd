@@ -13,10 +13,17 @@ var SPEED: float
 # IF PLAYER MOVEMENT IS ENABLED
 @export var MovementActive: bool = true
 
-#@onready var UI = load("res://Resources/GUI/Player_GUI.tscn")
+var Health: int
+var MaxHealth: int = 100
+
+signal health_changed(Health: int, MaxHealth: int)
 
 func _ready() -> void:
-	# Spawn UI into scene on spawn # This prevents the need to seperately add a player GUI into every player scene.
+	
+	health_changed.emit(Health, MaxHealth)
+	
+	Health = MaxHealth
+	
 	pass
 
 func get_input() -> Vector2:	
@@ -52,3 +59,28 @@ func _process(_delta):
 		# TURN PLAYER TO FACE CURSOR 
 	rotation = global_position.direction_to(mouse_position).angle() + PI / 2 # PI / 2 fixes rotation offset
 		
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Projectile"):
+		if area.has_method("Get_Damage"):
+			# GET DAMAGE FROM PROJECTILE
+			var Damage: int = area.Get_Damage()
+			take_damage(Damage)
+			
+			print_debug("Player hit for %s damage" % Damage)
+
+func take_damage(Damage):
+	Health = Health - Damage
+	
+	if Health <= 0:
+		die()
+	else:
+		pass
+	
+	health_changed.emit(Health, MaxHealth)
+		
+
+func die():
+	print_debug("Player dead")
+	pass

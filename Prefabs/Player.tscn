@@ -1011,7 +1011,7 @@ tracks/39/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [1.1]
 }
 tracks/40/type = "value"
 tracks/40/imported = false
@@ -7203,7 +7203,10 @@ scale_min = 0.5
 alpha_curve = SubResource("CurveTexture_gy83n")
 turbulence_enabled = true
 
-[node name="Player" type="CharacterBody2D" unique_id=1520154662]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmfnb"]
+radius = 123.25989
+
+[node name="Player" type="CharacterBody2D" unique_id=1520154662 groups=["Player"]]
 physics_interpolation_mode = 1
 z_index = 1
 script = ExtResource("1_um8lo")
@@ -7283,7 +7286,7 @@ zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=525967669]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=525967669 groups=["Player"]]
 shape = SubResource("CircleShape2D_tytk5")
 
 [node name="WeaponManager" type="Node2D" parent="." unique_id=1392133605]
@@ -7358,3 +7361,11 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="BulletOrigin" type="Node2D" parent="WeaponManager/Core" unique_id=458772070]
 rotation = -1.5707964
 scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=839511039 groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=520473683 groups=["Player"]]
+shape = SubResource("CircleShape2D_pmfnb")
+debug_color = Color(0.8745098, 0, 0, 0.41960785)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

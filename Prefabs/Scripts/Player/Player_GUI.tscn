@@ -159,5 +159,17 @@ size_flags_vertical = 3
 tooltip_text = "Return to mainmenu"
 text = "Terminate Cycle"
 
+[node name="HealthOverlay" type="TextureRect" parent="Control" unique_id=70823851]
+self_modulate = Color(1, 1, 1, 0.7254902)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 6
+
 [connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Continue" to="Control" method="_on_continue_button_down"]
 [connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Quit" to="Control" method="_on_quit_button_down"]

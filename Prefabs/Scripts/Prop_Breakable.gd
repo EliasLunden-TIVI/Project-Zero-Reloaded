@@ -5,7 +5,6 @@ var Health: int = 15
 
 @onready var PropTexture = $PropTexture
 @onready var Animator = $PropAnimator
-@onready var Collision = $CollisionShape2D
 @onready var Particles = $PropParticles
 @onready var Audio = $PropSFX
 
