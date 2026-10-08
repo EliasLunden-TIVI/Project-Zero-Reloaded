@@ -20,7 +20,7 @@ var LoadoutIndex: int
 
 const WEAPONS = {
 	"92FSX": {
-		"fire_rate": 0.15,
+		"fire_rate": 0.2,
 		"fire_mode": 1,
 		"capacity": 15,
 		"reload_speed": 2,

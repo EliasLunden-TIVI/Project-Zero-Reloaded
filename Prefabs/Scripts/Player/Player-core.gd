@@ -16,6 +16,8 @@ var SPEED: float
 var Health: int
 var MaxHealth: int = 100
 
+var Controllable: bool
+
 signal health_changed(Health: int, MaxHealth: int)
 
 func _ready() -> void:
@@ -24,22 +26,29 @@ func _ready() -> void:
 	
 	Health = MaxHealth
 	
+	Controllable = true
+	
 	pass
 
 func get_input() -> Vector2:	
-	var input := Vector2.ZERO
-	
-	# CALCULATE MOVEMENT STRENGHT ON THE X AXIS
-	input.x = Input.get_action_strength("Movement_Left") - Input.get_action_strength("Movement_Right")
-	# CALCULATE MOVEMENT STRENGHT ON THE Y AXIS
-	input.y = Input.get_action_strength("Movement_Down") - Input.get_action_strength("Movement_Up")
-	
-	if Input.is_action_pressed("Movement_Sprint"):
-		SPEEDMODIFIER = 1.25
-	else:
-		SPEEDMODIFIER = 1
+	# Check if player should be able to controll the character
+	if Controllable == true:
+		var input := Vector2.ZERO
 		
-	return input.normalized()
+		# CALCULATE MOVEMENT STRENGHT ON THE X AXIS
+		input.x = Input.get_action_strength("Movement_Left") - Input.get_action_strength("Movement_Right")
+		# CALCULATE MOVEMENT STRENGHT ON THE Y AXIS
+		input.y = Input.get_action_strength("Movement_Down") - Input.get_action_strength("Movement_Up")
+		
+		if Input.is_action_pressed("Movement_Sprint"):
+			SPEEDMODIFIER = 1.25
+		else:
+			SPEEDMODIFIER = 1
+			
+		return input.normalized()
+	else:
+		var input := Vector2.ZERO
+		return input.normalized()
 
 		
 func _process(_delta):
@@ -58,9 +67,13 @@ func _process(_delta):
 	var mouse_position = get_global_mouse_position()
 		# TURN PLAYER TO FACE CURSOR 
 	rotation = global_position.direction_to(mouse_position).angle() + PI / 2 # PI / 2 fixes rotation offset
-		
+	
+	# Function for testing purposes
+	if Input.is_action_just_pressed("Combat_Hotkey_Medical"):
+		Health += 25
+		health_changed.emit(Health, MaxHealth)
 
-
+# When a projectile enters the hitbox area
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile"):
 		if area.has_method("Get_Damage"):
@@ -70,6 +83,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			
 			print_debug("Player hit for %s damage" % Damage)
 
+# Transfer projectile damage to player
 func take_damage(Damage):
 	Health = Health - Damage
 	
@@ -78,9 +92,14 @@ func take_damage(Damage):
 	else:
 		pass
 	
+	# Signal GUI to update
 	health_changed.emit(Health, MaxHealth)
 		
 
 func die():
+	
 	print_debug("Player dead")
-	pass
+	Controllable = false
+	# Delete player during deathscreen
+	await get_tree().create_timer(0.1).timeout
+	queue_free()
