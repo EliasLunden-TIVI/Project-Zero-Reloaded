@@ -6,6 +6,9 @@ extends Control
 @onready var WeaponImage = $"Weapon-Panel/Weapon-Image-Card/Weapon-Image"
 
 @onready var weapon_manager = get_node("../../Player/WeaponManager")
+@onready var player_manager = get_node("../../Player")
+
+@onready var DeathGUI = load("res://Resources/GUI/DeathScreen.tscn")
 
 var Paused: bool = false
 
@@ -17,6 +20,8 @@ func _ready() -> void:
 	
 	weapon_manager.ammo_changed.connect(_on_ammo_changed)
 	weapon_manager.weapon_changed.connect(_on_weapon_changed)
+	
+	player_manager.health_changed.connect(_on_health_changed)
 
 
 func _input(event) -> void:	
@@ -36,7 +41,6 @@ func pause():
 		Paused = true
 
 	
-
 
 ### AMMO COUNTER SYSTEM ###
 func _on_ammo_changed(current_capacity: int, capacity: int):
@@ -78,6 +82,22 @@ func _on_weapon_changed(current_weapon: String):
 	
 	WeaponName.text = str(current_weapon)
 	
+
+func _on_health_changed(Health: int, MaxHealth: int):
+	
+	if Health > 75:
+		$HealthOverlay.texture = load("")
+	elif Health <= 75 && Health > 50:
+		$HealthOverlay.texture = load("res://Textures/GUI/HUD/HealthOverlay4.png")
+	elif Health <= 50 && Health > 25:
+		$HealthOverlay.texture = load("res://Textures/GUI/HUD/HealthOverlay5.png")
+	elif Health <= 25 && Health > 0:
+		$HealthOverlay.texture = load("res://Textures/GUI/HUD/HealthOverlay6.png")
+	elif Health <= 0:
+		# Spawns Death GUI on death
+		var deathgui = DeathGUI.instantiate()
+		
+		get_tree().current_scene.add_child(deathgui)
 
 
 func _on_quit_button_down() -> void:

@@ -63,7 +63,7 @@ tracks/1/path = NodePath("PropSFX:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.03333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -145,7 +145,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("PropSFX:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -157,7 +157,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("PropSFX:stream")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -280,7 +280,8 @@ libraries/ = SubResource("AnimationLibrary_xvyq3")
 autoplay = &"PlanterPotSmall_Idle"
 
 [node name="PropSFX" type="AudioStreamPlayer2D" parent="." unique_id=829834308]
-max_distance = 3500.0
+volume_db = 1.0
+max_distance = 3000.0
 max_polyphony = 6
 
 [node name="PropParticles" type="GPUParticles2D" parent="." unique_id=1831800860]

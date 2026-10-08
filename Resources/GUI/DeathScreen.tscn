@@ -1,0 +1,483 @@
+[gd_scene format=3 uid="uid://chhfvfum8fb6"]
+
+[ext_resource type="Script" uid="uid://b4xup1e721knw" path="res://DeathMenu.gd" id="1_mru5n"]
+[ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="1_qe8ul"]
+[ext_resource type="Theme" uid="uid://dr3lfjhijpwhr" path="res://Resources/Themes/MainMenu-Button.tres" id="2_5l0as"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe8ul"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_qe8ul"]
+resource_name = "Intro"
+length = 9.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackroundPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 1, 3, 5, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.07605296, 5.583919e-08, 3.1585806e-08, 1), Color(0, 0, 0, 1), Color(0.07605296, 5.583919e-08, 3.1585806e-08, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackroundPanel/Header:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["FATAL ERROR", "SUBJECT TERMINATED"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackroundPanel/SideText:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.99, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackroundPanel/Header:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8000001, 2, 2.2, 2.4, 2.6, 2.8000002, 3, 3.2, 3.4, 3.6000004, 3.8000002, 4, 4.2000003, 4.4000006, 4.6000004, 4.8, 5, 5.2000003, 5.4000006, 5.600001, 5.8000007, 6.0000005, 6.2000003, 6.4, 6.6000004, 6.8000007, 7.0000005, 7.2000003, 7.4, 7.6, 7.8, 8, 8.200001, 8.4, 8.6, 8.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ButtonContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BackroundPanel/SideText:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["FATAL ERROR : INSTANCE : 0
+
+RUNNING DIAGNOSTICS [COMPLETE]
+
+DIAGNOSTICS LOG #53103:
+
+////////////////////////////////////
+
+HELMCAM_1_DISPLAY_1 [x]
+
+COM_COMS_1 [x]
+
+ATU_EXP_G0 [x]
+
+TRC_GEOTRK_GPS [y]
+
+PRMS_CLM [x]
+
+PRMS_TELEM [x]
+
+VITALS_MON [y]
+
+KRON_ADM [x]
+
+////////////////////////////////////
+
+FAILED 6/8
+
+////////////////////////////////////
+
+Determining retrieval capability ...", "FATAL ERROR : INSTANCE : 0
+
+RUNNING DIAGNOSTICS [COMPLETE]
+
+DIAGNOSTICS LOG #53103:
+
+////////////////////////////////////
+
+HELMCAM_1_DISPLAY_1 [x]
+
+COM_COMS_1 [x]
+
+ATU_EXP_G0 [x]
+
+TRC_GEOTRK_GPS [y]
+
+PRMS_CLM [x]
+
+PRMS_TELEM [x]
+
+VITALS_MON [y]
+
+KRON_ADM [x]
+
+////////////////////////////////////
+
+FAILED 6/8
+
+////////////////////////////////////
+
+Determining retrieval capability ..."]
+}
+
+[sub_resource type="Animation" id="Animation_mru5n"]
+resource_name = "Loop"
+length = 4.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackroundPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.07605296, 5.583919e-08, 3.1585806e-08, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackroundPanel/Header:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["FATAL ERROR", "SUBJECT TERMINATED"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackroundPanel/Header:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.19999981, 0.3999998, 0.5999998, 0.79999983, 0.9999998, 1.1999998, 1.3999999, 1.5999998, 1.7999998, 1.9999999, 2.1999998, 2.3999999, 2.6, 2.7999997, 3, 3.1999998, 3.3999999, 3.6, 3.8000002, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackroundPanel/SideText:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.99, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_5l0as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackroundPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackroundPanel/Header:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["FATAL ERROR"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackroundPanel/SideText:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackroundPanel/Header:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ButtonContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BackroundPanel/SideText:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["FATAL ERROR : INSTANCE : 0
+
+RUNNING DIAGNOSTICS [COMPLETE]
+
+DIAGNOSTICS LOG #53103:
+
+////////////////////////////////////
+
+HELMCAM_1_DISPLAY_1 [x]
+
+COM_COMS_1 [x]
+
+ATU_EXP_G0 [x]
+
+TRC_GEOTRK_GPS [y]
+
+PRMS_CLM [x]
+
+PRMS_TELEM [x]
+
+VITALS_MON [y]
+
+KRON_ADM [x]
+
+////////////////////////////////////
+
+FAILED 6/8
+
+////////////////////////////////////
+
+Determining retrieval capability ..."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mru5n"]
+_data = {
+&"Intro": SubResource("Animation_qe8ul"),
+&"Loop": SubResource("Animation_mru5n"),
+&"RESET": SubResource("Animation_5l0as")
+}
+
+[node name="DeathScreen" type="CanvasLayer" unique_id=316497918]
+
+[node name="Control" type="Control" parent="." unique_id=1525899964]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mru5n")
+
+[node name="BackroundPanel" type="Panel" parent="Control" unique_id=899244507]
+self_modulate = Color(0, 0, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qe8ul")
+
+[node name="SideText" type="Label" parent="Control/BackroundPanel" unique_id=1524311190]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.031000001
+anchor_right = 0.312
+anchor_bottom = 0.98800004
+offset_left = 0.41599655
+offset_top = -0.08800125
+offset_right = 0.57598877
+offset_bottom = -0.22399902
+theme = ExtResource("1_qe8ul")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "FATAL ERROR : INSTANCE : 0
+
+RUNNING DIAGNOSTICS [COMPLETE]
+
+DIAGNOSTICS LOG #53103:
+
+////////////////////////////////////
+
+HELMCAM_1_DISPLAY_1 [x]
+
+COM_COMS_1 [x]
+
+ATU_EXP_G0 [x]
+
+TRC_GEOTRK_GPS [y]
+
+PRMS_CLM [x]
+
+PRMS_TELEM [x]
+
+VITALS_MON [y]
+
+KRON_ADM [x]
+
+////////////////////////////////////
+
+FAILED 6/8
+
+////////////////////////////////////
+
+Determining retrieval capability ..."
+
+[node name="Header" type="Label" parent="Control/BackroundPanel" unique_id=1920025991]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -17.0
+offset_right = 126.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qe8ul")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "FATAL ERROR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=247269139]
+libraries/ = SubResource("AnimationLibrary_mru5n")
+autoplay = &"Intro"
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Control" unique_id=1874446154]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.351
+anchor_top = 0.74700004
+anchor_right = 0.646
+anchor_bottom = 1.0
+offset_left = 0.14797974
+offset_top = -0.056030273
+offset_right = 3.3079834
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ReloadSave" type="Button" parent="Control/ButtonContainer" unique_id=1551932137]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_5l0as")
+theme_override_font_sizes/font_size = 20
+text = "Reload Instance"
+
+[node name="MainMenu" type="Button" parent="Control/ButtonContainer" unique_id=697313915]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_5l0as")
+theme_override_font_sizes/font_size = 20
+text = "Terminate Program"
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Control" unique_id=1263105748]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Control" unique_id=1985022146]
+
+[connection signal="button_down" from="Control/ButtonContainer/ReloadSave" to="Control" method="_on_reload_save_button_down"]
+[connection signal="button_down" from="Control/ButtonContainer/MainMenu" to="Control" method="_on_main_menu_button_down"]

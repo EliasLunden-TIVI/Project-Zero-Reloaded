@@ -5,7 +5,6 @@ var Health: int = 15
 
 @onready var PropTexture = $PropTexture
 @onready var Animator = $PropAnimator
-@onready var Collision = $CollisionShape2D
 @onready var Particles = $PropParticles
 @onready var Audio = $PropSFX
 
@@ -41,5 +40,6 @@ func Take_Damage(Damage):
 	
 # Activate breaking animation
 func Break():
+	Audio.pitch_scale = randf_range(0.8, 1.2)
 	Animator.play("%s_Break" % PropName[0])
 	Broken = true

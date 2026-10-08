@@ -19,7 +19,7 @@ var Direction: Vector2
 
 const CALIBERS = {
 	"9x19mm": {
-		"damage": 15,
+		"damage": 25,
 		"velocity": 15,
 		"penetration": 2,
 		"projectilecount": 1
