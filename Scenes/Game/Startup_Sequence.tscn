@@ -1,0 +1,780 @@
+[gd_scene format=3 uid="uid://bd0akj4nb15ik"]
+
+[ext_resource type="Script" uid="uid://b3k8o0rlboeao" path="res://Scripts/GUI/Startup_Sequence.gd" id="1_7158t"]
+[ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="1_am7as"]
+[ext_resource type="Texture2D" uid="uid://5o6ljialh78" path="res://Textures/GUI/Mainmenu/Halcyon.png" id="2_7158t"]
+[ext_resource type="AudioStream" uid="uid://c4xco8dqmcv8l" path="res://SFX/GUI/SECUOSBoot.wav" id="3_ixtla"]
+[ext_resource type="Texture2D" uid="uid://5g8og6jna0h3" path="res://Textures/GUI/Mainmenu/PROJECTZEROLOGO.png" id="3_xmsj6"]
+[ext_resource type="AudioStream" uid="uid://bhlm7obocvhsx" path="res://SFX/Music/VOID.wav" id="4_r0odk"]
+[ext_resource type="Theme" uid="uid://dr3lfjhijpwhr" path="res://Resources/Themes/MainMenu-Button.tres" id="5_xmsj6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixtla"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_25kr7"]
+resource_name = "Intro"
+length = 20.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BootSequence/Backround/Instruction:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["ENTER AUTHORIZATION CODE:", "ACCESS GRANTED : USER_ID : 53103A", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BootSequence/Backround/Instruction:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BootSequence/Backround/Input:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "_", "", "_", "", "_", "", "_", "", "_", "", "_", "", "_", "", "************", "************_", "************", "Innitating startup sequence", "Innitating startup sequence .", "Innitating startup sequence ..", "Innitating startup sequence ...", ""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BootSequence/Backround/Input:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7, 7.1000004, 8.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BootSequence:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BootSequence/Backround:theme_override_styles/panel:bg_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BootSequence/Backround/TextureRect:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 11, 31.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("2_7158t"), ExtResource("3_xmsj6")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BootSequence/Backround/TextureRect:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 11, 12, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BootSequence:mouse_filter")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BootSequence:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BootSequence/Backround/Loading:visible_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 11, 18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BootSequence/Backround/LoadingText:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 11, 13, 14, 15, 16.25, 18),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["
+", "> RUNNING SYSTEM CHECKSUM <", "> LOADING USER_DATA <", "> LOADING USER_CONF <", "> LOADING SUBJECT_DATA <", "> INITIALIZING SUBJECT_ZERO <", "> LOADING COMPLETE <"]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BootSequence/BootSequenceSFX:stream")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ixtla")]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("BootSequence/BootSequenceSFX:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("BootSequence/BootMusic:stream")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_r0odk")]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("BootSequence/BootMusic:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gesnh"]
+resource_name = "Intro_Alt"
+length = 35.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BootSequence:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BootSequence/Backround:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 34, 35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BootSequence/Backround/Instruction:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6, 6.5, 13, 16.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["ENTER AUTHORIZATION CODE", "ENTER AUTHORIZATION CODE", "LOGGED IN AS : LOCAL", ""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BootSequence/Backround/Instruction:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 6.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BootSequence/Backround/Input:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "_", "", "_", "", "_", "***************_", "***************_", "*************** ", "***************_", "[ INITIALIZING STARTUP PROCESS ]", ""]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BootSequence/Backround/Input:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.9, 9, 9.1, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BootSequence/Backround/Console:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 16.5, 28.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BootSequence/Backround/Console:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 16.5, 17.5, 31.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", "> WELCOME : LOCAL
+
+> RUNNING SYSTEM CHECKSUM [...]
+
+> LOADING USR_DATA [...]
+
+> LOADING USR_CONFIG [...]
+
+> LOADING USR_PERMS [...]
+
+> [WARNING]
+> CURRENT USER CONFIGURATION LACKS PROPER REGISTRATION
+> PLEASE CONTACT YOUR SYSTEM ADMINISTRATOR
+
+> CONTINUING BOOT IN RESTRICTED MODE [...]
+
+> [WARNING]
+> SYSTEM ACCESS LEVEL OVERRIDEN
+
+> WELCOME : ROOT/ADM
+
+>INITIAZILING SUBJECT_ZERO [...]
+
+> RUN SUBJECT_ZERO [...]", "> WELCOME : LOCAL
+
+> RUNNING SYSTEM CHECKSUM [...]
+
+> LOADING USR_DATA [...]
+
+> LOADING USR_CONFIG [...]
+
+> LOADING USR_PERMS [...]
+
+> [WARNING]
+> CURRENT USER CONFIGURATION LACKS PROPER REGISTRATION
+> PLEASE CONTACT YOUR SYSTEM ADMINISTRATOR
+
+> CONTINUING BOOT IN RESTRICTED MODE [...]
+
+> [WARNING]
+> SYSTEM ACCESS LEVEL OVERRIDEN
+
+> WELCOME : ROOT/ADM
+
+>INITIAZILING SUBJECT_ZERO [...]
+
+> RUN SUBJECT_ZERO [...]", ""]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BootSequence/Backround/TextureRect:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1, 3, 31.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("2_7158t"), null, ExtResource("3_xmsj6")]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BootSequence/Backround/TextureRect:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 34, 35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BootSequence:mouse_filter")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_226ph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BootSequence:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BootSequence/Backround:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BootSequence/Backround/Instruction:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["ENTER AUTHORIZATION CODE"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BootSequence/Backround/Instruction:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BootSequence/Backround/Input:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["_"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BootSequence/Backround/Input:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BootSequence/Backround/Console:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BootSequence/Backround/Console:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> WELCOME : ROOT/LOCAL
+
+> RUNNING SYSTEM CHECKSUM [...]
+
+> LOADING USR_DATA [...]
+
+> LOADING USR_CONFIG [...]
+
+> LOADING USR_PERMS [...]
+
+> [WARNING]
+> CURRENT USER CONFIGURATION LACKS PROPER REGISTRATION
+> PLEASE CONTACT YOUR SYSTEM ADMINISTRATOR
+
+> CONTINUING BOOT IN RESTRICTED MODE [...]
+
+> [WARNING]
+> SYSTEM ACCESS LEVEL OVERRIDEN
+
+> WELCOME : ROOT/ADM
+
+>INITIAZILING SUBJECT_ZERO [...]
+
+> RUN SUBJECT_ZERO [...]"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BootSequence/Backround/TextureRect:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BootSequence/Backround/TextureRect:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BootSequence:mouse_filter")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BootSequence:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BootSequence/Backround/Loading:visible_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0odk"]
+_data = {
+&"Intro": SubResource("Animation_25kr7"),
+&"Intro_Alt": SubResource("Animation_gesnh"),
+&"RESET": SubResource("Animation_226ph")
+}
+
+[node name="BootSequence" type="Control" unique_id=1821615020]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7158t")
+
+[node name="Backround" type="Panel" parent="." unique_id=956086562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ixtla")
+
+[node name="OSLabel" type="Label" parent="Backround" unique_id=710348621]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004
+anchor_right = 0.333
+anchor_bottom = 0.074
+offset_left = 0.3199997
+offset_right = 0.64001465
+offset_bottom = 0.08000183
+theme = ExtResource("1_am7as")
+theme_override_constants/line_spacing = 7
+text = "SEC-OS /// V5.2.x.x /// HALCYON DEFENSE CO. /// ALL RIGHTS RESERVED ///
+AUTH USER [NULL]  /// ACCESSED FROM [ENCRYPTED] /// AT [ENCRYPTED] ///
+UNAUTHORIZED USE AND REDISTRIBUTION PROHIBITED BY LAW /// §14-C ///"
+vertical_alignment = 1
+
+[node name="Input" type="Label" parent="Backround" unique_id=945543793]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23300001
+anchor_top = 0.48100004
+anchor_right = 0.767
+anchor_bottom = 0.53300005
+offset_left = 0.63998413
+offset_top = -7.4800415
+offset_right = -0.64001465
+offset_bottom = 0.35992432
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_am7as")
+theme_override_font_sizes/font_size = 30
+text = "_"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instruction" type="Label" parent="Backround" unique_id=1842698142]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23300001
+anchor_top = 0.41500002
+anchor_right = 0.767
+anchor_bottom = 0.47400004
+offset_left = 0.63998413
+offset_top = -0.2000122
+offset_right = -0.64001465
+offset_bottom = 0.079956055
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_am7as")
+theme_override_font_sizes/font_size = 30
+text = "ENTER AUTHORIZATION CODE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Console" type="Label" parent="Backround" unique_id=812613451]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.119
+anchor_right = 0.73300004
+anchor_bottom = 0.88900006
+offset_left = -0.64001465
+offset_top = -0.5200043
+offset_right = 0.6398926
+offset_bottom = -0.12005615
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_am7as")
+theme_override_font_sizes/font_size = 30
+text = "> WELCOME : ROOT/LOCAL
+
+> RUNNING SYSTEM CHECKSUM [...]
+
+> LOADING USR_DATA [...]
+
+> LOADING USR_CONFIG [...]
+
+> LOADING USR_PERMS [...]
+
+> [WARNING]
+> CURRENT USER CONFIGURATION LACKS PROPER REGISTRATION
+> PLEASE CONTACT YOUR SYSTEM ADMINISTRATOR
+
+> CONTINUING BOOT IN RESTRICTED MODE [...]
+
+> [WARNING]
+> SYSTEM ACCESS LEVEL OVERRIDEN
+
+> WELCOME : ROOT/ADM
+
+>INITIAZILING SUBJECT_ZERO [...]
+
+> RUN SUBJECT_ZERO [...]"
+
+[node name="Loading" type="Label" parent="Backround" unique_id=985950792]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.8880001
+anchor_right = 0.767
+anchor_bottom = 0.9480001
+offset_left = -0.64001465
+offset_top = -0.040100098
+offset_right = -0.64001465
+offset_bottom = 0.15991211
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_am7as")
+theme_override_font_sizes/font_size = 48
+text = "▬▬▬▬▬▬▬▬▬▬"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Backround" unique_id=2128252274]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.178
+anchor_right = 0.90000004
+anchor_bottom = 0.83000004
+offset_top = -0.2400055
+offset_right = -0.00012207031
+offset_bottom = -0.4000244
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, -20)
+expand_mode = 2
+stretch_mode = 5
+
+[node name="LoadingText" type="Label" parent="Backround" unique_id=370349236]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.83000004
+anchor_right = 0.767
+anchor_bottom = 0.88900006
+offset_left = -0.64001465
+offset_top = -0.4000244
+offset_right = -0.64001465
+offset_bottom = -0.12005615
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_am7as")
+theme_override_font_sizes/font_size = 40
+text = "> LOADING COMPLETE <"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuAnimator" type="AnimationPlayer" parent="." unique_id=2054035879]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_r0odk")
+autoplay = &"Intro"
+
+[node name="Skip" type="Button" parent="." unique_id=636365755]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83300006
+anchor_top = 0.88900006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.6398926
+offset_top = -0.12005615
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("5_xmsj6")
+theme_override_font_sizes/font_size = 32
+text = "Skip"
+
+[node name="BootSequenceSFX" type="AudioStreamPlayer2D" parent="." unique_id=2134645506]
+stream = ExtResource("3_ixtla")
+
+[node name="BootMusic" type="AudioStreamPlayer2D" parent="." unique_id=991659155]
+stream = ExtResource("4_r0odk")
+volume_db = -8.68
+
+[connection signal="button_down" from="Skip" to="." method="_on_skip_button_down"]

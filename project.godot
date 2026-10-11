@@ -12,13 +12,14 @@ config_version=5
 
 config/name="Project-Zero-Reloaded"
 config/tags=PackedStringArray("Project")
-run/main_scene="uid://6e2wy25210fi"
+run/main_scene="uid://bd0akj4nb15ik"
 config/features=PackedStringArray("4.7")
 config/icon="res://Textures/Misc/icon.png"
 
 [display]
 
-window/size/mode=2
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/vsync/vsync_mode=0
 
 [global_group]

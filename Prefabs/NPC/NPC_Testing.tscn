@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b60sf41hvsg1e"]
 
-[ext_resource type="Script" uid="uid://ccm21nt2i2374" path="res://Prefabs/Scripts/NPC_Core.gd" id="1_h3cth"]
+[ext_resource type="Script" uid="uid://ccm21nt2i2374" path="res://Scripts/NPC_Core.gd" id="1_h3cth"]
 [ext_resource type="Texture2D" uid="uid://3rg61gr4wwcl" path="res://Textures/Character/NPC/Dummy/Dummy_Torso.png" id="2_khe3p"]
 [ext_resource type="Texture2D" uid="uid://dhc2s4thjlydw" path="res://Textures/Character/NPC/Dummy/Dummy_Shoulder.png" id="3_o5t11"]
 [ext_resource type="Texture2D" uid="uid://5q70on00qrao" path="res://Textures/Character/NPC/Dummy/Dummy_Forearm.png" id="4_lgv57"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dywjh126wph5j" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Magazine_Empty.png" id="15_m8r0l"]
 [ext_resource type="AudioStream" uid="uid://4h56u1gqiuqy" path="res://SFX/Weapon/92FSX/92FSX_Reload_Full.wav" id="16_88jcq"]
 [ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="25_x85f1"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
 radius = 128.0

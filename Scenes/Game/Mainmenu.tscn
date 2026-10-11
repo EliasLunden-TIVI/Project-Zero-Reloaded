@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6e2wy25210fi"]
 
-[ext_resource type="Script" uid="uid://bj7avifa0x3u" path="res://Prefabs/Scripts/Mainmenu.gd" id="1_c7nip"]
+[ext_resource type="Script" uid="uid://bj7avifa0x3u" path="res://Scripts/GUI/Mainmenu.gd" id="1_c7nip"]
 [ext_resource type="Texture2D" uid="uid://n2re6dsdp1ws" path="res://Textures/GUI/Mainmenu/Icon_1.png" id="1_jphfe"]
 [ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="2_8fsw5"]
 [ext_resource type="Texture2D" uid="uid://bbc4hr3v1ue7c" path="res://Resources/GUI/Bliss_(Windows_XP).png" id="2_o658a"]
@@ -10,6 +10,16 @@
 [ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="6_e6dy5"]
 [ext_resource type="Theme" uid="uid://byxdw7cx3j5mw" path="res://Resources/Themes/MainMenu-Panel.tres" id="7_cpf42"]
 [ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="10_j60ab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0odk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h062f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e30ck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nraqu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1un1a"]
 
 [sub_resource type="Theme" id="Theme_dc60u"]
 default_font = ExtResource("6_e6dy5")
@@ -58,6 +68,11 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r0odk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h062f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e30ck")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nraqu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1un1a")
 icon = ExtResource("1_jphfe")
 icon_alignment = 1
 expand_icon = true
@@ -66,6 +81,11 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r0odk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h062f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e30ck")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nraqu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1un1a")
 icon = ExtResource("2_vvj6j")
 icon_alignment = 1
 expand_icon = true
@@ -74,6 +94,11 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r0odk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h062f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e30ck")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nraqu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1un1a")
 icon = ExtResource("3_dpccq")
 icon_alignment = 1
 expand_icon = true
@@ -82,6 +107,11 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r0odk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h062f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e30ck")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nraqu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1un1a")
 icon = ExtResource("4_e6dy5")
 icon_alignment = 1
 expand_icon = true
@@ -365,6 +395,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("10_j60ab")
 text = "OK"
+
+[node name="MenuSounds" type="AudioStreamPlayer2D" parent="." unique_id=1030220614]
 
 [connection signal="button_down" from="Taskbar/HBoxContainer/Command_Shortcut" to="." method="_on_command_shortcut_button_down"]
 [connection signal="button_down" from="Taskbar/HBoxContainer/Settings_Shortcut" to="." method="_on_settings_shortcut_button_down"]
