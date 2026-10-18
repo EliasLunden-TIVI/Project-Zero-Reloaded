@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://b31iptpm53a1j"]
+
+[ext_resource type="Script" uid="uid://bi6dhxwboyasf" path="res://Prefabs/Casing_Ejection.gd" id="1_g0gyy"]
+[ext_resource type="Texture2D" uid="uid://wkipat7p6ru1" path="res://VFX/Weapons/Casings/Casing_9x19.png" id="2_6aaf4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l0m7g"]
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc60u"]
+size = Vector2(20, 31)
+
+[sub_resource type="Animation" id="Animation_6aaf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ghcy7"]
+resource_name = "Spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.5489626, 0.5489626, 0.54896253, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5489626, 0.5489626, 0.54896253, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_avxgn"]
+_data = {
+&"RESET": SubResource("Animation_6aaf4"),
+&"Spawn": SubResource("Animation_ghcy7")
+}
+
+[node name="Casing9mm" type="RigidBody2D" unique_id=1405081215]
+collision_layer = 2
+mass = 0.006
+physics_material_override = SubResource("PhysicsMaterial_l0m7g")
+gravity_scale = 0.0
+linear_damp = 1.0
+angular_damp = 0.5
+script = ExtResource("1_g0gyy")
+Lifetime = 5.0
+Speed = 2500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1041513252]
+z_index = -4
+texture = ExtResource("2_6aaf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175707942]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_dc60u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=766800326]
+libraries/ = SubResource("AnimationLibrary_avxgn")
+autoplay = &"Spawn"

@@ -20,14 +20,14 @@ var Direction: Vector2
 const CALIBERS = {
 	"9x19mm": {
 		"damage": 25,
-		"velocity": 15,
+		"velocity": 150,
 		"penetration": 2,
 		"projectilecount": 1
 	},
 	
 	"45ACP": {
 		"damage": 15,
-		"velocity": 30,
+		"velocity": 150,
 		"penetration": 2,
 		"projectilecount": 1
 	}
@@ -53,7 +53,7 @@ func Instantiate(Caliber):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta) -> void:
+func _physics_process(_delta) -> void:
 	# Move the projectile forward according to its Velocity stat
 	position += Direction.normalized() * Velocity
 

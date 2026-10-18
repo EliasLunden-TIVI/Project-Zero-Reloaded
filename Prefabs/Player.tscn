@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://dywjh126wph5j" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Magazine_Empty.png" id="13_8afax"]
 [ext_resource type="Texture2D" uid="uid://cefphrvdlr8hj" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Magazine.png" id="14_08l6w"]
 [ext_resource type="AudioStream" uid="uid://cc716rk8hiww8" path="res://SFX/Weapon/92FSX/92FSX_Fire_Unsupressed.wav" id="14_fd4tb"]
-[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="14_t7w7j"]
 [ext_resource type="AudioStream" uid="uid://ctjx4nkhocvp4" path="res://SFX/Weapon/92FSX/92FSX_Reload_Emergency.wav" id="15_aw6xh"]
 [ext_resource type="AudioStream" uid="uid://4h56u1gqiuqy" path="res://SFX/Weapon/92FSX/92FSX_Reload_Full.wav" id="16_aw6xh"]
 [ext_resource type="AudioStream" uid="uid://ban6vkxoa67la" path="res://SFX/Weapon/92FSX/92FSX_Reload_Partial.wav" id="16_qm8rn"]
@@ -29,7 +28,6 @@
 [ext_resource type="AudioStream" uid="uid://cd16decc6h2n" path="res://SFX/Weapon/SPS-7/SMG Reload_Emergency.wav" id="25_406my"]
 [ext_resource type="AudioStream" uid="uid://dubt0tu7c6x7y" path="res://SFX/Weapon/SPS-7/SMG Reload_Full.wav" id="26_fd4tb"]
 [ext_resource type="AudioStream" uid="uid://ccbptm4667yqj" path="res://SFX/Weapon/SPS-7/SMG Reload_Retention.wav" id="27_2ywdf"]
-
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_31m54"]
 light_mode = 1
@@ -267,7 +265,7 @@ tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 75), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 70), Vector2(0, 0)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -339,7 +337,7 @@ tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 75), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 70), Vector2(0, 0)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
@@ -416,19 +414,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -75)]
+"update": 1,
+"values": [ExtResource("14_fd4tb")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -440,98 +438,74 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [null]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [false]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("14_fd4tb")]
+"update": 0,
+"values": [1.0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/Bolt:z_index")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [0]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/CasingEjection:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(0, 85.00001)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
+tracks/38/path = NodePath("Core/MuzzleParticles:position")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Core/Bolt:z_index")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_54dtf"]
@@ -764,7 +738,7 @@ tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 75)]
+"values": [Vector2(0, 0), Vector2(0, 70)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -836,7 +810,7 @@ tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 75)]
+"values": [Vector2(0, 0), Vector2(0, 70)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
@@ -913,19 +887,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -75)]
+"update": 1,
+"values": [ExtResource("14_fd4tb")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -937,98 +911,74 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [null]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [false]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("14_fd4tb")]
+"update": 0,
+"values": [1.1]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/Bolt:z_index")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [0]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/CasingEjection:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(0, 85.00001)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
+tracks/38/path = NodePath("Core/MuzzleParticles:position")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.1]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Core/Bolt:z_index")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_8afax"]
@@ -1399,98 +1349,86 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/30/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [null]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [false]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/32/path = NodePath("Core/WeaponSound:stream")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [ExtResource("16_aw6xh")]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/33/path = NodePath("Core/WeaponSound:playing")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [false]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/34/path = NodePath("Core/Bolt:z_index")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/WeaponSound:stream")
+tracks/35/path = NodePath("Core/CasingEjection:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("16_aw6xh")]
+"update": 0,
+"values": [Vector2(0, 85.00001)]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/WeaponSound:playing")
+tracks/36/path = NodePath("Core/MuzzleParticles:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("Core/Bolt:z_index")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_tkui5"]
@@ -1861,98 +1799,86 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/30/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [null]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [false]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/32/path = NodePath("Core/WeaponSound:stream")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [ExtResource("16_aw6xh")]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/33/path = NodePath("Core/WeaponSound:playing")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [false]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/34/path = NodePath("Core/Bolt:z_index")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/WeaponSound:stream")
+tracks/35/path = NodePath("Core/CasingEjection:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("16_aw6xh")]
+"update": 0,
+"values": [Vector2(0, 85.00001)]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/WeaponSound:playing")
+tracks/36/path = NodePath("Core/MuzzleParticles:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("Core/Bolt:z_index")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_aw6xh"]
@@ -2322,110 +2248,98 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/30/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [null]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [false]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/32/path = NodePath("Core/WeaponSound:stream")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [ExtResource("15_aw6xh")]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/33/path = NodePath("Core/WeaponSound:playing")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [true]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/34/path = NodePath("Core/Magazine:self_modulate")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/WeaponSound:stream")
+tracks/35/path = NodePath("Core/Bolt:z_index")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("15_aw6xh")]
+"values": [0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/WeaponSound:playing")
+tracks/36/path = NodePath("Core/CasingEjection:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(0, 85.00001)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/Magazine:self_modulate")
+tracks/37/path = NodePath("Core/MuzzleParticles:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Core/Bolt:z_index")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_qm8rn"]
@@ -2795,122 +2709,110 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/30/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [null]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [false]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/32/path = NodePath("Core/WeaponSound:stream")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [ExtResource("16_aw6xh")]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/33/path = NodePath("Core/WeaponSound:playing")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [true]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/34/path = NodePath("Core/Magazine:self_modulate")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.5, 0.6, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/WeaponSound:stream")
+tracks/35/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.4, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("16_aw6xh")]
+"values": [0, 5, 0, 0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/WeaponSound:playing")
+tracks/36/path = NodePath("Core/Bolt:z_index")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [0]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/Magazine:self_modulate")
+tracks/37/path = NodePath("Core/CasingEjection:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(0, 85.00001)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
+tracks/38/path = NodePath("Core/MuzzleParticles:position")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
-"times": PackedFloat32Array(0, 1.4, 1.7, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 5, 0, 0]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Bolt:z_index")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_o7xy3"]
@@ -3256,98 +3158,86 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/28/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [null]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/29/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [false]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/30/path = NodePath("Core/WeaponSound:stream")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [ExtResource("16_qm8rn")]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/31/path = NodePath("Core/WeaponSound:playing")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.099999994),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [true]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/32/path = NodePath("Core/Bolt:z_index")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/WeaponSound:stream")
+tracks/33/path = NodePath("Core/CasingEjection:position")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("16_qm8rn")]
+"update": 0,
+"values": [Vector2(0, 85.00001)]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/WeaponSound:playing")
+tracks/34/path = NodePath("Core/MuzzleParticles:position")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"times": PackedFloat32Array(0.099999994),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/35/type = "value"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Bolt:z_index")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(0, -67.5)]
 }
 
 [sub_resource type="Animation" id="Animation_wuv02"]
@@ -3583,55 +3473,55 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/19/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [1.0]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
+tracks/20/path = NodePath("Core:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Vector2(0, 0)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Core:position")
+tracks/21/path = NodePath("Core:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [0.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Core:rotation")
+tracks/22/path = NodePath("Core/Frame:texture")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [null]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Core/Frame:texture")
+tracks/23/path = NodePath("Core/ChargingHandle:texture")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -3643,86 +3533,86 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Core/ChargingHandle:texture")
+tracks/24/path = NodePath("Core/ChargingHandle:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Core/ChargingHandle:position")
+tracks/25/path = NodePath("Core/Barrel/MuzzleFlash:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -48)]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Core/Barrel/MuzzleFlash:position")
+tracks/26/path = NodePath("Core/Bolt:z_index")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -48)]
+"update": 1,
+"values": [-1]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/27/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -48)]
+"values": [Vector2(0, -104)]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Core/Bolt:z_index")
+tracks/28/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"update": 0,
+"values": [Vector2(0, -104)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
+tracks/29/path = NodePath("Core/CasingEjection:position")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -104)]
+"values": [Vector2(0, 0)]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
+tracks/30/path = NodePath("Core/MuzzleParticles:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -104)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_3b1fg"]
@@ -4104,19 +3994,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -350)]
+"update": 1,
+"values": [ExtResource("25_2ywdf")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -4128,98 +4018,74 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [null]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [false]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("25_2ywdf")]
+"update": 0,
+"values": [1.0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/Bolt:z_index")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [-1]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/CasingEjection:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(0, -25)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
+tracks/38/path = NodePath("Core/MuzzleParticles:position")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Core/Bolt:z_index")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"values": [Vector2(0, -338.75003)]
 }
 
 [sub_resource type="Animation" id="Animation_2ywdf"]
@@ -4601,19 +4467,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -350)]
+"update": 1,
+"values": [ExtResource("25_2ywdf")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -4625,98 +4491,74 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [null]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [false]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("25_2ywdf")]
+"update": 0,
+"values": [1.1]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/Bolt:z_index")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [-1]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/CasingEjection:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(0, -25)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
+tracks/38/path = NodePath("Core/MuzzleParticles:position")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.1]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Core/Bolt:z_index")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"values": [Vector2(0, -338.75003)]
 }
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_3b1fg"]
@@ -5104,19 +4946,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [SubResource("AudioStreamWAV_3b1fg")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -5128,86 +4970,62 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [null]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [false]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AudioStreamWAV_3b1fg")]
+"update": 0,
+"values": [1.0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/CasingEjection:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, -25)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/MuzzleParticles:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Vector2(0, -338.75003)]
 }
 
 [sub_resource type="Animation" id="Animation_fd4tb"]
@@ -5589,19 +5407,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [SubResource("AudioStreamWAV_3b1fg")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -5613,82 +5431,34 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [null]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [false]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AudioStreamWAV_3b1fg")]
-}
-tracks/36/type = "value"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -6074,19 +5844,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [SubResource("AudioStreamWAV_3b1fg")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -6098,86 +5868,62 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [ExtResource("25_406my")]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [true]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AudioStreamWAV_3b1fg")]
+"update": 0,
+"values": [1.0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/CasingEjection:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, -25)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/MuzzleParticles:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("25_406my")]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Vector2(0, -338.75003)]
 }
 
 [sub_resource type="Animation" id="Animation_gy83n"]
@@ -6559,19 +6305,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [SubResource("AudioStreamWAV_3b1fg")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -6583,98 +6329,74 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [ExtResource("26_fd4tb")]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [true]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AudioStreamWAV_3b1fg")]
+"update": 0,
+"values": [1.0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/Bolt:z_index")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [-1]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/CasingEjection:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("26_fd4tb")]
+"update": 0,
+"values": [Vector2(0, -25)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
+tracks/38/path = NodePath("Core/MuzzleParticles:position")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Core/Bolt:z_index")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"values": [Vector2(0, -338.75003)]
 }
 
 [sub_resource type="Animation" id="Animation_2wlbw"]
@@ -7056,19 +6778,19 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Core/Barrel/MuzzleParticles:position")
+tracks/31/path = NodePath("Core/Barrel/AttackSound:stream")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [SubResource("AudioStreamWAV_3b1fg")]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Core/Barrel/MuzzleParticles:emitting")
+tracks/32/path = NodePath("Core/Barrel/AttackSound:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -7080,86 +6802,62 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Core/Barrel/MuzzleParticles:amount")
+tracks/33/path = NodePath("Core/WeaponSound:stream")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [20]
+"values": [ExtResource("27_2ywdf")]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Core/Barrel/MuzzleParticles:lifetime")
+tracks/34/path = NodePath("Core/WeaponSound:playing")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
+"update": 1,
+"values": [true]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Core/Barrel/AttackSound:stream")
+tracks/35/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("AudioStreamWAV_3b1fg")]
+"update": 0,
+"values": [1.0]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Core/Barrel/AttackSound:playing")
+tracks/36/path = NodePath("Core/CasingEjection:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, -25)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Core/WeaponSound:stream")
+tracks/37/path = NodePath("Core/MuzzleParticles:position")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("27_2ywdf")]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Core/WeaponSound:playing")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Core/Barrel/AttackSound:pitch_scale")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Vector2(0, -338.75003)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wuv02"]
@@ -7193,26 +6891,6 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8421053, 0.15789473)
 metadata/_snap_enabled = true
 metadata/_snap_count = 6
-
-[sub_resource type="Curve" id="Curve_08l6w"]
-_data = [Vector2(0.0067567676, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0]
-point_count = 2
-metadata/_snap_enabled = true
-
-[sub_resource type="CurveTexture" id="CurveTexture_gy83n"]
-curve = SubResource("Curve_08l6w")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08l6w"]
-lifetime_randomness = 0.25
-particle_flag_disable_z = true
-angle_min = -320.0
-angle_max = 360.00003
-initial_velocity_min = 200.0
-initial_velocity_max = 800.0
-gravity = Vector3(0, 98, 0)
-scale_min = 0.5
-alpha_curve = SubResource("CurveTexture_gy83n")
-turbulence_enabled = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pmfnb"]
 radius = 123.25989
@@ -7349,21 +7027,6 @@ shadow_filter = 2
 texture = SubResource("GradientTexture2D_t7w7j")
 texture_scale = 4.0
 
-[node name="MuzzleParticles" type="GPUParticles2D" parent="WeaponManager/Core/Barrel" unique_id=1231867892]
-self_modulate = Color(0.45490196, 0.45490196, 0.45490196, 0.29411766)
-position = Vector2(0, -48)
-rotation = -1.5707964
-emitting = false
-amount = 20
-texture = ExtResource("14_t7w7j")
-lifetime = 0.6
-interp_to_end = 0.1
-one_shot = true
-speed_scale = 3.0
-explosiveness = 0.5
-randomness = 0.5
-process_material = SubResource("ParticleProcessMaterial_08l6w")
-
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1375523854]
 
 [node name="ChargingHandle" type="Sprite2D" parent="WeaponManager/Core" unique_id=1294498646]
@@ -7376,6 +7039,10 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="BulletOrigin" type="Node2D" parent="WeaponManager/Core" unique_id=458772070]
 rotation = -1.5707964
 scale = Vector2(0.9999998, 0.9999998)
+
+[node name="CasingEjection" type="Node2D" parent="WeaponManager/Core" unique_id=1506263487]
+
+[node name="MuzzleParticles" type="Node2D" parent="WeaponManager/Core" unique_id=1230182854]
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=839511039 groups=["Player"]]
 

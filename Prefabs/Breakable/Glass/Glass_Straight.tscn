@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://dg715vjuht0vc" path="res://Scripts/Prop_Breakable.gd" id="1_l4hek"]
 [ext_resource type="Texture2D" uid="uid://d3sug0i0xf0vv" path="res://Textures/Building/Walls/Wall_Glass-Sheet.png" id="1_odhng"]
 [ext_resource type="AudioStream" uid="uid://dxhp8oh0ul6ys" path="res://SFX/Prop/Glass_Break_Pixabay.mp3" id="3_7pxbo"]
-[ext_resource type="Texture2D" uid="uid://dx87g8v3ic3wy" path="res://Textures/VFX/Debris/Glass/Debris_Glass1.png" id="3_lgp4r"]
+[ext_resource type="Texture2D" uid="uid://dx87g8v3ic3wy" path="res://VFX/Debris/Glass/Debris_Glass1.png" id="3_lgp4r"]
+
 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tytk5"]

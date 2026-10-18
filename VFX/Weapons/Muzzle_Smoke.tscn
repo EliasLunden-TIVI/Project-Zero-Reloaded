@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dhi4sks716jfo"]
+
+[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://VFX/Weapons/Muzzle_Smoke.png" id="1_xj2up"]
+[ext_resource type="Script" uid="uid://bey3gs2c33hsm" path="res://Scripts/Particle.gd" id="2_p68b2"]
+
+[sub_resource type="Curve" id="Curve_5i0cs"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p68b2"]
+curve = SubResource("Curve_5i0cs")
+
+[sub_resource type="Curve" id="Curve_p68b2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.42696637), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xj2up"]
+curve = SubResource("Curve_p68b2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oi4pm"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 600.0
+initial_velocity_max = 750.0
+angular_velocity_min = -18.150015
+angular_velocity_max = 72.609985
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_xj2up")
+color = Color(1, 1, 1, 0.039215688)
+alpha_curve = SubResource("CurveTexture_p68b2")
+
+[node name="Effect_MuzzleSmoke" type="GPUParticles2D" unique_id=40420839]
+emitting = false
+amount = 10
+texture = ExtResource("1_xj2up")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_oi4pm")
+script = ExtResource("2_p68b2")

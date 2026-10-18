@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cxrtngud7ckjs" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Compensator.png" id="12_rfciv"]
 [ext_resource type="Texture2D" uid="uid://dywjh126wph5j" path="res://Textures/Weapons/92FSX/Gameplay/92FSX_Magazine_Empty.png" id="15_m8r0l"]
 [ext_resource type="AudioStream" uid="uid://4h56u1gqiuqy" path="res://SFX/Weapon/92FSX/92FSX_Reload_Full.wav" id="16_88jcq"]
-[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://Textures/VFX/Weapons/Muzzle_Smoke.png" id="25_x85f1"]
+[ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://VFX/Weapons/Muzzle_Smoke.png" id="25_x85f1"]
+
 
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]

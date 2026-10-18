@@ -18,6 +18,10 @@ var Equiped_Weapon: String
 
 var LoadoutIndex: int
 
+var casing_scene = load("res://VFX/Weapons/Casing_Assets/Casing-9mm.tscn")
+
+var smoke_scene = load("res://VFX/Weapons/Muzzle_Smoke.tscn")
+
 const WEAPONS = {
 	"92FSX": {
 		"fire_rate": 0.2,
@@ -122,7 +126,7 @@ func Attack():
 		
 	current_capacity -= 1
 	
-	# Spawning bullet
+	# Spawning bullet #
 	
 	var weapon_data = WEAPONS[current_weapon]
 		
@@ -133,7 +137,30 @@ func Attack():
 	projectile.global_rotation = $Core/BulletOrigin.global_rotation
 
 	get_tree().current_scene.add_child(projectile)
+	
+	# Spawning bulletcasing effect #
+	
+	var casing = casing_scene.instantiate()
+	
+	casing.global_position = $Core/CasingEjection.global_position
+	casing.global_rotation = $Core/CasingEjection.global_rotation
 
+	get_tree().current_scene.add_child(casing)
+
+	var local_right = Vector2.RIGHT.rotated(casing.global_rotation)
+	
+	var random_force = randi_range(750, 1250)
+	casing.apply_central_impulse(local_right * random_force)
+	
+	# Spawning gunsmoke effect #
+	
+	var smoke = smoke_scene.instantiate()
+	
+	smoke.global_position = $Core/MuzzleParticles.global_position
+	smoke.global_rotation = $Core/MuzzleParticles.global_rotation
+
+	get_tree().current_scene.add_child(smoke)
+	
 	await get_tree().create_timer(weapon_data["fire_rate"]).timeout
 
 	Canfire = true
