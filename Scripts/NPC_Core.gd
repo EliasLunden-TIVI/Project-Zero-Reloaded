@@ -41,7 +41,7 @@ func _on_npc_hurtbox_torso_area_entered(area: Area2D) -> void:
 
 func Take_Damage(Damage):
 	if Alive == true:
-		Health =- Damage
+		Health -= Damage
 		
 		if Health <= 0:
 			Die()
