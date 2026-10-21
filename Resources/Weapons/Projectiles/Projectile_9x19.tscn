@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://86cysesibhom" path="res://Scripts/Projectile.gd" id="1_df847"]
 [ext_resource type="Texture2D" uid="uid://kndmq3ydh1qp" path="res://VFX/Weapons/Projectile_Small.png" id="1_wu8uk"]
 
-
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu8uk"]
 size = Vector2(32.000004, 48)
 
@@ -24,3 +22,6 @@ debug_color = Color(1, 0, 0, 0.41960785)
 material = SubResource("CanvasItemMaterial_df847")
 rotation = 1.5707966
 texture = ExtResource("1_wu8uk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

@@ -15,6 +15,8 @@ var Caliber: String
 
 var Direction: Vector2
 
+var BloodHitAssets = load("res://VFX/Gore/BloodSplatter/VFX_Bloodsplatter.tscn")
+
 # DATASHEET FOR ALL CALIBERS
 
 const CALIBERS = {
@@ -25,10 +27,10 @@ const CALIBERS = {
 		"projectilecount": 1
 	},
 	
-	"45ACP": {
-		"damage": 15,
-		"velocity": 150,
-		"penetration": 2,
+	"4.6x30mm": {
+		"damage": 20,
+		"velocity": 250,
+		"penetration": 3,
 		"projectilecount": 1
 	}
 }
@@ -60,3 +62,25 @@ func _physics_process(_delta) -> void:
 # Send damage and penetration stats to the target object
 func Get_Damage() -> int:
 	return Damage
+	
+
+# Hit Effects & Penetration #
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Humanoid"):
+		var Effect = BloodHitAssets.instantiate()	
+		Effect.global_position = $"Projectile_Texture".global_position
+		Effect.global_rotation = $"Projectile_Texture".global_rotation
+		
+		get_tree().current_scene.add_child(Effect)
+	
+		print_debug("Hit effect spawned")
+
+# Limiting wall penetration with penetration stat #
+	#elif area.is_in_group("Wall"):
+		#if Penetration >= 1:
+			#Penetration = Penetration - 1
+		#elif Penetration <= 0:
+			#queue_free()
+		
+	

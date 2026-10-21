@@ -14,8 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://4h56u1gqiuqy" path="res://SFX/Weapon/92FSX/92FSX_Reload_Full.wav" id="16_88jcq"]
 [ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://VFX/Weapons/Muzzle_Smoke.png" id="25_x85f1"]
 
-
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
 radius = 128.0
 
@@ -901,10 +899,11 @@ radius = 122.05327
 
 [node name="NpcTesting" type="CharacterBody2D" unique_id=330108728 groups=["TestDummy"]]
 script = ExtResource("1_h3cth")
+MaxHealth = 99999
 
-[node name="NPC_Hurtbox_Torso" type="Area2D" parent="." unique_id=1884212185]
+[node name="NPC_Hurtbox_Torso" type="Area2D" parent="." unique_id=1884212185 groups=["Humanoid"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Hurtbox_Torso" unique_id=1213675818]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Hurtbox_Torso" unique_id=1213675818 groups=["Humanoid"]]
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_dc60u")
 debug_color = Color(1, 0, 0, 0.41960785)

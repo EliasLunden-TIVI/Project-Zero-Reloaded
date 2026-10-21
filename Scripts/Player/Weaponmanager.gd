@@ -149,8 +149,11 @@ func Attack():
 
 	var local_right = Vector2.RIGHT.rotated(casing.global_rotation)
 	
-	var random_force = randi_range(750, 1250)
-	casing.apply_central_impulse(local_right * random_force)
+	
+	
+	casing.apply_central_impulse(local_right * randi_range(750, 1250))
+	
+	
 	
 	# Spawning gunsmoke effect #
 	

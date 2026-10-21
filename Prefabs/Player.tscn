@@ -6994,12 +6994,10 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Stock" type="Sprite2D" parent="WeaponManager/Core" unique_id=1655655174]
 z_index = -1
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("22_406my")
 
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=1720549317]
 z_index = 1
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("23_fd4tb")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=173589982]
 z_index = -1
@@ -7012,10 +7010,8 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=60731910]
 z_index = -1
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("20_gy83n")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=986302984]
-texture = ExtResource("24_2ywdf")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=302458990]
 position = Vector2(0, -48)
@@ -7025,7 +7021,7 @@ range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_t7w7j")
-texture_scale = 4.0
+texture_scale = 1e-05
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1375523854]
 
@@ -7040,13 +7036,13 @@ scale = Vector2(0.9999998, 0.9999998)
 rotation = -1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 
-[node name="CasingEjection" type="Node2D" parent="WeaponManager/Core" unique_id=1506263487]
+[node name="CasingEjection" type="Node2D" parent="WeaponManager/Core" unique_id=1506263487 groups=["Humanoid"]]
 
 [node name="MuzzleParticles" type="Node2D" parent="WeaponManager/Core" unique_id=1230182854]
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=839511039 groups=["Player"]]
+[node name="Hitbox" type="Area2D" parent="." unique_id=839511039 groups=["Humanoid", "Player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=520473683 groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=520473683 groups=["Humanoid", "Player"]]
 shape = SubResource("CircleShape2D_pmfnb")
 debug_color = Color(0.8745098, 0, 0, 0.41960785)
 

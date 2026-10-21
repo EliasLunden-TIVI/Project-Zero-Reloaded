@@ -25,17 +25,21 @@ window/vsync/vsync_mode=0
 [file_customization]
 
 folder_colors={
+"res://Prefabs/": "gray",
 "res://Resources/": "red",
 "res://SFX/": "orange",
 "res://Scenes/": "yellow",
 "res://Scripts/": "purple",
-"res://Textures/": "blue"
+"res://Textures/": "blue",
+"res://VFX/": "pink"
 }
 
 [global_group]
 
 Projectile="Any projectile"
 Player=""
+Humanoid=""
+Wall=""
 
 [input]
 
