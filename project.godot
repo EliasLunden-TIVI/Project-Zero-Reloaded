@@ -14,6 +14,7 @@ config/name="Project-Zero-Reloaded"
 config/tags=PackedStringArray("Project")
 run/main_scene="uid://bd0akj4nb15ik"
 config/features=PackedStringArray("4.7")
+run/max_fps=500
 config/icon="res://Textures/Misc/icon.png"
 
 [display]

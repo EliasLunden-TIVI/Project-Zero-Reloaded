@@ -18,6 +18,10 @@ var State: String
 
 var Health
 
+var target
+
+@onready var Target = $"../Player"
+
 @onready var Animator = $NPC_Animator
 
 @onready var BloodAssets = load("res://VFX/Gore/BloodSplatter/VFX_Bloodsplatter.tscn")
@@ -74,5 +78,26 @@ func _on_view_area_area_entered(area: Area2D) -> void:
 			var collider = ray.get_collider()
 			if collider.is_in_group("Player"):
 				print_debug("Player Detected!")
+				combat()
 			else:
 				pass
+
+# Targeting
+
+func combat():
+	target = get_tree().get_first_node_in_group("Player")
+
+	var Target_Detected = true
+	var Target_Visible = true
+
+	while Target_Visible == true:
+		
+		#print_debug("Looking at player")
+		
+		if Target_Visible == false:
+			break
+		else:
+			look_at(target.global_position)
+			rotation_degrees += 90 # A +90 Degree offset to fix NPC rotation offset
+			
+			await get_tree().create_timer(0.01).timeout

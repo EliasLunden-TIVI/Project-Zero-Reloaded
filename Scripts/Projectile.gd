@@ -67,6 +67,9 @@ func Get_Damage() -> int:
 # Hit Effects & Penetration #
 
 func _on_area_entered(area: Area2D) -> void:
+	
+	# Human / Blood impacts #
+	
 	if area.is_in_group("Humanoid"):
 		var Effect = BloodHitAssets.instantiate()	
 		Effect.global_position = $"Projectile_Texture".global_position
@@ -75,7 +78,9 @@ func _on_area_entered(area: Area2D) -> void:
 		get_tree().current_scene.add_child(Effect)
 	
 		print_debug("Hit effect spawned")
-
+		
+	# Effect checks for other types of materials ...
+	
 # Limiting wall penetration with penetration stat #
 	#elif area.is_in_group("Wall"):
 		#if Penetration >= 1:
