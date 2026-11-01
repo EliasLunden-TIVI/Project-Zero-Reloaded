@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blg2i4t21pkc4"
-path="res://.godot/imported/92FSX.png-e219d17050816c0ec23bfa3e0fa3b021.ctex"
+uid="uid://cciqvi6ekuhvn"
+path="res://.godot/imported/Barrel.png-85b9b2ec40f353334d8910f40f62019b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/GUI/92FSX.png"
-dest_files=["res://.godot/imported/92FSX.png-e219d17050816c0ec23bfa3e0fa3b021.ctex"]
+source_file="res://Textures/Weapons/870-TS/Barrel.png"
+dest_files=["res://.godot/imported/Barrel.png-85b9b2ec40f353334d8910f40f62019b.ctex"]
 
 [params]
 

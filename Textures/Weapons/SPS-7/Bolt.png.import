@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mbm0pv8r6tkq"
-path="res://.godot/imported/Barrel.png-5362b4b76f9bf693c00ac9f1f8589e34.ctex"
+uid="uid://378qp7mmw2vm"
+path="res://.godot/imported/Bolt.png-45bb1b0384179094c4cfc26d14cc9169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/SPS-7/Gameplay/Barrel.png"
-dest_files=["res://.godot/imported/Barrel.png-5362b4b76f9bf693c00ac9f1f8589e34.ctex"]
+source_file="res://Textures/Weapons/SPS-7/Bolt.png"
+dest_files=["res://.godot/imported/Bolt.png-45bb1b0384179094c4cfc26d14cc9169.ctex"]
 
 [params]
 

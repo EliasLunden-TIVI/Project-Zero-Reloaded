@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t0gq4tsqgge3"
-path="res://.godot/imported/92FSX_Frame.png-27eddc6d975c6a950824ea0ff577199f.ctex"
+uid="uid://bfjhumk4x6eli"
+path="res://.godot/imported/ChargingHandle.png-cad99987ee82a4568ba9a0b87b212838.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/Gameplay/92FSX_Frame.png"
-dest_files=["res://.godot/imported/92FSX_Frame.png-27eddc6d975c6a950824ea0ff577199f.ctex"]
+source_file="res://Textures/Weapons/SPS-7/ChargingHandle.png"
+dest_files=["res://.godot/imported/ChargingHandle.png-cad99987ee82a4568ba9a0b87b212838.ctex"]
 
 [params]
 

@@ -32,6 +32,7 @@ folder_colors={
 "res://Scenes/": "yellow",
 "res://Scripts/": "purple",
 "res://Textures/": "blue",
+"res://Textures/Weapons/Icons/": "red",
 "res://VFX/": "pink"
 }
 

@@ -68,14 +68,15 @@ func _on_ammo_changed(current_capacity: int, capacity: int):
 		WeaponAmmo.text = "XXXXX"
 		WeaponAmmo.add_theme_color_override("font_color", Color(0.608, 0.0, 0.0, 1.0))
 	else:
-		print_debug("ERROR: Ammo_percent out of range")
+		#print_debug("ERROR: Ammo_percent out of range")
+		pass
 
 func _on_weapon_changed(current_weapon: String):
 	
 	#DEBUG feature
 	#print_debug(current_weapon)
 	
-	var weapon_path = "res://Textures/Weapons/%s/GUI/%s.png" % [current_weapon, current_weapon]
+	var weapon_path = "res://Textures/Weapons/ICONS/%s_Icon.png" % current_weapon
 	var weapon_texture = load(weapon_path)
 	
 	WeaponImage.texture = weapon_texture

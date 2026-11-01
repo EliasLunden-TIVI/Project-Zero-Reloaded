@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btq4hhw8f042n"
-path="res://.godot/imported/SPS-7.png-67d655bdcbe1d83eb2a6691118bc4447.ctex"
+path="res://.godot/imported/SPS-7_Icon.png-2055ff51fd1a8df29c8f33c9fbbf8bec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/SPS-7/GUI/SPS-7.png"
-dest_files=["res://.godot/imported/SPS-7.png-67d655bdcbe1d83eb2a6691118bc4447.ctex"]
+source_file="res://Textures/Weapons/Icons/SPS-7_Icon.png"
+dest_files=["res://.godot/imported/SPS-7_Icon.png-2055ff51fd1a8df29c8f33c9fbbf8bec.ctex"]
 
 [params]
 
