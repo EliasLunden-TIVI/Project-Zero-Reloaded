@@ -119,7 +119,7 @@ func _process(delta: float) -> void:
 func _input(_event: InputEvent) -> void:
 	# Reload if the player Can fire (Not mid animation) and if the weapon is not fully loaded
 	if Input.is_action_just_pressed("Combat_Reload") && Canfire && current_capacity < WEAPONS[current_weapon]["capacity"]:
-		Reload_Magazine(WEAPONS[current_weapon]["reload_type"])
+		Reload(WEAPONS[current_weapon]["reload_type"])
 		
 	if Input.is_action_just_pressed("Combat_Swapweapon") && Canfire == true:
 		current_weapon = Loadout[LoadoutIndex]
@@ -140,6 +140,10 @@ func Attack():
 		
 	current_capacity -= 1
 	
+	# Signal and update UI with new data
+	
+	ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
+	
 	# Spawning bullet #
 	
 	var weapon_data = WEAPONS[current_weapon]
@@ -156,10 +160,7 @@ func Attack():
 		
 		# Calculating spread angle #
 		
-		var accuracy_offset = deg_to_rad(randf_range(
-		-weapon_data["max_spread"],
-		weapon_data["max_spread"]
-	))
+		var accuracy_offset = deg_to_rad(randf_range(-weapon_data["max_spread"],weapon_data["max_spread"]))
 
 		projectile.global_position = $Core/BulletOrigin.global_position
 		projectile.global_rotation = $Core/BulletOrigin.global_rotation + accuracy_offset
@@ -178,8 +179,6 @@ func Attack():
 	get_tree().current_scene.add_child(casing)
 
 	var local_right = Vector2.RIGHT.rotated(casing.global_rotation)
-	
-	
 	
 	casing.apply_central_impulse(local_right * randi_range(750, 1250))
 	
@@ -205,11 +204,7 @@ func Attack():
 	else:
 		WeaponAnimator.play("%s_Idle_Empty" % current_weapon)
 	
-	# Signal and update UI with new data
-	
-	ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
-	
-func Reload_Magazine(Reload_Type):
+func Reload(Reload_Type):
 	
 	Canfire = false
 	
@@ -236,23 +231,30 @@ func Reload_Magazine(Reload_Type):
 		ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
 		
 		WeaponAnimator.play("%s_Idle" % current_weapon)
+		
+		Canfire = true
 	
 	elif Reload_Type == "singular":
 		while current_capacity <= capacity:
 			if current_capacity >= 1:
 				Canfire = false
 				WeaponAnimator.play("%s_Reload" % current_weapon)
-				current_capacity += 1
 				await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"]).timeout
+				current_capacity += 1
 				
 			elif current_capacity == 0:
 				Canfire = false
 				WeaponAnimator.play("%s_Reload_Empty" % current_weapon)
-				current_capacity += 1
 				await get_tree().create_timer(WEAPONS[current_weapon]["reload_speed"] * 2).timeout
+				current_capacity += 1
 				
 			# Signal GUI update #
 			ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
+			
+		Canfire = true
+		
+		WeaponAnimator.play("%s_Idle" % current_weapon)
+		
 	else:
 		
 		# Failsafe #
@@ -261,5 +263,4 @@ func Reload_Magazine(Reload_Type):
 		current_capacity = WEAPONS[current_weapon]["capacity"]
 		ammo_changed.emit(current_capacity, WEAPONS[current_weapon]["capacity"])
 	
-	Canfire = true
 	
