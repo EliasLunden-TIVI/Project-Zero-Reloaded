@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://378qp7mmw2vm"
-path="res://.godot/imported/Bolt.png-589955c0e1a0240c47e1a88d3c2d83fa.ctex"
+uid="uid://b67mbfvfl8628"
+path="res://.godot/imported/Stock.png-11a4181c66b067dcbd99b058a7434196.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/SPS-7/Gameplay/Bolt.png"
-dest_files=["res://.godot/imported/Bolt.png-589955c0e1a0240c47e1a88d3c2d83fa.ctex"]
+source_file="res://Textures/Weapons/870-TS/Stock.png"
+dest_files=["res://.godot/imported/Stock.png-11a4181c66b067dcbd99b058a7434196.ctex"]
 
 [params]
 

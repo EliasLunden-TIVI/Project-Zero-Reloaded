@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr0jvs2wdaq81"
-path="res://.godot/imported/Stock.png-f70270bf1004eff8dd740635cdc94fe8.ctex"
+uid="uid://dm8uiewc1ds5s"
+path="res://.godot/imported/Core.png-fb2015eabe1dba5f88a4979beae3204c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/SPS-7/Gameplay/Stock.png"
-dest_files=["res://.godot/imported/Stock.png-f70270bf1004eff8dd740635cdc94fe8.ctex"]
+source_file="res://Textures/Weapons/870-TS/Core.png"
+dest_files=["res://.godot/imported/Core.png-fb2015eabe1dba5f88a4979beae3204c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxrtngud7ckjs"
-path="res://.godot/imported/92FSX_Compensator.png-da9c4038bc7b192f5ac2296950fad213.ctex"
+uid="uid://bo02ew17j7psv"
+path="res://.godot/imported/870-TS_Icon.png-8d7da4384256216afd05a30dd6ae1ddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/92FSX/Gameplay/92FSX_Compensator.png"
-dest_files=["res://.godot/imported/92FSX_Compensator.png-da9c4038bc7b192f5ac2296950fad213.ctex"]
+source_file="res://Textures/Weapons/Icons/870-TS_Icon.png"
+dest_files=["res://.godot/imported/870-TS_Icon.png-8d7da4384256216afd05a30dd6ae1ddd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4my347jchrr3"
-path="res://.godot/imported/Sight.png-a0bbc230f94e9cce3e0606956f96b9f3.ctex"
+uid="uid://derjnibvrq8sx"
+path="res://.godot/imported/92FSX_Sights.png-b6afe619cd9d8d8bf461b7463ec7cc93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Weapons/SPS-7/Gameplay/Sight.png"
-dest_files=["res://.godot/imported/Sight.png-a0bbc230f94e9cce3e0606956f96b9f3.ctex"]
+source_file="res://Textures/Weapons/92FSX/92FSX_Sights.png"
+dest_files=["res://.godot/imported/92FSX_Sights.png-b6afe619cd9d8d8bf461b7463ec7cc93.ctex"]
 
 [params]
 
