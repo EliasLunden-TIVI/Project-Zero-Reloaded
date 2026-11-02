@@ -49,11 +49,11 @@ const WEAPONS = {
 	"870-TS": {
 		"fire_rate": 1,
 		"fire_mode": 1,
-		"capacity": 6,
+		"capacity": 5,
 		"reload_speed": 0.6,
 		"reload_type": "singular",
 		"ammo_type": "HeavyAmmo",
-		"max_spread": 8,
+		"max_spread": 5,
 		"projectile_count": 8,
 		"projectile": preload("res://Resources/Weapons/Projectiles/Projectile_9x19.tscn")
 	}
@@ -235,7 +235,7 @@ func Reload(Reload_Type):
 		Canfire = true
 	
 	elif Reload_Type == "singular":
-		while current_capacity <= capacity:
+		while current_capacity < capacity:
 			if current_capacity >= 1:
 				Canfire = false
 				WeaponAnimator.play("%s_Reload" % current_weapon)

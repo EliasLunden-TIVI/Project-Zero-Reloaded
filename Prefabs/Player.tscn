@@ -1022,6 +1022,7 @@ stereo = true
 [sub_resource type="Animation" id="Animation_dik4f"]
 resource_name = "870-TS_Idle"
 length = 3.0
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1507,6 +1508,7 @@ tracks/39/keys = {
 [sub_resource type="Animation" id="Animation_605ro"]
 resource_name = "870-TS_Idle_Empty"
 length = 3.0000000000000004
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -7535,6 +7537,7 @@ tracks/38/keys = {
 [sub_resource type="Animation" id="Animation_fuy0y"]
 resource_name = "SPS-7_Idle"
 length = 3.0000000000000004
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -8008,6 +8011,7 @@ tracks/38/keys = {
 [sub_resource type="Animation" id="Animation_fd4tb"]
 resource_name = "SPS-7_Idle_Empty"
 length = 3.0000000000000004
+loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -9982,7 +9986,7 @@ libraries/ = SubResource("AnimationLibrary_wuv02")
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=1720549317]
 z_index = 1
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("13_605ro")
+texture = ExtResource("23_fd4tb")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=173589982]
 z_index = -1
@@ -9991,18 +9995,19 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Stock" type="Sprite2D" parent="WeaponManager/Core" unique_id=1655655174]
 z_index = -1
 scale = Vector2(0.99999964, 0.99999964)
-texture = ExtResource("12_700hf")
+texture = ExtResource("22_406my")
 
 [node name="Frame" type="Sprite2D" parent="WeaponManager/Core" unique_id=1661681515]
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=60731910]
 z_index = -1
+position = Vector2(0, 50)
 scale = Vector2(0.99999964, 0.99999964)
-texture = ExtResource("10_0yh01")
+texture = ExtResource("20_gy83n")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=986302984]
-texture = ExtResource("14_mghi7")
+texture = ExtResource("24_2ywdf")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=302458990]
 position = Vector2(0, -48)
