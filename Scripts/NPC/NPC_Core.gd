@@ -26,6 +26,8 @@ var target
 
 @onready var BloodAssets = load("res://VFX/Gore/BloodSplatter/VFX_Bloodsplatter.tscn")
 
+signal Attack()
+
 func _ready() -> void:
 	
 	# Get the first group name to be set as the name and "ID" of the enemy.
@@ -60,6 +62,9 @@ func Die():
 	await get_tree().create_timer(CorpseRemovalDelay).timeout
 	queue_free()
 
+@onready var BulletOrigin = $WeaponManager/Core/BulletOrigin
+@onready var Projectile = load("res://Resources/Weapons/Projectiles/Projectile_9x19.tscn")
+
 
 func _on_view_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
@@ -91,7 +96,7 @@ func combat():
 	var Target_Visible = true
 
 	while Target_Visible == true:
-		
+			
 		#print_debug("Looking at player")
 		
 		if Target_Visible == false:
@@ -101,3 +106,7 @@ func combat():
 			rotation_degrees += 90 # A +90 Degree offset to fix NPC rotation offset
 			
 			await get_tree().create_timer(0.01).timeout
+			
+func _on_targeting_area_area_entered(area: Area2D) -> void:
+		emit_signal("Attack")
+		await get_tree().create_timer(2).timeout

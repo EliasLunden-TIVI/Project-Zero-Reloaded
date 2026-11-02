@@ -87,7 +87,7 @@ func _on_weapon_changed(current_weapon: String):
 func _on_health_changed(Health: int, MaxHealth: int):
 	
 	if Health > 75:
-		$HealthOverlay.texture = load("")
+		$HealthOverlay.texture = load("res://Textures/GUI/HUD/Blank.png")
 	elif Health <= 75 && Health > 50:
 		$HealthOverlay.texture = load("res://Textures/GUI/HUD/HealthOverlay4.png")
 	elif Health <= 50 && Health > 25:

@@ -9924,7 +9924,7 @@ texture = ExtResource("5_vxq8l")
 [node name="Right-Shoulder" type="Bone2D" parent="Torso" unique_id=1851167748]
 position = Vector2(120, 0)
 rotation = -3.1415927
-scale = Vector2(0.9999994, -0.9999994)
+scale = Vector2(0.9999995, -0.9999995)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
 
 [node name="Shoulder-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder" unique_id=892489682]
@@ -9985,29 +9985,30 @@ libraries/ = SubResource("AnimationLibrary_wuv02")
 
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=1720549317]
 z_index = 1
+position = Vector2(0, 70)
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("23_fd4tb")
+texture = ExtResource("11_8afax")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=173589982]
 z_index = -1
 scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_8afax")
 
 [node name="Stock" type="Sprite2D" parent="WeaponManager/Core" unique_id=1655655174]
 z_index = -1
 scale = Vector2(0.99999964, 0.99999964)
-texture = ExtResource("22_406my")
 
 [node name="Frame" type="Sprite2D" parent="WeaponManager/Core" unique_id=1661681515]
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=60731910]
 z_index = -1
-position = Vector2(0, 50)
+position = Vector2(0, 70)
 scale = Vector2(0.99999964, 0.99999964)
-texture = ExtResource("20_gy83n")
+texture = ExtResource("10_wuv02")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=986302984]
-texture = ExtResource("24_2ywdf")
+texture = ExtResource("12_t7w7j")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=302458990]
 position = Vector2(0, -48)
