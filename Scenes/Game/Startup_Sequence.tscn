@@ -13,7 +13,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_25kr7"]
 resource_name = "Intro"
-length = 20.0
+length = 18.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -49,7 +49,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["", "_", "", "_", "", "_", "", "_", "", "_", "", "_", "", "_", "", "************", "************_", "************", "Innitating startup sequence", "Innitating startup sequence .", "Innitating startup sequence ..", "Innitating startup sequence ...", ""]
+"values": ["", "_", "", "_", "", "_", "", "_", "", "_", "", "_", "", "_", "", "************", "************", "************", "Innitating startup sequence", "Innitating startup sequence .", "Innitating startup sequence ..", "Innitating startup sequence ...", ""]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -58,7 +58,7 @@ tracks/3/path = NodePath("BootSequence/Backround/Input:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 7, 7.1000004, 8.7),
+"times": PackedFloat32Array(0, 7, 7.5, 8.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [1.0, 1.0, 0.0, 1.0]
@@ -70,7 +70,7 @@ tracks/4/path = NodePath("BootSequence:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 20),
+"times": PackedFloat32Array(0, 18),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
@@ -82,7 +82,7 @@ tracks/5/path = NodePath("BootSequence/Backround:theme_override_styles/panel:bg_
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 20),
+"times": PackedFloat32Array(0, 18),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
@@ -106,7 +106,7 @@ tracks/7/path = NodePath("BootSequence/Backround/TextureRect:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 11, 12, 20),
+"times": PackedFloat32Array(0, 11, 12, 18),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
@@ -118,7 +118,7 @@ tracks/8/path = NodePath("BootSequence:mouse_filter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 20),
+"times": PackedFloat32Array(0, 18),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -130,7 +130,7 @@ tracks/9/path = NodePath("BootSequence:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 20),
+"times": PackedFloat32Array(0, 18),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
@@ -746,7 +746,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_am7as")
 theme_override_font_sizes/font_size = 40
-text = "> LOADING COMPLETE <"
+text = "
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

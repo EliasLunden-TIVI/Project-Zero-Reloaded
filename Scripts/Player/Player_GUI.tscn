@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dts8prmsnk6it" path="res://Scripts/Player/Player-gui.gd" id="1_qaa8i"]
 [ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="3_qaa8i"]
 
-
 [node name="PlayerGui" type="CanvasLayer" unique_id=941128799]
 
 [node name="Control" type="Control" parent="." unique_id=1698331355]
