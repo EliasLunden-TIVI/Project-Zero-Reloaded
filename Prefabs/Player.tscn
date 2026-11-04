@@ -9985,14 +9985,11 @@ libraries/ = SubResource("AnimationLibrary_wuv02")
 
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=1720549317]
 z_index = 1
-position = Vector2(0, 70)
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("11_8afax")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=173589982]
 z_index = -1
 scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("13_8afax")
 
 [node name="Stock" type="Sprite2D" parent="WeaponManager/Core" unique_id=1655655174]
 z_index = -1
@@ -10003,12 +10000,9 @@ scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=60731910]
 z_index = -1
-position = Vector2(0, 70)
 scale = Vector2(0.99999964, 0.99999964)
-texture = ExtResource("10_wuv02")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=986302984]
-texture = ExtResource("12_t7w7j")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=302458990]
 position = Vector2(0, -48)
@@ -10018,7 +10012,7 @@ range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_t7w7j")
-texture_scale = 4.0
+texture_scale = 1e-05
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1375523854]
 

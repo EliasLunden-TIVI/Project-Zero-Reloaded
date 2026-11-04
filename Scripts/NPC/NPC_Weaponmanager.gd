@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var WeaponAnimator = $NPCWeaponAnimator
+
+@onready var NPC_Core = $".."
+
 var Canfire: bool = true
 
 var Projectile
@@ -22,9 +26,6 @@ var casing_scene = load("res://VFX/Weapons/Casing_Assets/Casing-9mm.tscn")
 
 var smoke_scene = load("res://VFX/Weapons/Muzzle_Smoke.tscn")
 
-@onready var WeaponAnimator = $NPCWeaponAnimator
-
-@onready var NPC_Core = $".."
 
 
 
@@ -90,7 +91,7 @@ func Attack():
 			WeaponAnimator.play("%s_Attack" % current_weapon)
 		elif current_capacity == 1:
 			WeaponAnimator.play("%s_Attack_Empty" % current_weapon)
-				
+
 		# Remove 1 bullet	
 				
 		current_capacity -= 1
@@ -137,9 +138,11 @@ func Attack():
 				
 			smoke.global_position = $Core/MuzzleParticles.global_position
 			smoke.global_rotation = $Core/MuzzleParticles.global_rotation
-			#
+			
 			get_tree().current_scene.add_child(smoke)
-				
+			
+			await get_tree().create_timer(WEAPONS[current_weapon]["fire_rate"] * 2).timeout
+			
 			# Animation variations
 				
 			if current_capacity > 0:
@@ -147,9 +150,8 @@ func Attack():
 			else:
 				WeaponAnimator.play("%s_Idle_Empty" % current_weapon)
 
-			await get_tree().create_timer(WEAPONS[current_weapon]["fire_rate"]).timeout
-
 			Canfire = true
+	
 	if current_capacity <= 0 && Canfire == true:
 		await Reload(WEAPONS[current_weapon]["reload_type"])
 	

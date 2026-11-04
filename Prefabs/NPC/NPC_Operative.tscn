@@ -25,9 +25,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
 radius = 128.0
 
-[sub_resource type="Animation" id="Animation_u10mv"]
+[sub_resource type="Animation" id="Animation_kxhtb"]
 resource_name = "92FSX_Attack"
-length = 0.3
+length = 0.39999999999999997
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3744,7 +3744,7 @@ tracks/39/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5e3hn"]
 _data = {
-&"92FSX_Attack": SubResource("Animation_u10mv"),
+&"92FSX_Attack": SubResource("Animation_kxhtb"),
 &"92FSX_Attack_Empty": SubResource("Animation_sfnxj"),
 &"92FSX_Idle": SubResource("Animation_uq71m"),
 &"92FSX_Idle_Empty": SubResource("Animation_o2qe7"),
@@ -4012,6 +4012,8 @@ position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_dc60u")
 debug_color = Color(1, 0, 0, 0.41960785)
 
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=273032310]
+
 [node name="Torso" type="Bone2D" parent="." unique_id=1235584438]
 rest = Transform2D(0, 0, 0.02, 0, 0, 0)
 
@@ -4092,8 +4094,6 @@ one_shot = true
 explosiveness = 0.99
 randomness = 0.4
 
-[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=273032310]
-
 [node name="WeaponManager" type="Node2D" parent="." unique_id=1201009737]
 position = Vector2(0, -256)
 scale = Vector2(0.8, 0.8)
@@ -4145,6 +4145,7 @@ texture = SubResource("GradientTexture2D_6vpf7")
 texture_scale = 4.0
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1222817337]
+max_distance = 10000.0
 
 [node name="ChargingHandle" type="Sprite2D" parent="WeaponManager/Core" unique_id=1267356114]
 z_index = -1
