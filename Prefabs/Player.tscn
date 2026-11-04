@@ -9887,8 +9887,6 @@ physics_interpolation_mode = 1
 z_index = 1
 script = ExtResource("1_um8lo")
 
-[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=324574269]
-
 [node name="Torso" type="Bone2D" parent="." unique_id=703447236]
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
 
@@ -9962,6 +9960,8 @@ texture = ExtResource("6_gg3t4")
 z_index = 1
 material = SubResource("CanvasItemMaterial_31m54")
 texture = ExtResource("7_javds")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=324574269]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=504990517]
 zoom = Vector2(0.4, 0.4)

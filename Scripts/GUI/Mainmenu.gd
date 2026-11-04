@@ -6,12 +6,6 @@ func _ready() -> void:
 	$LevelSelectWindow.hide()
 	$SettingsWindow.hide()
 	$ErrorPopup.hide()
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_scene_1_button_down() -> void:

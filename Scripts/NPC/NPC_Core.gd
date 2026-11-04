@@ -18,7 +18,13 @@ var State: String
 
 var Health
 
-var target
+var target: Node2D = null
+
+var target_visible: bool = false
+
+var player_in_range: bool = false
+
+var turning: bool = false
 
 @onready var Target = $"../Player"
 
@@ -67,46 +73,120 @@ func Die():
 
 
 func _on_view_area_area_entered(area: Area2D) -> void:
+
+	# Only checks for Player #
+
 	if area.is_in_group("Player"):
-		var ray = RayCast2D.new()
-		add_child(ray)
+		target = area
+		target_visible = true
+		player_in_range = true
 
-		ray.global_position = global_position
-		ray.target_position = to_local(area.global_position)
-		ray.enabled = true
-		ray.collision_mask = 3 # Layer 1 + Layer 2
-		ray.collide_with_areas = true
-		ray.collide_with_bodies = true
-		ray.force_raycast_update()
-
-		if ray.is_colliding():
-			var collider = ray.get_collider()
-			if collider.is_in_group("Player"):
-				print_debug("Player Detected!")
-				combat()
-			else:
-				pass
-
-# Targeting
-
-func combat():
-	target = get_tree().get_first_node_in_group("Player")
-
-	var Target_Detected = true
-	var Target_Visible = true
-
-	while Target_Visible == true:
-			
-		#print_debug("Looking at player")
+		# Check line of sight
+		check_line_of_sight()
 		
-		if Target_Visible == false:
-			break
+
+func _on_view_area_area_exited(area: Area2D) -> void:
+
+	if area.is_in_group("Player"):
+		target_visible = false
+		player_in_range = false
+		target = null
+
+
+func check_line_of_sight():
+
+	# Check if player is visible with Raycast #
+
+	var ray = RayCast2D.new()
+	add_child(ray)
+
+	ray.position = Vector2.ZERO
+	ray.target_position = ray.to_local(target.global_position)
+	ray.collision_mask = 3
+	ray.collide_with_areas = true
+	ray.collide_with_bodies = true
+	ray.enabled = true
+	
+#	ray.add_exception(self)
+	ray.add_exception($TargetingArea)
+	
+	ray.force_raycast_update()
+
+	if ray.is_colliding():
+
+		var collider = ray.get_collider()
+
+		if collider.is_in_group("Player"):
+			target_visible = true
+			$TargetingArea.monitoring = true
 		else:
-			look_at(target.global_position)
-			rotation_degrees += 90 # A +90 Degree offset to fix NPC rotation offset
-			
-			await get_tree().create_timer(0.01).timeout
-			
-func _on_targeting_area_area_entered(area: Area2D) -> void:
-		emit_signal("Attack")
-		await get_tree().create_timer(2).timeout
+			target_visible = false
+			$TargetingArea.monitoring = false
+
+	else:
+
+		target_visible = false
+
+	ray.queue_free()
+	var collider = ray.get_collider()
+
+	if collider.is_in_group("Player"):
+
+		target_visible = true
+	else:
+		target_visible = false
+	
+	ScanForTargets()
+	
+	ray.queue_free()
+	
+
+func _process(delta):
+
+	if target_visible == true and is_instance_valid(target):
+		turn_towards_target(delta)
+
+
+func turn_towards_target(delta):
+
+	var target_angle = global_position.direction_to(target.global_position).angle() + deg_to_rad(90)
+
+	rotation = rotate_toward(rotation, target_angle, 3.0 * delta)
+				
+func HasLineOfSight(target: Node2D) -> bool:
+	
+	var LOS_Ray = RayCast2D.new()
+	add_child(LOS_Ray)
+	
+	if !is_instance_valid(target):
+		return false
+
+	LOS_Ray.target_position = LOS_Ray.to_local(target.global_position)
+	LOS_Ray.force_raycast_update()
+
+	if LOS_Ray.is_colliding():
+
+		var collider = LOS_Ray.get_collider()
+
+		if collider.is_in_group("Player"):
+			return true
+
+	return false
+
+func ScanForTargets():
+
+	while true:
+
+		if is_instance_valid(target) && player_in_range == true:
+
+			target_visible = HasLineOfSight(target)
+
+			if target_visible:
+				print_debug("Player visible!")
+			elif player_in_range == false: 
+				print_debug("Player exited area!")
+				break
+			else:
+				print_debug("Player not visible!")
+
+		await get_tree().create_timer(0.1).timeout
