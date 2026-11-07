@@ -16,7 +16,7 @@ var MovementActive: bool = true
 @export_category("Health")
 
 var Health: int
-@export var MaxHealth: int = 100
+@export var MaxHealth: int = 9999999999
 
 @export var PassiveHealthRegeneration: bool = false
 
