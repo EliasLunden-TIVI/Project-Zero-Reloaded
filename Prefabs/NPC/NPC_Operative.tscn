@@ -27,7 +27,7 @@ radius = 128.0
 
 [sub_resource type="Animation" id="Animation_kxhtb"]
 resource_name = "92FSX_Attack"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -4004,6 +4004,7 @@ size = Vector2(400, 2200)
 [node name="NPC_Operative" type="CharacterBody2D" unique_id=330108728 groups=["Operative"]]
 script = ExtResource("1_4a8rk")
 MaxHealth = 100
+EnemyName = "Operative"
 
 [node name="NPC_Hurtbox_Torso" type="Area2D" parent="." unique_id=1884212185 groups=["Humanoid"]]
 
@@ -4136,13 +4137,12 @@ texture = ExtResource("8_sfnxj")
 texture = ExtResource("10_5l8gu")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=723980233]
-position = Vector2(0, -48)
 color = Color(1, 0.37254903, 0, 1)
 energy = 0.0
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_6vpf7")
-texture_scale = 4.0
+texture_scale = 1e-05
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1222817337]
 max_distance = 10000.0
@@ -4159,10 +4159,8 @@ rotation = -1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="CasingEjection" type="Node2D" parent="WeaponManager/Core" unique_id=982376450]
-position = Vector2(0, 85.00001)
 
 [node name="MuzzleParticles" type="Node2D" parent="WeaponManager/Core" unique_id=734044314]
-position = Vector2(0, -67.5)
 
 [node name="NPC_Animator" type="AnimationPlayer" parent="." unique_id=615595383]
 libraries/ = SubResource("AnimationLibrary_o7vlm")

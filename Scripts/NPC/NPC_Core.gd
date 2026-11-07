@@ -8,11 +8,13 @@ extends CharacterBody2D
 var Torso_Armor: int
 var Head_Armor: int
 
+@export_category("NPC-Data")
+
+@export var EnemyName: String
+
 var Alive: bool
 
 var CorpseRemovalDelay: float = 15
-
-var EnemyName: String
 
 var State: String
 
@@ -37,7 +39,7 @@ signal Attack()
 func _ready() -> void:
 	
 	# Get the first group name to be set as the name and "ID" of the enemy.
-	EnemyName = get_groups()[0]
+	#EnemyName = get_groups()[0]
 	
 	Health = MaxHealth
 	Alive = true
