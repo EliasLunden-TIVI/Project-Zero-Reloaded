@@ -26,7 +26,9 @@ var casing_scene = load("res://VFX/Weapons/Casing_Assets/Casing-9mm.tscn")
 
 var smoke_scene = load("res://VFX/Weapons/Muzzle_Smoke.tscn")
 
-
+var Target: Node2D 
+var PlayerInRange: bool = false
+var CombatLoopRunning: bool = false
 
 
 # I should look into making weapon configuration files a single external file #
@@ -115,7 +117,7 @@ func Attack():
 			projectile.global_position = $Core/BulletOrigin.global_position
 			projectile.global_rotation = $Core/BulletOrigin.global_rotation + accuracy_offset
 
-			get_tree().current_scene.add_child(projectile)
+			get_tree().current_scene.add_child.call_deferred(projectile)
 						
 			projectiles_to_spawn -= 1
 				
@@ -126,7 +128,7 @@ func Attack():
 			casing.global_position = $Core/CasingEjection.global_position
 			casing.global_rotation = $Core/CasingEjection.global_rotation
 			
-			get_tree().current_scene.add_child(casing)
+			get_tree().current_scene.add_child.call_deferred(casing)
 			
 			var local_right = Vector2.RIGHT.rotated(casing.global_rotation)
 				
@@ -139,7 +141,7 @@ func Attack():
 			smoke.global_position = $Core/MuzzleParticles.global_position
 			smoke.global_rotation = $Core/MuzzleParticles.global_rotation
 			
-			get_tree().current_scene.add_child(smoke)
+			get_tree().current_scene.add_child.call_deferred(smoke)
 			
 			await get_tree().create_timer(WEAPONS[current_weapon]["fire_rate"] * 2).timeout
 			
@@ -152,13 +154,11 @@ func Attack():
 
 			Canfire = true
 	
-	if current_capacity <= 0 && Canfire == true:
+	elif current_capacity <= 0 && Canfire == true:
 		await Reload(WEAPONS[current_weapon]["reload_type"])
 	
-
-@onready var Target: Node2D = $"../../Player"
-var PlayerInRange: bool = false
-var CombatLoopRunning: bool = false
+	else:
+		print_debug("Attack failed")
 
 # Player enters targeting area #
 
@@ -170,7 +170,10 @@ func TargetingAreaEntered(body: Node2D):
 		PlayerInRange = true
 
 		if CombatLoopRunning == false:
+			print_debug("Starting Combat loop")
 			CombatLoop()
+		else:
+			print_debug("Error with combat loop")
 
 
 func TargetingAreaExited(body: Node2D):
@@ -183,26 +186,30 @@ func TargetingAreaExited(body: Node2D):
 
 func CombatLoop():
 
+	if CombatLoopRunning:
+		return
+
 	CombatLoopRunning = true
 
 	while PlayerInRange and is_instance_valid(Target):
 
-		# Check line of sight #
 		if NPC_Core.HasLineOfSight(Target) == false:
+
 			await get_tree().create_timer(0.05).timeout
 			continue
+
 
 
 		if Canfire == false:
+
 			await get_tree().create_timer(0.05).timeout
 			continue
 
-			# Reload if empty #
 		if current_capacity <= 0:
+			
 			await Reload(WEAPONS[current_weapon]["reload_type"])
 			continue
 
-		# Fire weapon #
 		await Attack()
 
 	CombatLoopRunning = false

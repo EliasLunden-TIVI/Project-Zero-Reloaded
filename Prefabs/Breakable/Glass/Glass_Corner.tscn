@@ -297,6 +297,7 @@ turbulence_noise_strength = 0.32
 collision_mode = 2
 
 [node name="GlassStraight" type="Area2D" unique_id=1478537201 groups=["Glass_Corner"]]
+collision_layer = 64
 script = ExtResource("1_gluok")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=348338161]
@@ -328,6 +329,8 @@ randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_m2k3o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=902780129]
+collision_layer = 64
+collision_mask = 4
 
 [node name="PropCollision" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=445740939]
 polygon = PackedVector2Array(40, -40, 200, -40, 200, 40, -40, 40, -40, -200, 40, -200)
