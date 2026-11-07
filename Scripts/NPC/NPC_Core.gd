@@ -12,8 +12,6 @@ var Head_Armor: int
 
 @export var EnemyName: String
 
-var Alive: bool
-
 var CorpseRemovalDelay: float = 15
 
 var State: String
@@ -39,11 +37,13 @@ var LOS_Scan_Timer: float = 0.0
 
 signal Attack
 
+signal UpdateState(State: float)
+
 
 func _ready() -> void:
 
 	Health = MaxHealth
-	Alive = true
+	State = "Idle"
 
 	# Configure persistent LOS ray
 	LOS_Ray.enabled = true
@@ -72,7 +72,7 @@ func _on_npc_hurtbox_torso_area_entered(area: Area2D) -> void:
 	
 
 func Take_Damage(Damage):
-	if Alive == true:
+	if State != "Dead":
 		Health -= Damage
 		
 		if Health <= 0:
@@ -82,7 +82,10 @@ func Take_Damage(Damage):
 
 func Die():
 	
-	Alive = false
+	State = "Dead"
+	
+	UpdateState.emit(State)
+	
 	print_debug("NPC Killed")
 	
 	Animator.play("NPC_%s_Death" % EnemyName)
@@ -115,12 +118,12 @@ func _on_view_area_area_exited(area: Area2D) -> void:
 
 func _physics_process(delta: float) -> void:
 
-	if Alive == false:
-		return
+	if State == "Dead":
+		pass
 
-	if player_in_range == false or is_instance_valid(target) == false:
+	elif player_in_range == false or is_instance_valid(target) == false:
 		target_visible = false
-		return
+		pass
 
 	LOS_Scan_Timer += delta
 
@@ -159,6 +162,9 @@ func _process(delta: float) -> void:
 	if target_visible and is_instance_valid(target):
 		
 		turn_towards_target(delta)
+		
+	else:
+		pass
 
 
 func turn_towards_target(delta: float) -> void:

@@ -4,6 +4,10 @@ extends Node2D
 
 @onready var NPC_Core = $".."
 
+@onready var ViewArea = $"../ViewArea"
+
+@onready var TargetingArea = $"../TargetingArea"
+
 var Canfire: bool = true
 
 var Projectile
@@ -30,6 +34,7 @@ var Target: Node2D
 var PlayerInRange: bool = false
 var CombatLoopRunning: bool = false
 
+var Attacking_Enabled = true
 
 # I should look into making weapon configuration files a single external file #
 
@@ -73,6 +78,7 @@ const WEAPONS = {
 func _ready() -> void:
 	
 	NPC_Core.Attack.connect(Attack)
+	NPC_Core.UpdateState.connect(CombatStates)
 
 	Loadout = ["92FSX"]
 	LoadoutIndex = 0
@@ -83,88 +89,98 @@ func _ready() -> void:
 	
 	
 func Attack():
-	
-	if current_capacity >= 1 && Canfire == true:
-		Canfire = false
-			
-		# Animation variations
-			
-		if current_capacity > 1:
-			WeaponAnimator.play("%s_Attack" % current_weapon)
-		elif current_capacity == 1:
-			WeaponAnimator.play("%s_Attack_Empty" % current_weapon)
-
-		# Remove 1 bullet	
+	if Attacking_Enabled == true:
+		if current_capacity >= 1 && Canfire == true:
+			Canfire = false
 				
-		current_capacity -= 1
-			
-		# Spawning bullet #
-		
-		var projectiles_to_spawn = WEAPONS[current_weapon]["projectile_count"]
-			
-		# Multi projectile spawning system for weapons #
-			
-		while projectiles_to_spawn != 0:
-
-
-			var projectile_scene = load("res://Resources/Weapons/Projectiles/Projectile_9x19.tscn")
-			var projectile = projectile_scene.instantiate()
-						
-			# Calculating spread angle #
-						
-			var accuracy_offset = deg_to_rad(randf_range(-WEAPONS[current_weapon]["max_spread"],WEAPONS[current_weapon]["max_spread"]))
-
-			projectile.global_position = $Core/BulletOrigin.global_position
-			projectile.global_rotation = $Core/BulletOrigin.global_rotation + accuracy_offset
-
-			get_tree().current_scene.add_child.call_deferred(projectile)
-						
-			projectiles_to_spawn -= 1
-				
-			# Spawning bulletcasing effect #
-			
-			var casing = casing_scene.instantiate()
-			
-			casing.global_position = $Core/CasingEjection.global_position
-			casing.global_rotation = $Core/CasingEjection.global_rotation
-			
-			get_tree().current_scene.add_child.call_deferred(casing)
-			
-			var local_right = Vector2.RIGHT.rotated(casing.global_rotation)
-				
-			casing.apply_central_impulse(local_right * randi_range(750, 1250))
-				
-			## Spawning gunsmoke effect #
-				
-			var smoke = smoke_scene.instantiate()
-				
-			smoke.global_position = $Core/MuzzleParticles.global_position
-			smoke.global_rotation = $Core/MuzzleParticles.global_rotation
-			
-			get_tree().current_scene.add_child.call_deferred(smoke)
-			
-			await get_tree().create_timer(WEAPONS[current_weapon]["fire_rate"] * 2).timeout
-			
 			# Animation variations
 				
-			if current_capacity > 0:
-				WeaponAnimator.play("%s_Idle" % current_weapon)
-			else:
-				WeaponAnimator.play("%s_Idle_Empty" % current_weapon)
+			if current_capacity > 1:
+				WeaponAnimator.play("%s_Attack" % current_weapon)
+			elif current_capacity == 1:
+				WeaponAnimator.play("%s_Attack_Empty" % current_weapon)
 
-			Canfire = true
-	
-	elif current_capacity <= 0 && Canfire == true:
-		await Reload(WEAPONS[current_weapon]["reload_type"])
-	
+			# Remove 1 bullet	
+					
+			current_capacity -= 1
+				
+			# Spawning bullet #
+			
+			var projectiles_to_spawn = WEAPONS[current_weapon]["projectile_count"]
+				
+			# Multi projectile spawning system for weapons #
+				
+			while projectiles_to_spawn != 0:
+
+
+				var projectile_scene = load("res://Resources/Weapons/Projectiles/Projectile_9x19.tscn")
+				var projectile = projectile_scene.instantiate()
+							
+				# Calculating spread angle #
+							
+				var accuracy_offset = deg_to_rad(randf_range(-WEAPONS[current_weapon]["max_spread"],WEAPONS[current_weapon]["max_spread"]))
+
+				projectile.global_position = $Core/BulletOrigin.global_position
+				projectile.global_rotation = $Core/BulletOrigin.global_rotation + accuracy_offset
+
+				get_tree().current_scene.add_child.call_deferred(projectile)
+							
+				projectiles_to_spawn -= 1
+					
+				# Spawning bulletcasing effect #
+				
+				var casing = casing_scene.instantiate()
+				
+				casing.global_position = $Core/CasingEjection.global_position
+				casing.global_rotation = $Core/CasingEjection.global_rotation
+				
+				get_tree().current_scene.add_child.call_deferred(casing)
+				
+				var local_right = Vector2.RIGHT.rotated(casing.global_rotation)
+					
+				casing.apply_central_impulse(local_right * randi_range(750, 1250))
+					
+				## Spawning gunsmoke effect #
+					
+				var smoke = smoke_scene.instantiate()
+					
+				smoke.global_position = $Core/MuzzleParticles.global_position
+				smoke.global_rotation = $Core/MuzzleParticles.global_rotation
+				
+				get_tree().current_scene.add_child.call_deferred(smoke)
+				
+				await get_tree().create_timer(WEAPONS[current_weapon]["fire_rate"] * 2).timeout
+				
+				# Animation variations
+					
+				if current_capacity > 0:
+					WeaponAnimator.play("%s_Idle" % current_weapon)
+				else:
+					WeaponAnimator.play("%s_Idle_Empty" % current_weapon)
+
+				Canfire = true
+		
+		elif current_capacity <= 0 && Canfire == true:
+			await Reload(WEAPONS[current_weapon]["reload_type"])
+		
+		else:
+			print_debug("Attack failed")
 	else:
-		print_debug("Attack failed")
+		pass
+
+func CombatStates(State):
+	if State == "Dead":
+		Attacking_Enabled = false
+		TargetingArea.monitoring = false
+		ViewArea.monitoring = false
+	elif State == "Combat":
+		pass
 
 # Player enters targeting area #
 
 func TargetingAreaEntered(body: Node2D):
 
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") && Attacking_Enabled == true:
 
 		Target = body
 		PlayerInRange = true
@@ -191,7 +207,7 @@ func CombatLoop():
 
 	CombatLoopRunning = true
 
-	while PlayerInRange and is_instance_valid(Target):
+	while PlayerInRange && is_instance_valid(Target) && Attacking_Enabled == true:
 
 		if NPC_Core.HasLineOfSight(Target) == false:
 
