@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://ctq3eukf7cm1d" path="res://SFX/Prop/Pot_Break_2_Pixabay.mp3" id="4_oc0vn"]
 [ext_resource type="AudioStream" uid="uid://d2eecyahew7u5" path="res://SFX/Prop/Ceramic_Break_Pixabay.mp3" id="5_oc0vn"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
 radius = 79.12016
 
@@ -265,6 +264,7 @@ _data = {
 
 [node name="PropPlanterPotSmall" type="Area2D" unique_id=404817474 groups=["PlanterPotSmall"]]
 z_index = -3
+collision_layer = 2
 script = ExtResource("1_8s872")
 
 [node name="PropTexture" type="Sprite2D" parent="." unique_id=1383000680 groups=["PlanterPotSmall"]]

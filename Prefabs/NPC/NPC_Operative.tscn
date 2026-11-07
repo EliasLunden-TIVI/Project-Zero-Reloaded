@@ -3999,14 +3999,21 @@ _data = {
 radius = 122.05327
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os3vg"]
-size = Vector2(400, 2200)
+size = Vector2(76, 2474)
 
 [node name="NPC_Operative" type="CharacterBody2D" unique_id=330108728 groups=["Operative"]]
+collision_layer = 4
+collision_mask = 240
 script = ExtResource("1_4a8rk")
 MaxHealth = 100
 EnemyName = "Operative"
 
+[node name="LOS_Ray" type="RayCast2D" parent="." unique_id=1469278693]
+collision_mask = 0
+collide_with_areas = true
+
 [node name="NPC_Hurtbox_Torso" type="Area2D" parent="." unique_id=1884212185 groups=["Humanoid"]]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Hurtbox_Torso" unique_id=1213675818 groups=["Humanoid"]]
 position = Vector2(0, -24)
@@ -4170,14 +4177,18 @@ position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_tytk5")
 
 [node name="ViewArea" type="Area2D" parent="." unique_id=211833503]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewArea" unique_id=1960003027]
 polygon = PackedVector2Array(0, 0, 0, 0, 2000, -2600, -1800, -2600)
 
 [node name="TargetingArea" type="Area2D" parent="." unique_id=1636488137]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetingArea" unique_id=1821757245]
-position = Vector2(0, -1100)
+position = Vector2(0, -1363)
 shape = SubResource("RectangleShape2D_os3vg")
 
 [connection signal="area_entered" from="NPC_Hurtbox_Torso" to="." method="_on_npc_hurtbox_torso_area_entered"]
@@ -4185,5 +4196,6 @@ shape = SubResource("RectangleShape2D_os3vg")
 [connection signal="area_entered" from="ViewArea" to="WeaponManager" method="_on_view_area_area_entered"]
 [connection signal="area_exited" from="ViewArea" to="." method="_on_view_area_area_exited"]
 [connection signal="area_entered" from="TargetingArea" to="." method="_on_targeting_area_area_entered"]
+[connection signal="area_entered" from="TargetingArea" to="WeaponManager" method="_on_targeting_area_area_entered"]
 [connection signal="area_entered" from="TargetingArea" to="WeaponManager" method="TargetingAreaEntered"]
 [connection signal="area_exited" from="TargetingArea" to="WeaponManager" method="TargetingAreaExited"]

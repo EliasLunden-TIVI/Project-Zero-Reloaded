@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bggb5nedbhx0h" path="res://Textures/Character/Dummy.png" id="4_hvk3o"]
 [ext_resource type="Texture2D" uid="uid://g2dp0h7kge00" path="res://VFX/Weapons/Muzzle_Smoke.png" id="5_buji3"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_dc60u"]
 radius = 157.81319
 
@@ -263,6 +262,7 @@ _data = {
 
 [node name="PropTargetDummy" type="Area2D" unique_id=404817474 groups=["TargetDummy"]]
 z_index = -3
+collision_layer = 2
 script = ExtResource("1_hvk3o")
 
 [node name="PropTexture" type="Sprite2D" parent="." unique_id=1383000680]

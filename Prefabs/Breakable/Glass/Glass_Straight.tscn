@@ -339,6 +339,7 @@ collision_mode = 2
 size = Vector2(400, 80)
 
 [node name="GlassStraight" type="Area2D" unique_id=1478537201 groups=["Glass_Straight"]]
+collision_layer = 64
 script = ExtResource("1_l4hek")
 
 [node name="PropTexture" type="Sprite2D" parent="." unique_id=1503184301]
@@ -370,6 +371,8 @@ randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_m2k3o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=902780129]
+collision_layer = 64
+collision_mask = 4
 
 [node name="PropCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=1907310552]
 shape = SubResource("RectangleShape2D_pmfnb")

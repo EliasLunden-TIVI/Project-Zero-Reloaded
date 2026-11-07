@@ -9885,7 +9885,11 @@ radius = 123.25989
 [node name="Player" type="CharacterBody2D" unique_id=1520154662 groups=["Player"]]
 physics_interpolation_mode = 1
 z_index = 1
+collision_layer = 6
+collision_mask = 120
 script = ExtResource("1_um8lo")
+
+[node name="LOS_Ray" type="RayCast2D" parent="." unique_id=1040378746]
 
 [node name="Torso" type="Bone2D" parent="." unique_id=703447236]
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
@@ -10032,6 +10036,8 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="MuzzleParticles" type="Node2D" parent="WeaponManager/Core" unique_id=1230182854]
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=839511039 groups=["Humanoid", "Player"]]
+collision_layer = 2
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=520473683 groups=["Humanoid", "Player"]]
 shape = SubResource("CircleShape2D_pmfnb")
