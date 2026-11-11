@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @export var MaxHealth: int
 @export var Armor: int
+@export var MovementSpeed: int
+@export var TurnSpeed: int
 
 var Torso_Armor: int
 var Head_Armor: int
@@ -11,6 +13,12 @@ var Head_Armor: int
 @export_category("NPC-Data")
 
 @export var EnemyName: String
+
+@export_category("NPC-Combat")
+
+@export var LOS_Lost_Grace_Time: float = 0.2
+
+var LOS_Lost_Timer: float = 0.0
 
 var CorpseRemovalDelay: float = 15
 
@@ -35,10 +43,17 @@ var player_in_range: bool = false
 var LOS_Scan_Interval: float = 0.001
 var LOS_Scan_Timer: float = 0.0
 
-signal Attack
+@onready var NPC_Navigation = $NPC_Navigator
+
+#signal Attack
 
 signal UpdateState(State: float)
 
+var LastKnownPosition: Vector2 = Vector2.ZERO
+var HasLastKnownPosition: bool = false
+
+var NavigationUpdateTimer: float = 0.0
+var NavigationUpdateInterval: float = 0.1
 
 func _ready() -> void:
 
@@ -93,7 +108,6 @@ func Die():
 	queue_free()
 
 
-# Player enters detection area
 
 func _on_view_area_area_entered(area: Area2D) -> void:
 
@@ -102,8 +116,12 @@ func _on_view_area_area_entered(area: Area2D) -> void:
 		target = area
 		player_in_range = true
 
+		target_visible = HasLineOfSight(area)
 
-# Player exits detection area
+		if target_visible:
+
+			LastKnownPosition = area.global_position
+			HasLastKnownPosition = true
 
 func _on_view_area_area_exited(area: Area2D) -> void:
 
@@ -113,24 +131,90 @@ func _on_view_area_area_exited(area: Area2D) -> void:
 		player_in_range = false
 		target_visible = false
 
+		LOS_Scan_Timer = 0.0
 
-# Periodic perception scan
+
+
+
 
 func _physics_process(delta: float) -> void:
 
 	if State == "Dead":
-		pass
 
-	elif player_in_range == false or is_instance_valid(target) == false:
-		target_visible = false
-		pass
+		velocity = Vector2.ZERO
+		return
 
-	LOS_Scan_Timer += delta
+	# PLAYER DETECTION AND LOS
 
-	if LOS_Scan_Timer >= LOS_Scan_Interval:
+	if player_in_range and is_instance_valid(target):
 
-		LOS_Scan_Timer = 0.0
-		target_visible = HasLineOfSight(target)
+		LOS_Scan_Timer += delta
+
+		if LOS_Scan_Timer >= LOS_Scan_Interval:
+
+			LOS_Scan_Timer = 0.0
+			target_visible = HasLineOfSight(target)
+
+		# ONLY update position when player is visible
+		
+		if target_visible:
+
+			LastKnownPosition = target.global_position
+			HasLastKnownPosition = true
+
+	# PLAYER VISIBLE: ENGAGE
+
+	if target_visible:
+
+		velocity = Vector2.ZERO
+
+		NPC_Navigation.target_position = global_position
+
+		NavigationUpdateTimer = 0.0
+
+		move_and_slide()
+		return
+
+	# PLAYER NOT VISIBLE: INVESTIGATE
+
+	if !HasLastKnownPosition:
+
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
+	# Update navigation destination periodically
+	NavigationUpdateTimer += delta
+
+	if NavigationUpdateTimer >= NavigationUpdateInterval:
+
+		NavigationUpdateTimer = 0.0
+		NPC_Navigation.target_position = LastKnownPosition
+
+	# NAVIGATION FINISHED
+
+	if NPC_Navigation.is_navigation_finished():
+
+		velocity = Vector2.ZERO
+
+		# Investigation completed
+		if !player_in_range:
+			HasLastKnownPosition = false
+
+		move_and_slide()
+		return
+
+
+	var next_path_position = NPC_Navigation.get_next_path_position()
+
+	var direction = (next_path_position - global_position).normalized()
+
+	velocity = direction * MovementSpeed
+
+	move_and_slide()
+
+
+
 
 
 # Line of sight
@@ -150,8 +234,10 @@ func HasLineOfSight(target_node: Node2D) -> bool:
 
 		if collider.is_in_group("Player"):
 			return true
-
-	return false
+		else:
+			return false
+	else:
+		return false
 
 
 # NPC turning
@@ -164,11 +250,19 @@ func _process(delta: float) -> void:
 		turn_towards_target(delta)
 		
 	else:
-		pass
+		if velocity.length_squared() > 1.0:
+
+			var target_angle = velocity.angle() + deg_to_rad(90)
+
+			rotation = rotate_toward(
+				rotation,
+				target_angle,
+				TurnSpeed * delta
+			)
 
 
 func turn_towards_target(delta: float) -> void:
 
 	var target_angle = global_position.direction_to(target.global_position).angle() + deg_to_rad(90)
 
-	rotation = rotate_toward(rotation, target_angle, 3.0 * delta)
+	rotation = rotate_toward(rotation, target_angle, TurnSpeed * delta)

@@ -77,7 +77,7 @@ const WEAPONS = {
 
 func _ready() -> void:
 	
-	NPC_Core.Attack.connect(Attack)
+	#NPC_Core.Attack.connect(Attack)
 	NPC_Core.UpdateState.connect(CombatStates)
 
 	Loadout = ["92FSX"]

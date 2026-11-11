@@ -42,6 +42,7 @@ Projectile="Any projectile"
 Player=""
 Humanoid=""
 Wall=""
+navigation_polygon_source_geometry_group=""
 
 [input]
 
@@ -109,7 +110,9 @@ Combat_Hotkey_Medical={
 [layer_names]
 
 2d_physics/layer_1="Projectiles"
+2d_navigation/layer_1="Ground"
 2d_physics/layer_2="Hitbox"
+2d_navigation/layer_2="Walkable Ground"
 2d_physics/layer_3="Humanoid Collision"
 2d_physics/layer_4="NPC Line Of Sight"
 2d_physics/layer_5="Wall"

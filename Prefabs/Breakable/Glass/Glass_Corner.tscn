@@ -301,7 +301,8 @@ collision_layer = 64
 script = ExtResource("1_gluok")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=348338161]
-polygon = PackedVector2Array(40, -40, 40, -40, 200, -40, 200, 40, -40, 40, -40, -200, 40, -200)
+visible = false
+polygon = PackedVector2Array(200, -50, 200, 50, -50, 50, -50, -200, 50, -200, 50, -50)
 
 [node name="PropTexture" type="Sprite2D" parent="." unique_id=1503184301 groups=["Glass_Corner"]]
 rotation = -1.5707964
@@ -333,6 +334,8 @@ collision_layer = 64
 collision_mask = 4
 
 [node name="PropCollision" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=445740939]
-polygon = PackedVector2Array(40, -40, 200, -40, 200, 40, -40, 40, -40, -200, 40, -200)
+polygon = PackedVector2Array(50, -50, 200, -50, 200, 50, -50, 50, -50, -200, 50, -200)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1021405503]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
