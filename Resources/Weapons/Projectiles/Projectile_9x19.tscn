@@ -10,6 +10,7 @@ size = Vector2(32.000004, 48)
 light_mode = 1
 
 [node name="Projectile_9x19" type="Area2D" unique_id=1785982187 groups=["Projectile"]]
+collision_mask = 242
 script = ExtResource("1_df847")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=480819546]

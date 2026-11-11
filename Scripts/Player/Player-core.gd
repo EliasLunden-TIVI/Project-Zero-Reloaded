@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-### MOVEMENT ###
+@export_category("Movement")
 
 # CURRENT PLAYER SPEED
 var SPEED: float
@@ -11,10 +11,14 @@ var SPEED: float
 # DEFAULT RUNSPEED
 @export var BASESPRINTSPEED: float = 1500
 # IF PLAYER MOVEMENT IS ENABLED
-@export var MovementActive: bool = true
+var MovementActive: bool = true
+
+@export_category("Health")
 
 var Health: int
-var MaxHealth: int = 100
+@export var MaxHealth: int = 9999999999
+
+@export var PassiveHealthRegeneration: bool = false
 
 var Controllable: bool
 

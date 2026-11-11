@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b60sf41hvsg1e"]
 
-[ext_resource type="Script" uid="uid://ccm21nt2i2374" path="res://Scripts/NPC_Core.gd" id="1_h3cth"]
+[ext_resource type="Script" uid="uid://ccm21nt2i2374" path="res://Scripts/NPC/NPC_Core.gd" id="1_h3cth"]
 [ext_resource type="Texture2D" uid="uid://3rg61gr4wwcl" path="res://Textures/Character/NPC/Dummy/Dummy_Torso.png" id="2_khe3p"]
 [ext_resource type="Texture2D" uid="uid://dhc2s4thjlydw" path="res://Textures/Character/NPC/Dummy/Dummy_Shoulder.png" id="3_o5t11"]
 [ext_resource type="Texture2D" uid="uid://5q70on00qrao" path="res://Textures/Character/NPC/Dummy/Dummy_Forearm.png" id="4_lgv57"]
@@ -25,7 +25,7 @@ resource_name = "92FSX_Idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Torso/Right-Shoulder:position")
+tracks/0/path = NodePath("../Skeleton2D/Torso/Right-Shoulder:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +37,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Torso/Right-Shoulder:rotation")
+tracks/1/path = NodePath("../Skeleton2D/Torso/Right-Shoulder:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -49,7 +49,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:position")
+tracks/2/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -61,7 +61,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
+tracks/3/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -73,7 +73,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
+tracks/4/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -85,7 +85,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:rotation")
+tracks/5/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -97,7 +97,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand/Hand-R-Texture:texture")
+tracks/6/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand/Hand-R-Texture:texture")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -109,7 +109,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Torso/Left-Shoulder:position")
+tracks/7/path = NodePath("../Skeleton2D/Torso/Left-Shoulder:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -121,7 +121,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Torso/Left-Shoulder:rotation")
+tracks/8/path = NodePath("../Skeleton2D/Torso/Left-Shoulder:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -133,7 +133,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:position")
+tracks/9/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -145,7 +145,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
+tracks/10/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -157,7 +157,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
+tracks/11/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -169,7 +169,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:rotation")
+tracks/12/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -181,7 +181,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand/Hand-L-Texture:texture")
+tracks/13/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand/Hand-L-Texture:texture")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -485,7 +485,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Torso/Left-Shoulder:position")
+tracks/0/path = NodePath("../Skeleton2D/Torso/Left-Shoulder:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -497,7 +497,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Torso/Left-Shoulder:rotation")
+tracks/1/path = NodePath("../Skeleton2D/Torso/Left-Shoulder:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -509,7 +509,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:position")
+tracks/2/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -521,7 +521,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:rotation")
+tracks/3/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -533,7 +533,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Torso/Left-Shoulder/Left-Forearm:visible")
+tracks/4/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -545,7 +545,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Torso/Right-Shoulder:position")
+tracks/5/path = NodePath("../Skeleton2D/Torso/Right-Shoulder:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -557,7 +557,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Torso/Right-Shoulder:rotation")
+tracks/6/path = NodePath("../Skeleton2D/Torso/Right-Shoulder:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -569,7 +569,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:position")
+tracks/7/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -581,7 +581,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:rotation")
+tracks/8/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -593,7 +593,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Torso/Right-Shoulder/Right-Forearm:visible")
+tracks/9/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -605,7 +605,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
+tracks/10/path = NodePath("../Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -617,7 +617,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
+tracks/11/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -629,7 +629,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
+tracks/12/path = NodePath("../Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand:z_index")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -910,76 +910,76 @@ debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=273032310]
 
-[node name="Torso" type="Bone2D" parent="." unique_id=1235584438]
+[node name="Torso" type="Bone2D" parent="Skeleton2D" unique_id=1235584438]
 
-[node name="Torso-Texture" type="Sprite2D" parent="Torso" unique_id=1115641233]
+[node name="Torso-Texture" type="Sprite2D" parent="Skeleton2D/Torso" unique_id=1115641233]
 texture = ExtResource("2_khe3p")
 
-[node name="Torso-Armor" type="Sprite2D" parent="Torso" unique_id=2144000781]
+[node name="Torso-Armor" type="Sprite2D" parent="Skeleton2D/Torso" unique_id=2144000781]
 
-[node name="Left-Shoulder" type="Bone2D" parent="Torso" unique_id=992563557]
+[node name="Left-Shoulder" type="Bone2D" parent="Skeleton2D/Torso" unique_id=992563557]
 position = Vector2(-120, 0)
 scale = Vector2(0.99999887, 0.99999887)
 
-[node name="Shoulder-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder" unique_id=1824237161]
+[node name="Shoulder-L-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Left-Shoulder" unique_id=1824237161]
 position = Vector2(0, -56)
 rotation = -0.00045359344
 texture = ExtResource("3_o5t11")
 
-[node name="Left-Forearm" type="Bone2D" parent="Torso/Left-Shoulder" unique_id=1700183307]
+[node name="Left-Forearm" type="Bone2D" parent="Skeleton2D/Torso/Left-Shoulder" unique_id=1700183307]
 z_index = -1
 position = Vector2(0, -96)
 scale = Vector2(0.9999966, 0.9999966)
 
-[node name="Forearm-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=508541386]
+[node name="Forearm-L-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Left-Shoulder/Left-Forearm" unique_id=508541386]
 position = Vector2(-10, -39)
 texture = ExtResource("4_lgv57")
 
-[node name="Left-Hand" type="Bone2D" parent="Torso/Left-Shoulder/Left-Forearm" unique_id=1915218629]
+[node name="Left-Hand" type="Bone2D" parent="Skeleton2D/Torso/Left-Shoulder/Left-Forearm" unique_id=1915218629]
 position = Vector2(0, -104)
 
-[node name="Hand-L-Texture" type="Sprite2D" parent="Torso/Left-Shoulder/Left-Forearm/Left-Hand" unique_id=674796934]
+[node name="Hand-L-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand" unique_id=674796934]
 position = Vector2(10, -25)
 texture = ExtResource("5_u41yb")
 
-[node name="Right-Shoulder" type="Bone2D" parent="Torso" unique_id=21467232]
+[node name="Right-Shoulder" type="Bone2D" parent="Skeleton2D/Torso" unique_id=21467232]
 position = Vector2(120, 0)
 rotation = 3.1415927
 scale = Vector2(0.9999995, -0.9999995)
 
-[node name="Shoulder-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder" unique_id=1682045891]
+[node name="Shoulder-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder" unique_id=1682045891]
 position = Vector2(0, -56)
 texture = ExtResource("3_o5t11")
 
-[node name="Right-Forearm" type="Bone2D" parent="Torso/Right-Shoulder" unique_id=1180751422]
+[node name="Right-Forearm" type="Bone2D" parent="Skeleton2D/Torso/Right-Shoulder" unique_id=1180751422]
 z_index = -1
 position = Vector2(0, -96)
 scale = Vector2(0.9999983, 0.9999983)
 
-[node name="Forearm-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=978770335]
+[node name="Forearm-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm" unique_id=978770335]
 position = Vector2(-10, -39)
 texture = ExtResource("4_lgv57")
 
-[node name="Right-Hand" type="Bone2D" parent="Torso/Right-Shoulder/Right-Forearm" unique_id=103394262]
+[node name="Right-Hand" type="Bone2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm" unique_id=103394262]
 position = Vector2(1.6721404e-05, -104.00027)
 
-[node name="Hand-R-Texture" type="Sprite2D" parent="Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=847765665]
+[node name="Hand-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=847765665]
 position = Vector2(10, -25)
 texture = ExtResource("5_u41yb")
 
-[node name="WeaponSocket" type="Node2D" parent="Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=1395898130]
+[node name="WeaponSocket" type="Node2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=1395898130]
 
-[node name="Head" type="Bone2D" parent="Torso" unique_id=1322962932]
+[node name="Head" type="Bone2D" parent="Skeleton2D/Torso" unique_id=1322962932]
 z_index = 2
 
-[node name="Head-Sprite" type="Sprite2D" parent="Torso/Head" unique_id=1277768716]
+[node name="Head-Sprite" type="Sprite2D" parent="Skeleton2D/Torso/Head" unique_id=1277768716]
 texture = ExtResource("6_5e3hn")
 
-[node name="Head-Gear" type="Sprite2D" parent="Torso/Head" unique_id=507430142]
+[node name="Head-Gear" type="Sprite2D" parent="Skeleton2D/Torso/Head" unique_id=507430142]
 z_index = 1
 material = SubResource("CanvasItemMaterial_gvnwn")
 
-[node name="Head-Face" type="Sprite2D" parent="Torso/Head" unique_id=1677062161]
+[node name="Head-Face" type="Sprite2D" parent="Skeleton2D/Torso/Head" unique_id=1677062161]
 
 [node name="WeaponManager" type="Node2D" parent="." unique_id=1201009737]
 position = Vector2(0, -256)

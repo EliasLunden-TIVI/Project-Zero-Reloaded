@@ -1,18 +1,16 @@
 [gd_scene format=4 uid="uid://b2w1tijhiskca"]
 
-[ext_resource type="Texture2D" uid="uid://iqh4hii07x8j" path="res://Textures/Building/Walls/Walls-Sheet.png" id="1_vra73"]
-[ext_resource type="PackedScene" uid="uid://dr7fen74a7bhg" path="res://Prefabs/Breakable/Glass/Glass_Straight.tscn" id="2_xcxbp"]
-[ext_resource type="PackedScene" uid="uid://co4sa1yxusowg" path="res://Prefabs/Breakable/Glass/Glass_Corner.tscn" id="3_itsqx"]
-[ext_resource type="Texture2D" uid="uid://jyt60kd51opo" path="res://Textures/Building/Floors/Dev/Floor-Sheet.png" id="4_d28dh"]
-[ext_resource type="Texture2D" uid="uid://4u2d1ivektun" path="res://Textures/Building/Floors/Floors-1-Sheet.png" id="5_75q7g"]
-[ext_resource type="PackedScene" uid="uid://dw0m6styhy3fx" path="res://Prefabs/Player.tscn" id="6_735nh"]
-[ext_resource type="PackedScene" uid="uid://bpgqo3jokd4fg" path="res://Scripts/Player/Player_GUI.tscn" id="7_4ki43"]
-[ext_resource type="PackedScene" uid="uid://c768o873ejnia" path="res://Prefabs/Breakable/Prop_PlanterPot_Small.tscn" id="8_3ntlq"]
-[ext_resource type="PackedScene" uid="uid://dgp1imme3k68t" path="res://Prefabs/Breakable/Prop_TargetDummy.tscn" id="9_3enne"]
-[ext_resource type="PackedScene" uid="uid://b60sf41hvsg1e" path="res://Prefabs/NPC/NPC_Testing.tscn" id="10_sh8is"]
-[ext_resource type="PackedScene" uid="uid://c53csauaj0b8g" path="res://Resources/Weapons/Projectiles/Projectile_9x19.tscn" id="11_ow41f"]
-[ext_resource type="PackedScene" uid="uid://d1hb854v4h3uh" path="res://Prefabs/NPC/NPC_Operative.tscn" id="12_ya4bw"]
-[ext_resource type="PackedScene" uid="uid://b31iptpm53a1j" path="res://VFX/Weapons/Casing_Assets/Casing-9mm.tscn" id="13_5xnwc"]
+[ext_resource type="Texture2D" uid="uid://iqh4hii07x8j" path="res://Textures/Building/Walls/Walls-Sheet.png" id="1_sj1v7"]
+[ext_resource type="PackedScene" uid="uid://dr7fen74a7bhg" path="res://Prefabs/Breakable/Glass/Glass_Straight.tscn" id="2_gc7rg"]
+[ext_resource type="PackedScene" uid="uid://co4sa1yxusowg" path="res://Prefabs/Breakable/Glass/Glass_Corner.tscn" id="3_vhqah"]
+[ext_resource type="Texture2D" uid="uid://jyt60kd51opo" path="res://Textures/Building/Floors/Dev/Floor-Sheet.png" id="4_wdaas"]
+[ext_resource type="Texture2D" uid="uid://4u2d1ivektun" path="res://Textures/Building/Floors/Floors-1-Sheet.png" id="5_v3ldo"]
+[ext_resource type="PackedScene" uid="uid://dw0m6styhy3fx" path="res://Prefabs/Player.tscn" id="6_o1u5f"]
+[ext_resource type="PackedScene" uid="uid://bpgqo3jokd4fg" path="res://Scripts/Player/Player_GUI.tscn" id="7_mh2ei"]
+[ext_resource type="PackedScene" uid="uid://c768o873ejnia" path="res://Prefabs/Breakable/Prop_PlanterPot_Small.tscn" id="8_0akhw"]
+[ext_resource type="PackedScene" uid="uid://dgp1imme3k68t" path="res://Prefabs/Breakable/Prop_TargetDummy.tscn" id="9_mcuio"]
+[ext_resource type="PackedScene" uid="uid://d1hb854v4h3uh" path="res://Prefabs/NPC/NPC_Operative.tscn" id="10_62ywn"]
+[ext_resource type="PackedScene" uid="uid://b31iptpm53a1j" path="res://VFX/Weapons/Casing_Assets/Casing-9mm.tscn" id="11_b1e3n"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s084k"]
 polygon = PackedVector2Array(-13.3333435, -200, 13.333328, -200, 13.333328, 200, -13.3333435, 200)
@@ -30,7 +28,7 @@ polygon = PackedVector2Array(-13.3333435, -200, 13.333328, -200, 14.640989, -13.
 polygon = PackedVector2Array(-13.3333435, -200, 13.333328, -200, 14.640989, -13.3333435, 200, -13.3333435, 200, 13.333328, 13.333328, 13.333328, 13.333328, 200, -13.3333435, 200, -13.3333435, 13.333328, -200, 13.333328, -200, -13.3333435, -13.3333435, -13.17691)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkty1"]
-texture = ExtResource("1_vra73")
+texture = ExtResource("1_sj1v7")
 texture_region_size = Vector2i(400, 400)
 4:0/0 = 0
 4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dq6ea")
@@ -61,27 +59,28 @@ texture_region_size = Vector2i(400, 400)
 [sub_resource type="TileSet" id="TileSet_s71vl"]
 tile_size = Vector2i(400, 400)
 occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 248
+physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_xkty1")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hvljq"]
 resource_name = "Glass"
-scenes/1/scene = ExtResource("2_xcxbp")
-scenes/2/scene = ExtResource("3_itsqx")
+scenes/1/scene = ExtResource("2_gc7rg")
+scenes/2/scene = ExtResource("3_vhqah")
 
 [sub_resource type="TileSet" id="TileSet_85wp8"]
 tile_size = Vector2i(400, 400)
 sources/0 = SubResource("TileSetScenesCollectionSource_hvljq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s084k"]
-texture = ExtResource("4_d28dh")
+texture = ExtResource("4_wdaas")
 texture_region_size = Vector2i(200, 200)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvljq"]
-texture = ExtResource("5_75q7g")
+texture = ExtResource("5_v3ldo")
 texture_region_size = Vector2i(200, 200)
 0:0/0 = 0
 1:0/0 = 0
@@ -143,45 +142,32 @@ color = Color(1.2032688e-08, 1.2032688e-08, 0.22171232, 1)
 blend_mode = 2
 shadow_filter = 2
 
-[node name="Player" parent="." unique_id=1520154662 instance=ExtResource("6_735nh")]
+[node name="Player" parent="." unique_id=1520154662 instance=ExtResource("6_o1u5f")]
 position = Vector2(600, -650)
 
-[node name="PlayerGui" parent="." unique_id=941128799 instance=ExtResource("7_4ki43")]
+[node name="PlayerGui" parent="." unique_id=941128799 instance=ExtResource("7_mh2ei")]
 
-[node name="PropPlanterPotSmall" parent="." unique_id=404817474 instance=ExtResource("8_3ntlq")]
+[node name="PropPlanterPotSmall" parent="." unique_id=404817474 instance=ExtResource("8_0akhw")]
 position = Vector2(270, -1730)
 
-[node name="PropPlanterPotSmall2" parent="." unique_id=841561457 instance=ExtResource("8_3ntlq")]
+[node name="PropPlanterPotSmall2" parent="." unique_id=841561457 instance=ExtResource("8_0akhw")]
 position = Vector2(542, -1737)
 
-[node name="PropPlanterPotSmall3" parent="." unique_id=1455483373 instance=ExtResource("8_3ntlq")]
+[node name="PropPlanterPotSmall3" parent="." unique_id=1455483373 instance=ExtResource("8_0akhw")]
 position = Vector2(417, -1570)
 
-[node name="PropPlanterPotSmall4" parent="." unique_id=591950209 instance=ExtResource("8_3ntlq")]
+[node name="PropPlanterPotSmall4" parent="." unique_id=591950209 instance=ExtResource("8_0akhw")]
 position = Vector2(1263, -2067)
 
-[node name="PropTargetDummy" parent="." unique_id=825368776 instance=ExtResource("9_3enne")]
-position = Vector2(-573, -792)
-
-[node name="PropTargetDummy2" parent="." unique_id=534695112 instance=ExtResource("9_3enne")]
-position = Vector2(-1444, -773)
-
-[node name="PropTargetDummy3" parent="." unique_id=776707449 instance=ExtResource("9_3enne")]
-position = Vector2(-1034, -779)
-
-[node name="PropPlanterPotSmall5" parent="." unique_id=1866339479 instance=ExtResource("8_3ntlq")]
+[node name="PropPlanterPotSmall5" parent="." unique_id=1866339479 instance=ExtResource("8_0akhw")]
 position = Vector2(-53, -646)
 
-[node name="PropPlanterPotSmall6" parent="." unique_id=1347712489 instance=ExtResource("8_3ntlq")]
+[node name="PropPlanterPotSmall6" parent="." unique_id=1347712489 instance=ExtResource("8_0akhw")]
 position = Vector2(-74, -818)
 
-[node name="PropTargetDummy4" parent="." unique_id=1692978967 instance=ExtResource("9_3enne")]
+[node name="PropTargetDummy4" parent="." unique_id=1692978967 instance=ExtResource("9_mcuio")]
 position = Vector2(582, -2033)
 rotation = -3.1415927
-
-[node name="NpcTesting" parent="." unique_id=330108728 instance=ExtResource("10_sh8is")]
-position = Vector2(1094, -176)
-Armor = null
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1743158910]
 position = Vector2(598.99994, -608.50006)
@@ -298,126 +284,107 @@ shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_tytk5")
 
-[node name="Projectile_9x19" parent="." unique_id=1785982187 instance=ExtResource("11_ow41f")]
-position = Vector2(-1087, -602)
-
-[node name="Projectile_9x20" parent="." unique_id=205120672 instance=ExtResource("11_ow41f")]
-position = Vector2(-2843, -602)
-
-[node name="Projectile_9x21" parent="." unique_id=740183528 instance=ExtResource("11_ow41f")]
-position = Vector2(-4929, -602)
-
-[node name="Projectile_9x22" parent="." unique_id=915731005 instance=ExtResource("11_ow41f")]
-position = Vector2(-6916, -602)
-
-[node name="Projectile_9x23" parent="." unique_id=824927660 instance=ExtResource("11_ow41f")]
-position = Vector2(-8689, -602)
-
-[node name="NpcTesting2" parent="." unique_id=1243327684 instance=ExtResource("12_ya4bw")]
-position = Vector2(2929, 1441)
-
-[node name="NPC_Operative" parent="." unique_id=2062404394 instance=ExtResource("12_ya4bw")]
+[node name="NPC_Operative" parent="." unique_id=2062404394 instance=ExtResource("10_62ywn")]
 position = Vector2(4903, 1684)
 rotation = 2.6649094
+Armor = null
 
-[node name="NPC_Operative2" parent="." unique_id=1950586182 instance=ExtResource("12_ya4bw")]
+[node name="NPC_Operative2" parent="." unique_id=1950586182 instance=ExtResource("10_62ywn")]
 position = Vector2(-1032, 377)
+Armor = null
 
-[node name="Casing9mm" parent="." unique_id=1405081215 instance=ExtResource("13_5xnwc")]
+[node name="Casing9mm" parent="." unique_id=1405081215 instance=ExtResource("11_b1e3n")]
 position = Vector2(29, -1022)
 
-[node name="NPC_Operative3" parent="." unique_id=1443010181 instance=ExtResource("12_ya4bw")]
+[node name="NPC_Operative3" parent="." unique_id=1443010181 instance=ExtResource("10_62ywn")]
 position = Vector2(949, -1864)
 Armor = 25
 
-[node name="NPC_Operative4" parent="." unique_id=1373337403 instance=ExtResource("12_ya4bw")]
+[node name="NPC_Operative4" parent="." unique_id=1373337403 instance=ExtResource("10_62ywn")]
 position = Vector2(3974, 1822)
-
-[node name="NpcTesting3" parent="." unique_id=1742433555 instance=ExtResource("10_sh8is")]
-position = Vector2(591, 548)
 Armor = null
 
 [connection signal="area_entered" from="Destructible/GlassStraight" to="Destructible/GlassStraight" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94450" to="Destructible/@Area2D@94450" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94451" to="Destructible/@Area2D@94451" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94452" to="Destructible/@Area2D@94452" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94453" to="Destructible/@Area2D@94453" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94454" to="Destructible/@Area2D@94454" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94455" to="Destructible/@Area2D@94455" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94456" to="Destructible/@Area2D@94456" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94457" to="Destructible/@Area2D@94457" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94458" to="Destructible/@Area2D@94458" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94459" to="Destructible/@Area2D@94459" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94460" to="Destructible/@Area2D@94460" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94461" to="Destructible/@Area2D@94461" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94462" to="Destructible/@Area2D@94462" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94463" to="Destructible/@Area2D@94463" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94464" to="Destructible/@Area2D@94464" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94465" to="Destructible/@Area2D@94465" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94466" to="Destructible/@Area2D@94466" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94467" to="Destructible/@Area2D@94467" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94468" to="Destructible/@Area2D@94468" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94469" to="Destructible/@Area2D@94469" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94470" to="Destructible/@Area2D@94470" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94471" to="Destructible/@Area2D@94471" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94472" to="Destructible/@Area2D@94472" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94473" to="Destructible/@Area2D@94473" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94474" to="Destructible/@Area2D@94474" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94475" to="Destructible/@Area2D@94475" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94476" to="Destructible/@Area2D@94476" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94477" to="Destructible/@Area2D@94477" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94478" to="Destructible/@Area2D@94478" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94479" to="Destructible/@Area2D@94479" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94480" to="Destructible/@Area2D@94480" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94481" to="Destructible/@Area2D@94481" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94482" to="Destructible/@Area2D@94482" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94483" to="Destructible/@Area2D@94483" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94484" to="Destructible/@Area2D@94484" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94485" to="Destructible/@Area2D@94485" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94486" to="Destructible/@Area2D@94486" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94487" to="Destructible/@Area2D@94487" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94488" to="Destructible/@Area2D@94488" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94489" to="Destructible/@Area2D@94489" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94490" to="Destructible/@Area2D@94490" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94491" to="Destructible/@Area2D@94491" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94492" to="Destructible/@Area2D@94492" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94493" to="Destructible/@Area2D@94493" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94494" to="Destructible/@Area2D@94494" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94495" to="Destructible/@Area2D@94495" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94496" to="Destructible/@Area2D@94496" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94497" to="Destructible/@Area2D@94497" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94498" to="Destructible/@Area2D@94498" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94499" to="Destructible/@Area2D@94499" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94500" to="Destructible/@Area2D@94500" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94501" to="Destructible/@Area2D@94501" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94502" to="Destructible/@Area2D@94502" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94503" to="Destructible/@Area2D@94503" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94504" to="Destructible/@Area2D@94504" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94505" to="Destructible/@Area2D@94505" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94506" to="Destructible/@Area2D@94506" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94507" to="Destructible/@Area2D@94507" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94508" to="Destructible/@Area2D@94508" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94509" to="Destructible/@Area2D@94509" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94510" to="Destructible/@Area2D@94510" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94511" to="Destructible/@Area2D@94511" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94512" to="Destructible/@Area2D@94512" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94513" to="Destructible/@Area2D@94513" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94514" to="Destructible/@Area2D@94514" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94515" to="Destructible/@Area2D@94515" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94516" to="Destructible/@Area2D@94516" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94517" to="Destructible/@Area2D@94517" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94518" to="Destructible/@Area2D@94518" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94519" to="Destructible/@Area2D@94519" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94520" to="Destructible/@Area2D@94520" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94521" to="Destructible/@Area2D@94521" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94522" to="Destructible/@Area2D@94522" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94523" to="Destructible/@Area2D@94523" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94524" to="Destructible/@Area2D@94524" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94525" to="Destructible/@Area2D@94525" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94526" to="Destructible/@Area2D@94526" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94527" to="Destructible/@Area2D@94527" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94528" to="Destructible/@Area2D@94528" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94529" to="Destructible/@Area2D@94529" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94530" to="Destructible/@Area2D@94530" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94531" to="Destructible/@Area2D@94531" method="_on_area_entered"]
-[connection signal="area_entered" from="Destructible/@Area2D@94532" to="Destructible/@Area2D@94532" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143376" to="Destructible/@Area2D@143376" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143377" to="Destructible/@Area2D@143377" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143378" to="Destructible/@Area2D@143378" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143379" to="Destructible/@Area2D@143379" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143380" to="Destructible/@Area2D@143380" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143381" to="Destructible/@Area2D@143381" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143382" to="Destructible/@Area2D@143382" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143383" to="Destructible/@Area2D@143383" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143384" to="Destructible/@Area2D@143384" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143385" to="Destructible/@Area2D@143385" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143386" to="Destructible/@Area2D@143386" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143387" to="Destructible/@Area2D@143387" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143388" to="Destructible/@Area2D@143388" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143389" to="Destructible/@Area2D@143389" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143390" to="Destructible/@Area2D@143390" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143391" to="Destructible/@Area2D@143391" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143392" to="Destructible/@Area2D@143392" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143393" to="Destructible/@Area2D@143393" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143394" to="Destructible/@Area2D@143394" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143395" to="Destructible/@Area2D@143395" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143396" to="Destructible/@Area2D@143396" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143397" to="Destructible/@Area2D@143397" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143398" to="Destructible/@Area2D@143398" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143399" to="Destructible/@Area2D@143399" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143400" to="Destructible/@Area2D@143400" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143401" to="Destructible/@Area2D@143401" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143402" to="Destructible/@Area2D@143402" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143403" to="Destructible/@Area2D@143403" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143404" to="Destructible/@Area2D@143404" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143405" to="Destructible/@Area2D@143405" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143406" to="Destructible/@Area2D@143406" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143407" to="Destructible/@Area2D@143407" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143408" to="Destructible/@Area2D@143408" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143409" to="Destructible/@Area2D@143409" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143410" to="Destructible/@Area2D@143410" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143411" to="Destructible/@Area2D@143411" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143412" to="Destructible/@Area2D@143412" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143413" to="Destructible/@Area2D@143413" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143414" to="Destructible/@Area2D@143414" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143415" to="Destructible/@Area2D@143415" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143416" to="Destructible/@Area2D@143416" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143417" to="Destructible/@Area2D@143417" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143418" to="Destructible/@Area2D@143418" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143419" to="Destructible/@Area2D@143419" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143420" to="Destructible/@Area2D@143420" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143421" to="Destructible/@Area2D@143421" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143422" to="Destructible/@Area2D@143422" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143423" to="Destructible/@Area2D@143423" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143424" to="Destructible/@Area2D@143424" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143425" to="Destructible/@Area2D@143425" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143426" to="Destructible/@Area2D@143426" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143427" to="Destructible/@Area2D@143427" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143428" to="Destructible/@Area2D@143428" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143429" to="Destructible/@Area2D@143429" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143430" to="Destructible/@Area2D@143430" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143431" to="Destructible/@Area2D@143431" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143432" to="Destructible/@Area2D@143432" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143433" to="Destructible/@Area2D@143433" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143434" to="Destructible/@Area2D@143434" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143435" to="Destructible/@Area2D@143435" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143436" to="Destructible/@Area2D@143436" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143437" to="Destructible/@Area2D@143437" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143438" to="Destructible/@Area2D@143438" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143439" to="Destructible/@Area2D@143439" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143440" to="Destructible/@Area2D@143440" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143441" to="Destructible/@Area2D@143441" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143442" to="Destructible/@Area2D@143442" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143443" to="Destructible/@Area2D@143443" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143444" to="Destructible/@Area2D@143444" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143445" to="Destructible/@Area2D@143445" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143446" to="Destructible/@Area2D@143446" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143447" to="Destructible/@Area2D@143447" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143448" to="Destructible/@Area2D@143448" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143449" to="Destructible/@Area2D@143449" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143450" to="Destructible/@Area2D@143450" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143451" to="Destructible/@Area2D@143451" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143452" to="Destructible/@Area2D@143452" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143453" to="Destructible/@Area2D@143453" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143454" to="Destructible/@Area2D@143454" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143455" to="Destructible/@Area2D@143455" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143456" to="Destructible/@Area2D@143456" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143457" to="Destructible/@Area2D@143457" method="_on_area_entered"]
+[connection signal="area_entered" from="Destructible/@Area2D@143458" to="Destructible/@Area2D@143458" method="_on_area_entered"]

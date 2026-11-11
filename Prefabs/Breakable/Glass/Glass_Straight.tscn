@@ -5,10 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://dxhp8oh0ul6ys" path="res://SFX/Prop/Glass_Break_Pixabay.mp3" id="3_7pxbo"]
 [ext_resource type="Texture2D" uid="uid://dx87g8v3ic3wy" path="res://VFX/Debris/Glass/Debris_Glass1.png" id="3_lgp4r"]
 
-
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tytk5"]
-size = Vector2(400, 80)
+size = Vector2(400, 100)
 
 [sub_resource type="Animation" id="Animation_7pxbo"]
 resource_name = "Glass_Straight_Break"
@@ -338,9 +336,10 @@ turbulence_noise_strength = 0.32
 collision_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmfnb"]
-size = Vector2(400, 80)
+size = Vector2(400, 100)
 
 [node name="GlassStraight" type="Area2D" unique_id=1478537201 groups=["Glass_Straight"]]
+collision_layer = 64
 script = ExtResource("1_l4hek")
 
 [node name="PropTexture" type="Sprite2D" parent="." unique_id=1503184301]
@@ -353,6 +352,7 @@ shape = SubResource("RectangleShape2D_tytk5")
 debug_color = Color(0.6725377, 0.5083542, 1.92523e-07, 0.41960785)
 
 [node name="PropSFX" type="AudioStreamPlayer2D" parent="." unique_id=305096023]
+volume_db = -5.0
 max_distance = 6000.0
 
 [node name="PropAnimator" type="AnimationPlayer" parent="." unique_id=1858662951 groups=["Glass_Straight"]]
@@ -371,8 +371,12 @@ randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_m2k3o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=902780129]
+collision_layer = 64
+collision_mask = 4
 
 [node name="PropCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=1907310552]
 shape = SubResource("RectangleShape2D_pmfnb")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=394760124]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

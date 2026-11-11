@@ -146,8 +146,6 @@ func Attack():
 	
 	# Spawning bullet #
 	
-	var weapon_data = WEAPONS[current_weapon]
-	
 	var projectiles_to_spawn = WEAPONS[current_weapon]["projectile_count"]
 	
 	# Multi projectile spawning system for weapons #
@@ -155,12 +153,12 @@ func Attack():
 	while projectiles_to_spawn != 0:
 
 
-		var projectile_scene: PackedScene = weapon_data["projectile"]
+		var projectile_scene: PackedScene = WEAPONS[current_weapon]["projectile"]
 		var projectile = projectile_scene.instantiate()
 		
 		# Calculating spread angle #
 		
-		var accuracy_offset = deg_to_rad(randf_range(-weapon_data["max_spread"],weapon_data["max_spread"]))
+		var accuracy_offset = deg_to_rad(randf_range(-WEAPONS[current_weapon]["max_spread"],WEAPONS[current_weapon]["max_spread"]))
 
 		projectile.global_position = $Core/BulletOrigin.global_position
 		projectile.global_rotation = $Core/BulletOrigin.global_rotation + accuracy_offset
@@ -193,7 +191,7 @@ func Attack():
 
 	get_tree().current_scene.add_child(smoke)
 	
-	await get_tree().create_timer(weapon_data["fire_rate"]).timeout
+	await get_tree().create_timer(WEAPONS[current_weapon]["fire_rate"]).timeout
 
 	Canfire = true
 	

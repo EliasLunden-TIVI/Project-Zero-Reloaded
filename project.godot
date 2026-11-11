@@ -19,8 +19,8 @@ config/icon="res://Textures/Misc/icon.png"
 
 [display]
 
-window/size/viewport_width=1290
-window/size/viewport_height=840
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/vsync/vsync_mode=0
 
 [file_customization]
@@ -42,6 +42,7 @@ Projectile="Any projectile"
 Player=""
 Humanoid=""
 Wall=""
+navigation_polygon_source_geometry_group=""
 
 [input]
 
@@ -105,3 +106,16 @@ Combat_Hotkey_Medical={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":72,"key_label":0,"unicode":104,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Projectiles"
+2d_navigation/layer_1="Ground"
+2d_physics/layer_2="Hitbox"
+2d_navigation/layer_2="Walkable Ground"
+2d_physics/layer_3="Humanoid Collision"
+2d_physics/layer_4="NPC Line Of Sight"
+2d_physics/layer_5="Wall"
+2d_physics/layer_6="Half Wall"
+2d_physics/layer_7="Glass"
+2d_physics/layer_8="Prop"

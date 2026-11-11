@@ -50,22 +50,22 @@ func _on_ammo_changed(current_capacity: int, capacity: int):
 	#print_debug(ammo_percent , current_capacity , capacity)
 	
 	if ammo_percent >= 1: 
-		WeaponAmmo.text = "OOOOO"
+		WeaponAmmo.text = "▬▬▬▬▬"
 		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
 	elif ammo_percent >= 0.8:
-		WeaponAmmo.text = "OOOOX"
+		WeaponAmmo.text = "▬▬▬▬▭"
 		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 1.0, 0.608, 1.0))
 	elif ammo_percent >= 0.6: 
-		WeaponAmmo.text = "OOOXX"
+		WeaponAmmo.text = "▬▬▬▭▭"
 		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 1.0, 0.0, 1.0))
 	elif ammo_percent >= 0.4: 
-		WeaponAmmo.text = "OOXXX"
+		WeaponAmmo.text = "▬▬▭▭▭"
 		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 0.333, 0.0, 1.0))
 	elif ammo_percent >= 0.2:
-		WeaponAmmo.text = "OXXXX"
+		WeaponAmmo.text = "▬▭▭▭▭"
 		WeaponAmmo.add_theme_color_override("font_color", Color(1.0, 0.0, 0.0, 1.0))
 	elif ammo_percent <= 0:
-		WeaponAmmo.text = "XXXXX"
+		WeaponAmmo.text = "▭▭▭▭▭"
 		WeaponAmmo.add_theme_color_override("font_color", Color(0.608, 0.0, 0.0, 1.0))
 	else:
 		#print_debug("ERROR: Ammo_percent out of range")
@@ -87,7 +87,7 @@ func _on_weapon_changed(current_weapon: String):
 func _on_health_changed(Health: int, MaxHealth: int):
 	
 	if Health > 75:
-		$HealthOverlay.texture = load("")
+		$HealthOverlay.texture = load("res://Textures/GUI/HUD/Blank.png")
 	elif Health <= 75 && Health > 50:
 		$HealthOverlay.texture = load("res://Textures/GUI/HUD/HealthOverlay4.png")
 	elif Health <= 50 && Health > 25:
