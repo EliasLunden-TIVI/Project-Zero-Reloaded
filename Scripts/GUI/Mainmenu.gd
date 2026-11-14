@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_scene_1_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Testing/Testing.tscn") # Testing scene
+	get_tree().change_scene_to_file("res://Scenes/Testing.tscn") # Testing scene
 
 
 func _on_command_button_down() -> void:

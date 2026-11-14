@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://6e2wy25210fi"]
 
 [ext_resource type="Script" uid="uid://bj7avifa0x3u" path="res://Scripts/GUI/Mainmenu.gd" id="1_c7nip"]
-[ext_resource type="Texture2D" uid="uid://n2re6dsdp1ws" path="res://Textures/GUI/Mainmenu/Icon_1.png" id="1_jphfe"]
+[ext_resource type="Texture2D" uid="uid://n2re6dsdp1ws" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icon_1.png" id="1_jphfe"]
 [ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="2_8fsw5"]
 [ext_resource type="Texture2D" uid="uid://bbc4hr3v1ue7c" path="res://Resources/GUI/Bliss_(Windows_XP).png" id="2_o658a"]
-[ext_resource type="Texture2D" uid="uid://2qhg8hqlvcog" path="res://Textures/GUI/Mainmenu/Icon_2.png" id="2_vvj6j"]
-[ext_resource type="Texture2D" uid="uid://v8ajj1hfmaf6" path="res://Textures/GUI/Mainmenu/Icon_3.png" id="3_dpccq"]
-[ext_resource type="Texture2D" uid="uid://ck34103s8wwb" path="res://Textures/GUI/Mainmenu/Icon_4.png" id="4_e6dy5"]
+[ext_resource type="Texture2D" uid="uid://2qhg8hqlvcog" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icon_2.png" id="2_vvj6j"]
+[ext_resource type="Texture2D" uid="uid://v8ajj1hfmaf6" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icon_3.png" id="3_dpccq"]
+[ext_resource type="Texture2D" uid="uid://ck34103s8wwb" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icon_4.png" id="4_e6dy5"]
 [ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="6_e6dy5"]
 [ext_resource type="Theme" uid="uid://byxdw7cx3j5mw" path="res://Resources/Themes/MainMenu-Panel.tres" id="7_cpf42"]
 [ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="10_j60ab"]
+[ext_resource type="Theme" uid="uid://djg7nfigvi2wv" path="res://Resources/Themes/FileButton.tres" id="12_1n4be"]
+[ext_resource type="Texture2D" uid="uid://bu666dbstkl27" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icons_Smaller-3.png" id="12_226ph"]
+[ext_resource type="Theme" uid="uid://d2304ok83p52a" path="res://Resources/Themes/Tab-Close.tres" id="14_rlj1f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0odk"]
 
@@ -24,6 +27,49 @@
 [sub_resource type="Theme" id="Theme_dc60u"]
 default_font = ExtResource("6_e6dy5")
 Window/fonts/title_font = ExtResource("6_e6dy5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc60u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6ux3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc60u"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_226ph"]
+resource_name = "Intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1n4be"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlj1f"]
+_data = {
+&"Intro": SubResource("Animation_226ph"),
+&"RESET": SubResource("Animation_1n4be")
+}
 
 [node name="Mainmenu" type="Control" unique_id=1638803952]
 layout_mode = 3
@@ -46,10 +92,10 @@ texture = ExtResource("2_o658a")
 [node name="Taskbar" type="Panel" parent="." unique_id=1175988159]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.938
+anchor_top = 0.92600006
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 0.17596436
+offset_top = -0.080078125
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -197,38 +243,172 @@ theme_override_font_sizes/font_size = 20
 text = "| SEC-OS 9.0.1A | UNAUTHORIZED USE AND DISTRIBUTION PROHIBITED |"
 
 [node name="LevelSelectWindow" type="Window" parent="." unique_id=270180033]
-transparent_bg = true
 oversampling_override = 1.0
-title = "PROJECT_ZERO/Command/Subject_Zero"
-initial_position = 2
-size = Vector2i(830, 400)
+initial_position = 1
+size = Vector2i(830, 600)
 visible = false
 theme = SubResource("Theme_dc60u")
+theme_override_constants/close_h_offset = 80
+theme_override_constants/close_v_offset = -15
+theme_override_styles/embedded_border = SubResource("StyleBoxEmpty_dc60u")
+theme_override_styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_q6ux3")
 
-[node name="Panel" type="Panel" parent="LevelSelectWindow" unique_id=2134064739]
-anchors_preset = 15
+[node name="Core" type="Panel" parent="LevelSelectWindow" unique_id=2134064739]
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.058000002
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.98
+offset_top = 0.19999695
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("7_cpf42")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectWindow/Panel" unique_id=1922395620]
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectWindow/Core" unique_id=1922395620]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.036000002
+anchor_right = 0.97
 anchor_bottom = 1.0
-offset_left = 128.0
-offset_right = -126.0
+offset_left = 0.11999893
+offset_right = -0.10003662
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Scene_1" type="Button" parent="LevelSelectWindow/Panel/VBoxContainer" unique_id=280992010]
+[node name="Operation-Brightstar" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=280992010]
 layout_mode = 2
 size_flags_vertical = 3
-text = "TEST-LEVEL-1"
+theme = ExtResource("12_1n4be")
+text = "OPERATION BRIGHTSTAR-ARCHIVE.DOC"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=539456451]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null2" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=2113034371]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null3" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=1084202290]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null4" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=1261971941]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null5" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=1012681512]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null6" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=210770925]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null7" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=461609225]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null8" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=893550125]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Null9" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=586772510]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+disabled = true
+text = "[REDACTED]"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="Header" type="Panel" parent="LevelSelectWindow" unique_id=2088511469]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LevelSelectWindow/Header" unique_id=1506092574]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.88000005
+anchor_bottom = 1.0
+offset_right = -0.4000244
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8fsw5")
+text = "PROJECT_ZERO/FILES/MISSIONS/ARCHIVES/DOCS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="LevelSelectWindow/Header" unique_id=695578323]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.88000005
+anchor_right = 0.97
+anchor_bottom = 1.0
+offset_left = -0.4000244
+offset_right = -0.10003662
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_rlj1f")
 
 [node name="SettingsWindow" type="Window" parent="." unique_id=1709379441]
 oversampling_override = 1.0
@@ -398,6 +578,20 @@ text = "OK"
 
 [node name="MenuSounds" type="AudioStreamPlayer2D" parent="." unique_id=1030220614]
 
+[node name="Fade" type="Panel" parent="." unique_id=1768705319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dc60u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=463875842]
+libraries/ = SubResource("AnimationLibrary_rlj1f")
+autoplay = &"Intro"
+
 [connection signal="button_down" from="Taskbar/HBoxContainer/Command_Shortcut" to="." method="_on_command_shortcut_button_down"]
 [connection signal="button_down" from="Taskbar/HBoxContainer/Settings_Shortcut" to="." method="_on_settings_shortcut_button_down"]
 [connection signal="button_down" from="Taskbar/HBoxContainer/Files_Shortcut" to="." method="_on_files_shortcut_button_down"]
@@ -407,7 +601,7 @@ text = "OK"
 [connection signal="button_down" from="Desktop/Files" to="." method="_on_files_button_down"]
 [connection signal="button_down" from="Desktop/Database" to="." method="_on_database_button_down"]
 [connection signal="close_requested" from="LevelSelectWindow" to="." method="_on_level_select_window_close_requested"]
-[connection signal="button_down" from="LevelSelectWindow/Panel/VBoxContainer/Scene_1" to="." method="_on_scene_1_button_down"]
+[connection signal="button_down" from="LevelSelectWindow/Core/VBoxContainer/Operation-Brightstar" to="." method="_on_scene_1_button_down"]
 [connection signal="close_requested" from="SettingsWindow" to="." method="_on_settings_window_close_requested"]
 [connection signal="close_requested" from="ErrorPopup" to="." method="_on_error_popup_close_requested"]
 [connection signal="button_down" from="ErrorPopup/Panel/Button" to="." method="_on_button_button_down"]

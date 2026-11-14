@@ -1,0 +1,35 @@
+[gd_resource type="Theme" format=3 uid="uid://djg7nfigvi2wv"]
+
+[ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="1_b5cdj"]
+[ext_resource type="Texture2D" uid="uid://v8ajj1hfmaf6" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icon_3.png" id="2_h0ftk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk5yh"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tchhg"]
+bg_color = Color(1, 1, 1, 0.20784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hq078"]
+bg_color = Color(1, 1, 1, 0.20784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olwo7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5cdj"]
+bg_color = Color(1, 1, 1, 0.20784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[resource]
+Button/fonts/font = ExtResource("1_b5cdj")
+Button/icons/icon = ExtResource("2_h0ftk")
+Button/styles/disabled = SubResource("StyleBoxFlat_sk5yh")
+Button/styles/hover = SubResource("StyleBoxFlat_tchhg")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_hq078")
+Button/styles/normal = SubResource("StyleBoxEmpty_olwo7")
+Button/styles/pressed = SubResource("StyleBoxFlat_b5cdj")

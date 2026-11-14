@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2qhg8hqlvcog"
-path="res://.godot/imported/Icon_2.png-b2096999dede76a70edfdc1d2bf42c39.ctex"
+uid="uid://bgu6cpvudjynd"
+path="res://.godot/imported/Operative.png-d532cf60f28bf17d0add6d043a5aaada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/GUI/Mainmenu/Icon_2.png"
-dest_files=["res://.godot/imported/Icon_2.png-b2096999dede76a70edfdc1d2bf42c39.ctex"]
+source_file="res://Textures/Character/NPC/Operative/Operative.png"
+dest_files=["res://.godot/imported/Operative.png-d532cf60f28bf17d0add6d043a5aaada.ctex"]
 
 [params]
 

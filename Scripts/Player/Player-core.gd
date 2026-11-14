@@ -26,13 +26,16 @@ signal health_changed(Health: int, MaxHealth: int)
 
 func _ready() -> void:
 	
+	Controllable = false # Disable player control for intro #
+	
 	health_changed.emit(Health, MaxHealth)
 	
 	Health = MaxHealth
 	
+	await get_tree().create_timer(5).timeout
+	
 	Controllable = true
 	
-	pass
 
 func get_input() -> Vector2:	
 	# Check if player should be able to controll the character

@@ -3,6 +3,418 @@
 [ext_resource type="Theme" uid="uid://lxr7dvegonym" path="res://Resources/Themes/Label-Text.tres" id="1_aw1gr"]
 [ext_resource type="Script" uid="uid://dts8prmsnk6it" path="res://Scripts/Player/Player-gui.gd" id="1_qaa8i"]
 [ext_resource type="Theme" uid="uid://bjiygoegi52bb" path="res://Resources/Themes/GUI-Button.tres" id="3_qaa8i"]
+[ext_resource type="Texture2D" uid="uid://5o6ljialh78" path="res://Textures/GUI/Mainmenu/Halcyon.png" id="4_6pbc6"]
+[ext_resource type="Theme" uid="uid://cbdh6arxaykhl" path="res://Resources/Themes/Command-Button.tres" id="5_m2rbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc60u"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_wex4v"]
+resource_name = "Bootup"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BlackScreen:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BlackScreen/BlackScreenText:max_lines_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2, 3, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 17, 17, 25, 25, 45]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BlackScreen:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BlackScreen/BlackScreenText:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["// CONNECTION ESTABLISHED - SUBJECT 0//
+> PINGING SUBJECT MODULES - 7/8 Succesfull ...
+
+// CONNECTING SUBJECT MODULES //
+> CONNECTING VITALS MONITOR ...
+> CONNECTING AUTONOMOUS MEDICAL ADMINISTRATOR ...
+> CONNECTING STIMULANT RESERVE ...
+> CONNECTING S.A.A.S HUD ...
+> CONNECTING NAVIGATION MODULE ... 
+> CONNECTING COMMUNICATIONS MODULE ...
+> CONNECTING SUBJECT BLACKBOX ...
+> CONNECTING SUBJECT VOCALIZER MODULE [x]
+
+# ERROR #
+// FAILED CONNECTION TO VOCALIZER MODULE. STATUS 1 | UNDEFINED OR DESTROYED |
+
+# PERFORMING CONDITION CHECK #
+
+> WGHT - 165 KG - OK
+> SPO₂ - 100%- OK
+> BLOOD CONT - 6.0L - OK
+> CORE TMP - 41.4°C - OK
+> BPM - 240 - OK
+> BP - 210/130 mmHg - OK
+
+// ADMINISTRATING STIMULANTS //
+
+> EPINEPHRINE - 0.5 mg / min
+> METHAMPHETAMINE SULF. - 45 mg
+> MODAFINIL - 450 mg
+> THERMAL AGENT - 330 mg
+
+// ADMINISTRATION COMPLETE //
+
+# CONTINUING SETUP # 
+> LOADING ROE - NO QUARTER ...
+> LOADING DIRECTIVES ...
+> LOADING DEBRIEF ...
+
+// CONNECTING DISPLAY //
+> CONNECTED TO DEVICE - HELMCAM - 01 ...
+> DISPLAY SPECS - 2560 x 1440 - 60HZ ...
+> STARTING REALTIME FEED ...
+
+// SETUP COMPLETE //"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BlackScreen/BlackScreenText:lines_skipped")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 20]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/BlackScreen/ButtonContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_m2rbo"]
+resource_name = "Exit"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BlackScreen:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BlackScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BlackScreen/BlackScreenText:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["// OPERATION COMPLETE //
+
+> LOGGING DATA TO SUBJECT SUBJECT DATABASE ...
+> WRITING DATA TO SUBJECT BPU ... 
+> TRANSFERRING DATA TO SAMPLING DATABASE ...
+> GRADING SUBJECT PERFORMANCE ...
+> REQUESTING NEW DIRECTIVE ...
+
+# ERROR #
+// DIRECTIVE OVERWRITE FAILED. STATUS 3 | LACKING AUTHORIZATION. EXTERNAL OVERWRITE  | //
+
+// RECOMMENDED ACTION | CONTACT OPERATIONAL DIRECTOR FOR SUBJECT TERMINATION AND REPURPOSING  | //
+
+> DOWNLOADING SUBJECT CAM FOOTAGE | HELMCAM - 01 | ...
+> TERMINATING REAL TIME FEED ...
+> TERMINATING SUBJECT CONNECTION ...
+
+// REMOTE ACCESS INSTANCE TERMINATED //
+
+// BREAK //
+
+> OPENING SUBJECT PERFORMANCE REPORT ..."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BlackScreen/BlackScreenText:lines_skipped")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BlackScreen/BlackScreenText:max_lines_visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.4000001, 2, 2.2, 3, 3.4, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 3, 9, 9, 17, 17, 20, 22]
+}
+
+[sub_resource type="Animation" id="Animation_gsj8j"]
+resource_name = "FadeOut"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BlackScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tjemf"]
+resource_name = "PerformanceReport"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BlackScreen:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BlackScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Control/BlackScreen/BlackScreenText:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BlackScreen/BlackScreenText:lines_skipped")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BlackScreen/BlackScreenText:max_lines_visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 4, 7]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/BlackScreen/ButtonContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6pbc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BlackScreen:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BlackScreen/BlackScreenText:max_lines_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BlackScreen:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BlackScreen/BlackScreenText:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["// CONNECTION ESTABLISHED - SUBJECT 0//
+> PINGING SUBJECT MODULES - 5/6 Sucesfull ...
+
+// CONNECTING SUBJECT MODULES //
+> CONNECTING VITALS MONITOR ...
+> CONNECTING S.A.A.S HUD ...
+> CONNECTING NAVIGATION MODULE ... 
+> CONNECTING COMMUNICATIONS MODULE ...
+> CONNECTING SUBJECT BLACKBOX ...
+> CONNECTING SUBJECT VOCALIZER MODULE [x]
+
+# ERROR #
+// FAILED CONNECTION TO VOCALIZER MODULE. STATUS 1 | UNDEFINED OR DESTROYED |
+
+# CONTINUING SETUP # 
+> LOADING ROE - NO QUARTER ...
+> LOADING DIRECTIVES ...
+> LOADING DEBRIEF ...
+
+// CONNECTING DISPLAY //
+> CONNECTED TO DEVICE - HELMCAM - 01 ...
+> DISPLAY SPECS - 2560 x 1440 - 60HZ ...
+> STARTING REALTIME FEED ...
+
+// SETUP COMPLETE //"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BlackScreen/BlackScreenText:lines_skipped")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/BlackScreen/ButtonContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m2rbo"]
+_data = {
+&"Bootup": SubResource("Animation_wex4v"),
+&"Exit": SubResource("Animation_m2rbo"),
+&"FadeOut": SubResource("Animation_gsj8j"),
+&"PerformanceReport": SubResource("Animation_tjemf"),
+&"RESET": SubResource("Animation_6pbc6")
+}
 
 [node name="PlayerGui" type="CanvasLayer" unique_id=941128799]
 
@@ -18,7 +430,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_qaa8i")
 
-[node name="Weapon-Panel" type="Panel" parent="Control" unique_id=1650090945]
+[node name="WeaponPanel" type="Panel" parent="Control" unique_id=1650090945]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -29,7 +441,7 @@ anchor_bottom = 1.0
 offset_left = -0.4000244
 offset_top = -0.14404297
 
-[node name="Weapon-Name-Card" type="Panel" parent="Control/Weapon-Panel" unique_id=197716135]
+[node name="Weapon-Name-Card" type="Panel" parent="Control/WeaponPanel" unique_id=197716135]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -41,7 +453,7 @@ offset_top = -0.03999996
 offset_right = -4.799988
 offset_bottom = -0.015991211
 
-[node name="Weapon-Name" type="Label" parent="Control/Weapon-Panel/Weapon-Name-Card" unique_id=509049867]
+[node name="Weapon-Name" type="Label" parent="Control/WeaponPanel/Weapon-Name-Card" unique_id=509049867]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -54,7 +466,7 @@ text = "PLACEHOLDER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weapon-Ammo-Card" type="Panel" parent="Control/Weapon-Panel" unique_id=454344543]
+[node name="Weapon-Ammo-Card" type="Panel" parent="Control/WeaponPanel" unique_id=454344543]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -66,7 +478,7 @@ offset_top = 0.0039978027
 offset_right = -5.9999847
 offset_bottom = -0.06200409
 
-[node name="Weapon-Ammo" type="Label" parent="Control/Weapon-Panel/Weapon-Ammo-Card" unique_id=305552587]
+[node name="Weapon-Ammo" type="Label" parent="Control/WeaponPanel/Weapon-Ammo-Card" unique_id=305552587]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -80,7 +492,7 @@ text = "[N/A]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weapon-Image-Card" type="Panel" parent="Control/Weapon-Panel" unique_id=685489054]
+[node name="Weapon-Image-Card" type="Panel" parent="Control/WeaponPanel" unique_id=685489054]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -92,7 +504,7 @@ offset_top = -0.041999817
 offset_right = -4.8999786
 offset_bottom = 0.039993286
 
-[node name="Weapon-Image" type="TextureRect" parent="Control/Weapon-Panel/Weapon-Image-Card" unique_id=1122416715]
+[node name="Weapon-Image" type="TextureRect" parent="Control/WeaponPanel/Weapon-Image-Card" unique_id=1122416715]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -103,7 +515,7 @@ grow_vertical = 2
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Pause-Panel" type="Panel" parent="Control" unique_id=2001114908]
+[node name="PausePanel" type="Panel" parent="Control" unique_id=2001114908]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -112,7 +524,7 @@ anchor_bottom = 1.0
 offset_right = -0.25604248
 grow_vertical = 2
 
-[node name="Header" type="Panel" parent="Control/Pause-Panel" unique_id=1545876574]
+[node name="Header" type="Panel" parent="Control/PausePanel" unique_id=1545876574]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -120,7 +532,7 @@ anchor_right = 1.0
 anchor_bottom = 0.09900001
 offset_bottom = -0.15200806
 
-[node name="Label" type="Label" parent="Control/Pause-Panel/Header" unique_id=1199318245]
+[node name="Label" type="Label" parent="Control/PausePanel/Header" unique_id=1199318245]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,7 +545,7 @@ text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Pause-Panel" unique_id=1228479246]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PausePanel" unique_id=1228479246]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
@@ -146,28 +558,28 @@ offset_right = -16.0
 offset_bottom = -16.0
 theme = ExtResource("3_qaa8i")
 
-[node name="Continue" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=602544188]
+[node name="Pausemenu-Continue" type="Button" parent="Control/PausePanel/VBoxContainer" unique_id=602544188]
 use_parent_material = true
 layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Continue the game"
 text = "Continue Cycle"
 
-[node name="Settings" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=716529786]
+[node name="Settings" type="Button" parent="Control/PausePanel/VBoxContainer" unique_id=716529786]
 use_parent_material = true
 layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Open settings"
 text = "Subject Configuration"
 
-[node name="Restart" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=99493955]
+[node name="Restart" type="Button" parent="Control/PausePanel/VBoxContainer" unique_id=99493955]
 use_parent_material = true
 layout_mode = 2
 size_flags_vertical = 3
 tooltip_text = "Restart current level"
 text = "Restart Cycle"
 
-[node name="Quit" type="Button" parent="Control/Pause-Panel/VBoxContainer" unique_id=1010147593]
+[node name="Pausemenu-Quit" type="Button" parent="Control/PausePanel/VBoxContainer" unique_id=1010147593]
 use_parent_material = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -187,5 +599,117 @@ grow_vertical = 2
 expand_mode = 3
 stretch_mode = 6
 
-[connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Continue" to="Control" method="_on_continue_button_down"]
-[connection signal="button_down" from="Control/Pause-Panel/VBoxContainer/Quit" to="Control" method="_on_quit_button_down"]
+[node name="BlackScreen" type="Panel" parent="Control" unique_id=212946153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dc60u")
+
+[node name="BlackScreenText" type="Label" parent="Control/BlackScreen" unique_id=446621267]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.365
+anchor_right = 0.88500005
+anchor_bottom = 1.0
+offset_left = -0.8000488
+offset_right = 0.79992676
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aw1gr")
+theme_override_font_sizes/font_size = 25
+text = "// CONNECTION ESTABLISHED - SUBJECT 0//
+> PINGING SUBJECT MODULES - 5/6 Sucesfull ...
+
+// CONNECTING SUBJECT MODULES //
+> CONNECTING VITALS MONITOR ...
+> CONNECTING S.A.A.S HUD ...
+> CONNECTING NAVIGATION MODULE ... 
+> CONNECTING COMMUNICATIONS MODULE ...
+> CONNECTING SUBJECT BLACKBOX ...
+> CONNECTING SUBJECT VOCALIZER MODULE [x]
+
+# ERROR #
+// FAILED CONNECTION TO VOCALIZER MODULE. STATUS 1 | UNDEFINED OR DESTROYED |
+
+# CONTINUING SETUP # 
+> LOADING ROE - NO QUARTER ...
+> LOADING DIRECTIVES ...
+> LOADING DEBRIEF ...
+
+// CONNECTING DISPLAY //
+> CONNECTED TO DEVICE - HELMCAM - 01 ...
+> DISPLAY SPECS - 2560 x 1440 - 60HZ ...
+> STARTING REALTIME FEED ...
+
+// SETUP COMPLETE //"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/BlackScreen" unique_id=1610174435]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.104
+anchor_bottom = 0.185
+offset_right = 0.31999207
+offset_bottom = 0.19999695
+texture = ExtResource("4_6pbc6")
+expand_mode = 2
+
+[node name="Topline" type="Label" parent="Control/BlackScreen" unique_id=1237671553]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104
+anchor_right = 0.469
+anchor_bottom = 0.065000005
+offset_left = 0.31999207
+offset_right = -0.4800415
+offset_bottom = -0.20000458
+theme = ExtResource("1_aw1gr")
+theme_override_font_sizes/font_size = 20
+text = "| SEC-OS® VERSION 5.2.X.X | REMOTE ACCESS | UNAUTHORIZED USE PROHIBITED |"
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Control/BlackScreen" unique_id=1398865405]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156
+anchor_top = 0.83300006
+anchor_right = 0.823
+anchor_bottom = 0.92600006
+offset_left = 0.47998047
+offset_top = 0.35992432
+offset_right = -0.16003418
+offset_bottom = -0.080078125
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="Control/BlackScreen/ButtonContainer" unique_id=416500494]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_m2rbo")
+theme_override_font_sizes/font_size = 30
+text = "RESTART"
+
+[node name="Exit" type="Button" parent="Control/BlackScreen/ButtonContainer" unique_id=1341467240]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_m2rbo")
+theme_override_font_sizes/font_size = 30
+text = "CONTINUE"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=240417794]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_m2rbo")
+autoplay = &"Bootup"
+
+[connection signal="button_down" from="Control/PausePanel/VBoxContainer/Pausemenu-Continue" to="Control" method="_on_pausemenu_continue_button_down"]
+[connection signal="button_down" from="Control/PausePanel/VBoxContainer/Restart" to="Control" method="_on_restart_button_button_down"]
+[connection signal="button_down" from="Control/PausePanel/VBoxContainer/Pausemenu-Quit" to="Control" method="_on_pausemenu_quit_button_down"]
+[connection signal="button_down" from="Control/BlackScreen/ButtonContainer/Restart" to="Control" method="_on_restart_button_down"]
+[connection signal="button_down" from="Control/BlackScreen/ButtonContainer/Exit" to="Control" method="_on_exit_button_down"]

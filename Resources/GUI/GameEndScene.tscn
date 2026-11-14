@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://1jrkqxw4d17a"]
+
+[node name="GameEndScene" type="Control" unique_id=297076301]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=590930608]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27100003
+anchor_top = 0.259
+anchor_right = 0.72900003
+anchor_bottom = 0.74100006
+offset_left = -0.32006836
+offset_top = 0.27999878
+offset_right = 0.3199463
+offset_bottom = -0.28009033
+grow_horizontal = 2
+grow_vertical = 2

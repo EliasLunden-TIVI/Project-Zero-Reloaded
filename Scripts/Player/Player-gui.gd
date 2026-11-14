@@ -1,36 +1,54 @@
 extends Control
 
+@onready var MainMenu = load("res://Scenes/Game/Mainmenu.tscn")
 
-@onready var WeaponName = $"Weapon-Panel/Weapon-Name-Card/Weapon-Name"
-@onready var WeaponAmmo = $"Weapon-Panel/Weapon-Ammo-Card/Weapon-Ammo"
-@onready var WeaponImage = $"Weapon-Panel/Weapon-Image-Card/Weapon-Image"
+var CurrentLevel
+
+@onready var WeaponName = $"WeaponPanel/Weapon-Name-Card/Weapon-Name"
+@onready var WeaponAmmo = $"WeaponPanel/Weapon-Ammo-Card/Weapon-Ammo"
+@onready var WeaponImage = $"WeaponPanel/Weapon-Image-Card/Weapon-Image"
+
+@onready var Animator = $AnimationPlayer
 
 @onready var weapon_manager = get_node("../../Player/WeaponManager")
 @onready var player_manager = get_node("../../Player")
+@onready var game_manager = get_node("../../")
 
 @onready var DeathGUI = load("res://Resources/GUI/DeathScreen.tscn")
+#@onready var GameEnd_GUI = load("")
+
+@onready var WeaponPanel = $WeaponPanel
+@onready var PausePanel = $PausePanel
+#@onready var ScorePanel = $ScorePanel
 
 var Paused: bool = false
 
+var Completion_Time: float
+var Performance_Score: int
+var Performance_Grade: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	$"Pause-Panel".hide()
+	Animator.play("Bootup")
 	
+	PausePanel.hide()
+	#ScorePanel.hide()
+	
+	# CONNECT SIGNALS #
+	
+	game_manager.Game_End.connect(_game_end)
 	weapon_manager.ammo_changed.connect(_on_ammo_changed)
 	weapon_manager.weapon_changed.connect(_on_weapon_changed)
-	
 	player_manager.health_changed.connect(_on_health_changed)
+
 
 
 func _input(event) -> void:	
 	if event.is_action_pressed("GUI_Pause"):
 		pause()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+# PAUSE TOGGLE FUNCTION #
 
 func pause():
 	if Paused == true:
@@ -101,9 +119,42 @@ func _on_health_changed(Health: int, MaxHealth: int):
 		get_tree().current_scene.add_child(deathgui)
 
 
-func _on_quit_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Game/Mainmenu.tscn")
+func _on_pausemenu_quit_button_down() -> void:
+	get_tree().change_scene_to_packed(MainMenu)
 
-
-func _on_continue_button_down() -> void:
+func _on_pausemenu_continue_button_down() -> void:
 	pause()
+	
+func _on_restart_button_button_down() -> void:
+	# Restarts current scene #
+	get_tree().reload_current_scene()
+	
+func _game_end(levelname, time, score, grade):
+	
+	Animator.play("Exit")
+	
+	await get_tree().create_timer(6).timeout
+	
+	Animator.play("PerformanceReport")
+	
+	$"BlackScreen/BlackScreenText".text = """// SUBJECT PERFORMANCE REPORT - %s //
+	
+	> COMPLETION TIME - %s
+	
+	> OPERATION PERFORMANCE SCORE - %s
+	
+	> OPERATION PERFORMANCE RANK - %s""" % [str(levelname), (time), str(score), str(grade)]
+	
+	
+	
+
+
+func _on_restart_button_down() -> void:
+	# Restarts current scene #
+	get_tree().reload_current_scene()
+
+
+func _on_exit_button_down() -> void:
+	Animator.play("FadeOut")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_packed(MainMenu)

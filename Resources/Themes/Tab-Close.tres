@@ -1,0 +1,30 @@
+[gd_resource type="Theme" format=3 uid="uid://d2304ok83p52a"]
+
+[ext_resource type="Texture2D" uid="uid://cf5pbm0qd15ao" path="res://Textures/GUI/Mainmenu/Close-Button1.png" id="1_tb04n"]
+[ext_resource type="Texture2D" uid="uid://bf7cgqrmirb8" path="res://Textures/GUI/Mainmenu/Close-Button2.png" id="2_4nl52"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54fp4"]
+texture = ExtResource("1_tb04n")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tx8dq"]
+texture = ExtResource("1_tb04n")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rlj1f"]
+texture = ExtResource("2_4nl52")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_54fp4")
+Button/styles/normal = SubResource("StyleBoxTexture_tx8dq")
+Button/styles/pressed = SubResource("StyleBoxTexture_rlj1f")

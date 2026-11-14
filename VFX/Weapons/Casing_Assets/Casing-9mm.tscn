@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b31iptpm53a1j"]
 
-[ext_resource type="Script" uid="uid://bi6dhxwboyasf" path="res://Prefabs/Casing_Ejection.gd" id="1_g0gyy"]
+[ext_resource type="Script" uid="uid://bi6dhxwboyasf" path="res://Scripts/Casing_Ejection.gd" id="1_g0gyy"]
 [ext_resource type="Texture2D" uid="uid://wkipat7p6ru1" path="res://VFX/Weapons/Casings/Casing_9x19.png" id="2_6aaf4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l0m7g"]
@@ -23,6 +23,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_ghcy7"]
 resource_name = "Spawn"
@@ -38,6 +50,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.5489626, 0.5489626, 0.54896253, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5489626, 0.5489626, 0.54896253, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 3, -4]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_avxgn"]
 _data = {
@@ -46,7 +70,8 @@ _data = {
 }
 
 [node name="Casing9mm" type="RigidBody2D" unique_id=1405081215]
-collision_layer = 2
+collision_layer = 0
+collision_mask = 240
 mass = 0.006
 physics_material_override = SubResource("PhysicsMaterial_l0m7g")
 gravity_scale = 0.0
@@ -57,7 +82,6 @@ Lifetime = 5.0
 Speed = 2500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1041513252]
-z_index = -4
 texture = ExtResource("2_6aaf4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175707942]
