@@ -16,7 +16,7 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olwo7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_226ph"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5cdj"]
 bg_color = Color(1, 1, 1, 0.20784314)
@@ -31,5 +31,5 @@ Button/icons/icon = ExtResource("2_h0ftk")
 Button/styles/disabled = SubResource("StyleBoxFlat_sk5yh")
 Button/styles/hover = SubResource("StyleBoxFlat_tchhg")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_hq078")
-Button/styles/normal = SubResource("StyleBoxEmpty_olwo7")
+Button/styles/normal = SubResource("StyleBoxEmpty_226ph")
 Button/styles/pressed = SubResource("StyleBoxFlat_b5cdj")

@@ -57,3 +57,7 @@ func _on_error_popup_close_requested() -> void:
 
 func _on_button_button_down() -> void:
 	$ErrorPopup.hide()
+
+
+func _on_exit_button_button_down() -> void:
+	$LevelSelectWindow.hide()
