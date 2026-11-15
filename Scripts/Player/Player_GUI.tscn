@@ -59,7 +59,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["// CONNECTION ESTABLISHED - SUBJECT 0//
+"values": ["// CONNECTION ESTABLISHED - SUBJECT 0 //
 > PINGING SUBJECT MODULES - 7/8 Succesfull ...
 
 // CONNECTING SUBJECT MODULES //
@@ -75,13 +75,13 @@ tracks/3/keys = {
 # ERROR #
 // FAILED CONNECTION TO VOCALIZER MODULE. STATUS 1 | UNDEFINED OR DESTROYED |
 
-# PERFORMING CONDITION CHECK #
-> WGHT - 165 KG - OK
-> SPO₂ - 100%- OK
+// RUNNING DIAGNOSTICS CHECK //
+> WGT - 165 KG - OK
 > BLOOD CONT - 6.0L - OK
 > CORE TMP - 41.4°C - OK
 > BPM - 240 - OK
 > BP - 210/130 mmHg - OK
+> SPO2 - 100% - OK
 
 // ADMINISTRATING STIMULANTS //
 > EPINEPHRINE - 0.5 mg / min
@@ -90,7 +90,8 @@ tracks/3/keys = {
 > THERMAL AGENT - 330 mg
 
 // ADMINISTRATION COMPLETE //
-# CONTINUING SETUP # 
+
+// LOADING OPERATIONAL PARAMETERS //
 > LOADING ROE - NO QUARTER ...
 > LOADING DIRECTIVES ...
 > LOADING DEBRIEF ...
@@ -109,10 +110,10 @@ tracks/4/path = NodePath("Control/BlackScreen/BlackScreenText:lines_skipped")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1, 5),
+"times": PackedFloat32Array(1, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 20]
+"values": [0, 25]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -175,7 +176,7 @@ tracks/2/keys = {
 # ERROR #
 // DIRECTIVE OVERWRITE FAILED. STATUS 3 | LACKING AUTHORIZATION. EXTERNAL OVERWRITE  | //
 
-// RECOMMENDED ACTION | CONTACT OPERATIONAL DIRECTOR FOR SUBJECT TERMINATION AND REPURPOSING  | //
+// RECOMMENDED ACTION | CONTACT OPERATIONAL DIRECTOR FOR SUBJECT TERMINATION AND REPURPOSING | //
 
 > DOWNLOADING SUBJECT CAM FOOTAGE | HELMCAM - 01 | ...
 > TERMINATING REAL TIME FEED ...
@@ -258,7 +259,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Control/BlackScreen/BlackScreenText:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true

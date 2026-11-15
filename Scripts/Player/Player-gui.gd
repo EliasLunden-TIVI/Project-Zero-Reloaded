@@ -135,8 +135,6 @@ func _game_end(levelname, time, score, grade):
 	
 	await get_tree().create_timer(6).timeout
 	
-	Animator.play("PerformanceReport")
-	
 	$"BlackScreen/BlackScreenText".text = """// SUBJECT PERFORMANCE REPORT - %s //
 	
 	> COMPLETION TIME - %s
@@ -145,9 +143,7 @@ func _game_end(levelname, time, score, grade):
 	
 	> OPERATION PERFORMANCE RANK - %s""" % [str(levelname), (time), str(score), str(grade)]
 	
-	
-	
-
+	Animator.play("PerformanceReport")
 
 func _on_restart_button_down() -> void:
 	# Restarts current scene #
