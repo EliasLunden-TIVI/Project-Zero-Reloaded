@@ -35,7 +35,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.5, 2, 3, 3.5, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0, 17, 17, 25, 25, 45]
+"values": [0, 17, 17, 25, 25, 42]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -76,7 +76,6 @@ tracks/3/keys = {
 // FAILED CONNECTION TO VOCALIZER MODULE. STATUS 1 | UNDEFINED OR DESTROYED |
 
 # PERFORMING CONDITION CHECK #
-
 > WGHT - 165 KG - OK
 > SPO₂ - 100%- OK
 > BLOOD CONT - 6.0L - OK
@@ -85,14 +84,12 @@ tracks/3/keys = {
 > BP - 210/130 mmHg - OK
 
 // ADMINISTRATING STIMULANTS //
-
 > EPINEPHRINE - 0.5 mg / min
 > METHAMPHETAMINE SULF. - 45 mg
 > MODAFINIL - 450 mg
 > THERMAL AGENT - 330 mg
 
 // ADMINISTRATION COMPLETE //
-
 # CONTINUING SETUP # 
 > LOADING ROE - NO QUARTER ...
 > LOADING DIRECTIVES ...
@@ -261,7 +258,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Control/BlackScreen/BlackScreenText:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -269,7 +266,13 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [""]
+"values": ["// SUBJECT PERFORMANCE REPORT - %s //
+	
+	> COMPLETION TIME - %s
+
+	> OPERATION PERFORMANCE SCORE - %s
+	
+	> OPERATION PERFORMANCE RANK - %s"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
