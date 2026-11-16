@@ -16,11 +16,15 @@ var MovementActive: bool = true
 @export_category("Health")
 
 var Health: int
-@export var MaxHealth: int = 9999999999
 
-@export var PassiveHealthRegeneration: bool = false
+@export var MaxHealth: int = 100
+
+@export var PassiveHealthRegeneration: bool
 
 var Controllable: bool
+
+# Load player GUI
+@onready var Player_GUI = load("res://Resources/GUI/Player_GUI.tscn") 
 
 signal health_changed(Health: int, MaxHealth: int)
 
@@ -32,9 +36,16 @@ func _ready() -> void:
 	
 	Health = MaxHealth
 	
-	await get_tree().create_timer(5).timeout
+	# Spawn player GUI #
+	
+	var PlayerGUI = Player_GUI.instantiate()
+	
+	get_tree().current_scene.add_child.call_deferred(PlayerGUI) # NOTE the instantiate must be added with call_deffered to not fail
+	
+	#await get_tree().create_timer(5).timeout
 	
 	Controllable = true
+	
 	
 
 func get_input() -> Vector2:	

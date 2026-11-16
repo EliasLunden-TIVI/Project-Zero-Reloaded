@@ -654,7 +654,6 @@ text = "// CONNECTION ESTABLISHED - SUBJECT 0//
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/BlackScreen" unique_id=1610174435]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.104
@@ -665,7 +664,6 @@ texture = ExtResource("4_6pbc6")
 expand_mode = 2
 
 [node name="Topline" type="Label" parent="Control/BlackScreen" unique_id=1237671553]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.104

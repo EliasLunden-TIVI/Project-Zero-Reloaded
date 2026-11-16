@@ -283,11 +283,20 @@ offset_right = -0.10003662
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Operation-Brightstar" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=280992010]
+[node name="OPERATION-BRIGHTSTAR" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=1938749617]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("12_1n4be")
-text = "OPERATION BRIGHTSTAR-ARCHIVE.DOC"
+text = "OPERATION - BRIGHTSTAR-ARCHIVE.DOC"
+icon = ExtResource("12_226ph")
+alignment = 0
+text_overrun_behavior = 4
+
+[node name="OPERATION - TEST" type="Button" parent="LevelSelectWindow/Core/VBoxContainer" unique_id=280992010]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_1n4be")
+text = "OPERATION - TEST.DOC"
 icon = ExtResource("12_226ph")
 alignment = 0
 text_overrun_behavior = 4
@@ -609,7 +618,8 @@ autoplay = &"Intro"
 [connection signal="button_down" from="Desktop/Files" to="." method="_on_files_button_down"]
 [connection signal="button_down" from="Desktop/Database" to="." method="_on_database_button_down"]
 [connection signal="close_requested" from="LevelSelectWindow" to="." method="_on_level_select_window_close_requested"]
-[connection signal="button_down" from="LevelSelectWindow/Core/VBoxContainer/Operation-Brightstar" to="." method="_on_scene_1_button_down"]
+[connection signal="button_down" from="LevelSelectWindow/Core/VBoxContainer/OPERATION-BRIGHTSTAR" to="." method="_on_operationbrightstar_button_down"]
+[connection signal="button_down" from="LevelSelectWindow/Core/VBoxContainer/OPERATION - TEST" to="." method="_on_operation__test_button_down"]
 [connection signal="button_down" from="LevelSelectWindow/Header/ExitButton" to="." method="_on_exit_button_button_down"]
 [connection signal="close_requested" from="SettingsWindow" to="." method="_on_settings_window_close_requested"]
 [connection signal="close_requested" from="ErrorPopup" to="." method="_on_error_popup_close_requested"]

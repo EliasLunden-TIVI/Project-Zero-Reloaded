@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b31iptpm53a1j"]
 
-[ext_resource type="Script" uid="uid://bi6dhxwboyasf" path="res://Scripts/Casing_Ejection.gd" id="1_g0gyy"]
+[ext_resource type="Script" uid="uid://bi6dhxwboyasf" path="res://Scripts/Effect/Casing_Ejection.gd" id="1_g0gyy"]
 [ext_resource type="Texture2D" uid="uid://wkipat7p6ru1" path="res://VFX/Weapons/Casings/Casing_9x19.png" id="2_6aaf4"]
+
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l0m7g"]
 bounce = 0.1

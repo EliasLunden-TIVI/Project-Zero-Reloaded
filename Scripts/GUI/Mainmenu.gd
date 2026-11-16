@@ -7,11 +7,6 @@ func _ready() -> void:
 	$SettingsWindow.hide()
 	$ErrorPopup.hide()
 
-
-func _on_scene_1_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Testing.tscn") # Testing scene
-
-
 func _on_command_button_down() -> void:
 	$LevelSelectWindow.show()
 	
@@ -61,3 +56,13 @@ func _on_button_button_down() -> void:
 
 func _on_exit_button_button_down() -> void:
 	$LevelSelectWindow.hide()
+
+
+func _on_operation__test_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Testing.tscn") # Testing scene
+	
+
+
+
+func _on_operationbrightstar_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Game/01-BRIGHTSTAR.tscn") # Intro scene
