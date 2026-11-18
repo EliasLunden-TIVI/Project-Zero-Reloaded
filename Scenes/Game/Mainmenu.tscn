@@ -13,7 +13,7 @@
 [ext_resource type="Theme" uid="uid://djg7nfigvi2wv" path="res://Resources/Themes/FileButton.tres" id="12_1n4be"]
 [ext_resource type="Texture2D" uid="uid://bu666dbstkl27" path="res://Textures/GUI/Mainmenu/Desktop Icons/Icons_Smaller-3.png" id="12_226ph"]
 [ext_resource type="Texture2D" uid="uid://wicmu8t85e2i" path="res://Textures/GUI/HUD/Blank.png" id="13_1n4be"]
-[ext_resource type="Script" uid="uid://daak800b7hus7" path="res://Scenes/Game/GraphicsMenu.gd" id="14_54fp4"]
+[ext_resource type="Script" uid="uid://daak800b7hus7" path="res://Scripts/GraphicsMenu.gd" id="14_54fp4"]
 [ext_resource type="Theme" uid="uid://d2304ok83p52a" path="res://Resources/Themes/Tab-Close.tres" id="14_rlj1f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0odk"]

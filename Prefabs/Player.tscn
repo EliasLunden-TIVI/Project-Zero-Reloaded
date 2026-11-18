@@ -9942,7 +9942,7 @@ scale = Vector2(1, -1)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
 auto_calculate_length_and_angle = false
 length = 96.0
-bone_angle = -89.99999
+bone_angle = -89.999985
 
 [node name="Shoulder-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder" unique_id=892489682]
 position = Vector2(0, -56)
