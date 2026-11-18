@@ -47,6 +47,8 @@ var LOS_Scan_Timer: float = 0.0
 
 @onready var NPC_Navigation = $NPC_Navigator
 
+var Turning_To_Target: bool
+
 #signal Attack
 
 signal UpdateState(State: float)
@@ -95,8 +97,13 @@ func Take_Damage(Damage):
 		if Health <= 0:
 			Die()
 		
-			print_debug("NPC killed")
-
+			#print_debug("NPC killed")
+			
+		if target_visible == false:	
+			
+			target = $"../Player"
+			Turning_To_Target = true # Start turning toward player
+			
 func Die():
 	
 	State = "Dead"
@@ -107,7 +114,7 @@ func Die():
 	
 	Animator.play("NPC_%s_Death" % EnemyName)
 	
-	$NPC_Hurtbox_Torso.monitorable = false # Disable Hurtbox
+	$NPC_Hurtbox_Torso.queue_free()
 	
 	await get_tree().create_timer(CorpseRemovalDelay).timeout
 	queue_free()
@@ -123,7 +130,7 @@ func _on_view_area_area_entered(area: Area2D) -> void:
 
 		target_visible = HasLineOfSight(area)
 
-		if target_visible:
+		if target_visible == true:
 
 			LastKnownPosition = area.global_position
 			HasLastKnownPosition = true
@@ -131,6 +138,11 @@ func _on_view_area_area_entered(area: Area2D) -> void:
 func _on_view_area_area_exited(area: Area2D) -> void:
 
 	if area == target:
+		
+		if HasLineOfSight(target) == true:
+			LastKnownPosition = target.global_position
+			
+			NPC_Navigation.target_position = LastKnownPosition
 
 		target = null
 		player_in_range = false
@@ -145,7 +157,6 @@ func _on_view_area_area_exited(area: Area2D) -> void:
 func _physics_process(delta: float) -> void:
 
 	if State == "Dead":
-
 		velocity = Vector2.ZERO
 		return
 
@@ -161,11 +172,24 @@ func _physics_process(delta: float) -> void:
 			target_visible = HasLineOfSight(target)
 
 		# ONLY update position when player is visible
-		
+
 		if target_visible:
 
 			LastKnownPosition = target.global_position
 			HasLastKnownPosition = true
+
+	# TURN TOWARDS ATTACKER
+
+	if Turning_To_Target and is_instance_valid(target):
+
+		var target_angle = global_position.direction_to(target.global_position).angle() + deg_to_rad(90)
+
+		rotation = rotate_toward(rotation, target_angle, TurnSpeed * delta)
+
+		# Stop turning once facing the attacker
+		if absf(angle_difference(rotation, target_angle)) < deg_to_rad(2):
+
+			Turning_To_Target = false
 
 	# PLAYER VISIBLE: ENGAGE
 
@@ -189,6 +213,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Update navigation destination periodically
+
 	NavigationUpdateTimer += delta
 
 	if NavigationUpdateTimer >= NavigationUpdateInterval:
@@ -209,7 +234,6 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
-
 	var next_path_position = NPC_Navigation.get_next_path_position()
 
 	var direction = (next_path_position - global_position).normalized()
@@ -222,7 +246,7 @@ func _physics_process(delta: float) -> void:
 
 
 
-# Line of sight
+# Check Line of sight
 
 func HasLineOfSight(target_node: Node2D) -> bool:
 
@@ -267,7 +291,7 @@ func _process(delta: float) -> void:
 
 
 func turn_towards_target(delta: float) -> void:
+	if State != "Dead":
+		var target_angle = global_position.direction_to(target.global_position).angle() + deg_to_rad(90)
 
-	var target_angle = global_position.direction_to(target.global_position).angle() + deg_to_rad(90)
-
-	rotation = rotate_toward(rotation, target_angle, TurnSpeed * delta)
+		rotation = rotate_toward(rotation, target_angle, TurnSpeed * delta)

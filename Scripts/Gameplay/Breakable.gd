@@ -14,6 +14,8 @@ extends Area2D
 
 @onready var Broken: bool = false
 
+@onready var NavMesh = $"../../LevelNavigation"
+
 var Breakable_Type: String
 
 func _ready() -> void:
@@ -60,9 +62,16 @@ func Break():
 		Broken = true
 	
 	elif Breakable_Type == "Wall":
-		# Add system to update navigation here once we get there lol #
 
 		Audio.pitch_scale = randf_range(0.8, 1.2)
 		$LightOccluder2D.visible = false
 		Animator.play("%s_Break" % Prop_Name)
+		
 		Broken = true
+		
+		await get_tree().create_timer(15).timeout
+		
+		queue_free()
+		
+		# Update navigation
+		#NavMesh.bake_navigation_polygon()

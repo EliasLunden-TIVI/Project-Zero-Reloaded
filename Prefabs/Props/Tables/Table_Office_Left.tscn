@@ -2,20 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://4c0urdhhdacd" path="res://Textures/Props/Tables/Tables3.png" id="1_024rc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rary2"]
-size = Vector2(800, 400)
-
 [node name="Table_Office_Left" type="Sprite2D" unique_id=1269495570]
+z_index = -1
 texture = ExtResource("1_024rc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1888975338]
 collision_layer = 128
 collision_mask = 15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1421222011]
-shape = SubResource("RectangleShape2D_rary2")
-debug_color = Color(0, 0.6410368, 0.3455257, 0.41960785)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1825962389]
+polygon = PackedVector2Array(-400, -200, 400, -200, 400, 100, -150, 100, -150, 200, -400, 200)
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=2031686873 groups=["Wall"]]
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=2031686873 groups=["Obstacle"]]
 vertices = PackedVector2Array(-400, -200, 400, -200, 400, 100, -150, 100, -150, 200, -400, 200, -400, 100)
 affect_navigation_mesh = true

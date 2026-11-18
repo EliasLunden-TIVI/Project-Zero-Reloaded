@@ -4150,7 +4150,7 @@ energy = 0.0
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_6vpf7")
-texture_scale = 1e-05
+texture_scale = 4.0
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1222817337]
 max_distance = 10000.0
@@ -4161,14 +4161,17 @@ z_index = -1
 [node name="WeaponSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core" unique_id=1059235352]
 position = Vector2(0, -70)
 scale = Vector2(0.9999998, 0.9999998)
+stream = ExtResource("12_kxhtb")
 
 [node name="BulletOrigin" type="Node2D" parent="WeaponManager/Core" unique_id=805111392]
 rotation = -1.5707964
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="CasingEjection" type="Node2D" parent="WeaponManager/Core" unique_id=982376450]
+position = Vector2(0, 85.00001)
 
 [node name="MuzzleParticles" type="Node2D" parent="WeaponManager/Core" unique_id=734044314]
+position = Vector2(0, -67.5)
 
 [node name="NPC_Animator" type="AnimationPlayer" parent="." unique_id=615595383]
 libraries/ = SubResource("AnimationLibrary_o7vlm")

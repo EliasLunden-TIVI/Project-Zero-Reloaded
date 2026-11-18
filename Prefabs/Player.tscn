@@ -9889,12 +9889,13 @@ collision_layer = 6
 collision_mask = 248
 script = ExtResource("1_um8lo")
 
-[node name="LOS_Ray" type="RayCast2D" parent="." unique_id=1040378746]
-
 [node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=324574269]
 
 [node name="Torso" type="Bone2D" parent="Skeleton2D" unique_id=703447236]
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 120.0
+bone_angle = 180.0
 
 [node name="Torso-Texture" type="Sprite2D" parent="Skeleton2D/Torso" unique_id=1736815501]
 texture = ExtResource("2_x3d5u")
@@ -9902,6 +9903,9 @@ texture = ExtResource("2_x3d5u")
 [node name="Left-Shoulder" type="Bone2D" parent="Skeleton2D/Torso" unique_id=1278055500]
 position = Vector2(-120, 0)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 96.0
+bone_angle = -90.0
 
 [node name="Shoulder-L-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Left-Shoulder" unique_id=2054261377]
 position = Vector2(0, -56)
@@ -9912,6 +9916,9 @@ texture = ExtResource("3_b43ah")
 z_index = -1
 position = Vector2(0, -96)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 104.0
+bone_angle = -90.0
 
 [node name="Forearn-L-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Left-Shoulder/Left-Forearm" unique_id=1586772091]
 position = Vector2(-10, -39)
@@ -9920,6 +9927,9 @@ texture = ExtResource("4_shmu5")
 [node name="Left-Hand" type="Bone2D" parent="Skeleton2D/Torso/Left-Shoulder/Left-Forearm" unique_id=3691123]
 position = Vector2(0, -104)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Hand-L-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Left-Shoulder/Left-Forearm/Left-Hand" unique_id=940419828]
 position = Vector2(10, -25)
@@ -9928,8 +9938,11 @@ texture = ExtResource("5_vxq8l")
 [node name="Right-Shoulder" type="Bone2D" parent="Skeleton2D/Torso" unique_id=1851167748]
 position = Vector2(120, 0)
 rotation = -3.1415927
-scale = Vector2(0.9999995, -0.9999995)
+scale = Vector2(1, -1)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 96.0
+bone_angle = -89.99999
 
 [node name="Shoulder-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder" unique_id=892489682]
 position = Vector2(0, -56)
@@ -9940,6 +9953,9 @@ z_index = -1
 position = Vector2(0, -96)
 scale = Vector2(0.99999964, 0.99999964)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 104.00001
+bone_angle = -90.0
 
 [node name="Forearn-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm" unique_id=243235102]
 position = Vector2(-10, -39)
@@ -9948,6 +9964,9 @@ texture = ExtResource("4_shmu5")
 [node name="Right-Hand" type="Bone2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm" unique_id=204275470]
 position = Vector2(0, -104)
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Hand-R-Texture" type="Sprite2D" parent="Skeleton2D/Torso/Right-Shoulder/Right-Forearm/Right-Hand" unique_id=1320456539]
 position = Vector2(10, -25)
@@ -9958,6 +9977,9 @@ texture = ExtResource("5_vxq8l")
 [node name="Head" type="Bone2D" parent="Skeleton2D/Torso" unique_id=814199551]
 z_index = 2
 rest = Transform2D(0.1, 0, 0, 0, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Head-Sprite" type="Sprite2D" parent="Skeleton2D/Torso/Head" unique_id=1704807458]
 texture = ExtResource("6_gg3t4")
@@ -9990,6 +10012,7 @@ libraries/ = SubResource("AnimationLibrary_wuv02")
 [node name="Sight" type="Sprite2D" parent="WeaponManager/Core" unique_id=1720549317]
 z_index = 1
 scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_605ro")
 
 [node name="Magazine" type="Sprite2D" parent="WeaponManager/Core" unique_id=173589982]
 z_index = -1
@@ -9998,6 +10021,7 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Stock" type="Sprite2D" parent="WeaponManager/Core" unique_id=1655655174]
 z_index = -1
 scale = Vector2(0.99999964, 0.99999964)
+texture = ExtResource("12_700hf")
 
 [node name="Frame" type="Sprite2D" parent="WeaponManager/Core" unique_id=1661681515]
 scale = Vector2(0.9999998, 0.9999998)
@@ -10005,8 +10029,10 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="Bolt" type="Sprite2D" parent="WeaponManager/Core" unique_id=60731910]
 z_index = -1
 scale = Vector2(0.99999964, 0.99999964)
+texture = ExtResource("10_0yh01")
 
 [node name="Barrel" type="Sprite2D" parent="WeaponManager/Core" unique_id=986302984]
+texture = ExtResource("14_mghi7")
 
 [node name="MuzzleFlash" type="PointLight2D" parent="WeaponManager/Core/Barrel" unique_id=302458990]
 position = Vector2(0, -48)
@@ -10017,7 +10043,7 @@ shadow_enabled = true
 shadow_filter = 2
 shadow_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_t7w7j")
-texture_scale = 1e-05
+texture_scale = 4.0
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="WeaponManager/Core/Barrel" unique_id=1375523854]
 

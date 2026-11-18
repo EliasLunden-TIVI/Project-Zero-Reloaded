@@ -77,10 +77,20 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		get_tree().current_scene.add_child(Effect)
 	
-		print_debug("Hit effect spawned")
+		#print_debug("Hit effect spawned")
+		
+		self.queue_free() # Delete projectile
 		
 	# Effect checks for other types of materials ...
+	if area.is_in_group("Wall"):
+		
+		self.queue_free()
 	else:
 		pass
 		
 	
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Wall"):
+		self.queue_free()
