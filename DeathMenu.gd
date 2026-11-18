@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_reload_save_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Testing/Testing.tscn")
+	get_tree().reload_current_scene()
 
 
 func _on_main_menu_button_down() -> void:

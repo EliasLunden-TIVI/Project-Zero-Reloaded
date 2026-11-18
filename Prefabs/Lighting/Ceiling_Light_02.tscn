@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dki1sf5lxvpi2"]
+
+[ext_resource type="Texture2D" uid="uid://h4rjavb4edyn" path="res://Textures/Building/Fixtures/Ceiling_Lights-Sheet.png" id="1_dkcqy"]
+
+[sub_resource type="Gradient" id="Gradient_fnycq"]
+colors = PackedColorArray(0.9868049, 0.9868049, 0.9868049, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dc60u"]
+gradient = SubResource("Gradient_fnycq")
+width = 128
+height = 128
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.1)
+metadata/_snap_enabled = true
+
+[node name="Ceiling_Light_02" type="Sprite2D" unique_id=1262767763]
+self_modulate = Color(1, 1, 1, 0.39215687)
+light_mask = 0
+z_index = 8
+texture = ExtResource("1_dkcqy")
+hframes = 3
+frame = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=475921134]
+scale = Vector2(7.8125005, 17.1875)
+color = Color(0.92156863, 1, 1, 1)
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_dc60u")

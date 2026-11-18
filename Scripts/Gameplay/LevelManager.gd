@@ -12,7 +12,7 @@ extends Node2D
 
 @export_category("Scoring criteria")
 
-var CurrentScore = 420
+var CurrentScore = "N/A"
 
 var CompletionTime
 
@@ -30,11 +30,11 @@ func _ready() -> void:
 func _on_end_trigger_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		
-		CompletionTime = 42.12304
+		CompletionTime = "N/A"
 		
 		CompletionScore = CurrentScore
 		
-		CompletionGrade = "A"
+		CompletionGrade = "N/A"
 		
 		Game_End.emit(Level_Name, CompletionTime, CompletionScore, CompletionGrade)
 		

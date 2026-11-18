@@ -80,12 +80,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print_debug("Hit effect spawned")
 		
 	# Effect checks for other types of materials ...
-	
-# Limiting wall penetration with penetration stat #
-	#elif area.is_in_group("Wall"):
-		#if Penetration >= 1:
-			#Penetration = Penetration - 1
-		#elif Penetration <= 0:
-			#queue_free()
+	else:
+		pass
 		
 	

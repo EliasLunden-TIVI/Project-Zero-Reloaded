@@ -34,6 +34,8 @@ var turning: bool = false
 
 @onready var BloodAssets = load("res://VFX/Gore/BloodSplatter/VFX_Bloodsplatter.tscn")
 
+@onready var Hurtbox = $NPC_Hurtbox_Torso
+
 @onready var LOS_Ray: RayCast2D = $LOS_Ray
 
 var target: Node2D = null
@@ -104,6 +106,9 @@ func Die():
 	print_debug("NPC Killed")
 	
 	Animator.play("NPC_%s_Death" % EnemyName)
+	
+	$NPC_Hurtbox_Torso.monitorable = false # Disable Hurtbox
+	
 	await get_tree().create_timer(CorpseRemovalDelay).timeout
 	queue_free()
 
