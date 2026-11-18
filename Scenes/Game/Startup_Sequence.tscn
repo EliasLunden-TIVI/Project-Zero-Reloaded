@@ -13,7 +13,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_25kr7"]
 resource_name = "Intro"
-length = 18.0
+length = 20.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -130,10 +130,10 @@ tracks/9/path = NodePath("BootSequence:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 18),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 18, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -611,9 +611,9 @@ offset_right = 0.64001465
 offset_bottom = 0.08000183
 theme = ExtResource("1_am7as")
 theme_override_constants/line_spacing = 7
-text = "SEC-OS /// V5.2.x.x /// HALCYON DEFENSE CO. /// ALL RIGHTS RESERVED ///
-AUTH USER [NULL]  /// ACCESSED FROM [ENCRYPTED] /// AT [ENCRYPTED] ///
-UNAUTHORIZED USE AND REDISTRIBUTION PROHIBITED BY LAW /// §14-C ///"
+text = "| SEC-OS® VERSION 5.2.X.X | UNAUTHORIZED USE PROHIBITED | HALCYON DEFENSE CORP. |
+
+| AUTH USER [NULL] | ACCESSED FROM [ENCRYPTED] | AT [ENCRYPTED] |"
 vertical_alignment = 1
 
 [node name="Input" type="Label" parent="Backround" unique_id=945543793]
@@ -746,7 +746,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_am7as")
 theme_override_font_sizes/font_size = 40
-text = "> LOADING COMPLETE <"
+text = "
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

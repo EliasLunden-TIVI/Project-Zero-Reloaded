@@ -66,3 +66,11 @@ func _on_operation__test_button_down() -> void:
 
 func _on_operationbrightstar_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Game/01-BRIGHTSTAR.tscn") # Intro scene
+
+
+func _on_settings_exit_button_button_down() -> void:
+	$SettingsWindow.hide()
+
+
+func _on_popup_exit_button_button_down() -> void:
+	$ErrorPopup.hide()

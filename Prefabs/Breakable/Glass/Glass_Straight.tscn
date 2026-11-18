@@ -254,7 +254,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -378,6 +378,7 @@ autoplay = &"Glass_Straight_Idle"
 
 [node name="PropParticles" type="GPUParticles2D" parent="." unique_id=562102925]
 material = SubResource("CanvasItemMaterial_ekvaq")
+emitting = false
 amount = 15
 texture = ExtResource("4_lgp4r")
 lifetime = 20.0
