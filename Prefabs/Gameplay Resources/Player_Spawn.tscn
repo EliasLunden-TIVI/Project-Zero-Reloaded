@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bbpcuvh20psy1"]
+
+[ext_resource type="Texture2D" uid="uid://bgu6cpvudjynd" path="res://Textures/Character/NPC/Operative/Operative.png" id="1_ousug"]
+
+[node name="Player_Spawn" type="Node2D" unique_id=664681397]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1411880317]
+modulate = Color(0, 6.840123, 0, 0.47058824)
+texture = ExtResource("1_ousug")

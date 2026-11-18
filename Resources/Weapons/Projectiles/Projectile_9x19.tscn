@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c53csauaj0b8g"]
+
+[ext_resource type="Script" uid="uid://86cysesibhom" path="res://Scripts/Gameplay/Projectile.gd" id="1_df847"]
+[ext_resource type="Texture2D" uid="uid://kndmq3ydh1qp" path="res://VFX/Weapons/Projectile_Small.png" id="1_wu8uk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu8uk"]
+size = Vector2(32.000004, 48)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_df847"]
+light_mode = 1
+
+[node name="Projectile_9x19" type="Area2D" unique_id=1785982187 groups=["Projectile"]]
+collision_mask = 242
+priority = 1
+script = ExtResource("1_df847")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=480819546]
+position = Vector2(0, 4.7683716e-07)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wu8uk")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Projectile_Texture" type="Sprite2D" parent="." unique_id=1641388000]
+material = SubResource("CanvasItemMaterial_df847")
+rotation = 1.5707966
+texture = ExtResource("1_wu8uk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

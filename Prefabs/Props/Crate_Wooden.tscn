@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bg6q1ecwovo43"]
+
+[ext_resource type="Texture2D" uid="uid://bw4ubdrdkx8k4" path="res://Textures/Props/Boxes/Wood-Crate.png" id="1_y1mfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc60u"]
+size = Vector2(400, 400)
+
+[node name="Crate_Wooden" type="Sprite2D" unique_id=1636090045 groups=["Wall"]]
+z_index = 4
+texture = ExtResource("1_y1mfr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1884975534 groups=["Obstacle", "Wall"]]
+collision_layer = 16
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1626721637]
+shape = SubResource("RectangleShape2D_dc60u")
+debug_color = Color(0, 0.6410368, 0.3455257, 0.41960785)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1224003180 groups=["Obstacle"]]
+vertices = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
+affect_navigation_mesh = true

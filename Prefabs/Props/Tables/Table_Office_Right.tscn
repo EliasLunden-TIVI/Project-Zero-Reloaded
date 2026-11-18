@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://uanqj4lnud6m"]
+
+[ext_resource type="Texture2D" uid="uid://dgnpfy7yqacya" path="res://Textures/Props/Tables/Tables4.png" id="1_c6xr0"]
+
+[node name="Table_Office_Right" type="Sprite2D" unique_id=1269495570]
+z_index = -1
+texture = ExtResource("1_c6xr0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1888975338]
+collision_layer = 128
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=404970823]
+polygon = PackedVector2Array(-400, -200, 400, -200, 400, 200, 150, 200, 150, 100, -400, 100)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=2031686873 groups=["Obstacle"]]
+vertices = PackedVector2Array(-400, -200, 400, -200, 400, 200, 150, 200, 150, 100, -400, 100)
+affect_navigation_mesh = true

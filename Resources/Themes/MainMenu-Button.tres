@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://dr3lfjhijpwhr"]
+
+[ext_resource type="FontFile" uid="uid://qvidcedy0eao" path="res://Resources/Fonts/MedodicaRegular.otf" id="1_tjjjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7xrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rru42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjjjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_im1eu"]
+
+[resource]
+Button/fonts/font = ExtResource("1_tjjjq")
+Button/styles/focus = SubResource("StyleBoxEmpty_e7xrc")
+Button/styles/hover = SubResource("StyleBoxEmpty_rru42")
+Button/styles/normal = SubResource("StyleBoxEmpty_tjjjq")
+Button/styles/pressed = SubResource("StyleBoxEmpty_im1eu")

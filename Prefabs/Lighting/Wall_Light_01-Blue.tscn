@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0o27hy7wf0wb"]
+
+[ext_resource type="Texture2D" uid="uid://18fh21p7n10h" path="res://Textures/Building/Fixtures/Wall_Light-Sheet.png" id="1_5tpri"]
+
+[sub_resource type="Gradient" id="Gradient_1tqu1"]
+offsets = PackedFloat32Array(0, 0.41593695)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjl8t"]
+gradient = SubResource("Gradient_1tqu1")
+fill = 1
+fill_from = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
+[node name="WallLight_01" type="Node2D" unique_id=1719860564]
+z_index = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2076550106]
+texture = ExtResource("1_5tpri")
+hframes = 5
+frame = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2114359688]
+position = Vector2(-683.4182, 1.4574175e-05)
+rotation = -1.5707964
+scale = Vector2(9.35563, 6.137338)
+color = Color(0.72885066, 0.93641126, 0.9905543, 1)
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_xjl8t")
+texture_scale = 3.24
